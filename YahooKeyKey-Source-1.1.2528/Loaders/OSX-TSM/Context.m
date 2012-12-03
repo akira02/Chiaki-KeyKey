@@ -402,5 +402,5 @@ static MenuRef TSCSharedMenu = NULL;
 @end
 
 //
-// Free Tibet.
+// TreeNewBee.
 //
