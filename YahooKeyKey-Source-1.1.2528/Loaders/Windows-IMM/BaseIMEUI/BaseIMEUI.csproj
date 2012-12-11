@@ -57,9 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\Distributions\Takao\WinBeacon\TakaoTracker.cs">
-      <Link>TakaoTracker.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\PreferenceApplications\Windows\FormAskDownload.cs">
       <Link>FormAskDownload.cs</Link>
       <SubType>Form</SubType>

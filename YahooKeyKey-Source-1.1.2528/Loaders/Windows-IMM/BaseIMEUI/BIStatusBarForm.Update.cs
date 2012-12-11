@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Runtime;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
-using Takao;
+// using Takao;
 
 namespace BaseIMEUI
 {
@@ -106,11 +106,11 @@ namespace BaseIMEUI
 
         private void SendBeacon()
         {
-            try
-            {
-                Tracker.SendTrackingURL(Config.YahooKeyKeyStartBeaconURL);
-            }
-            catch { }
+            //try
+            //{
+            //    Tracker.SendTrackingURL(Config.YahooKeyKeyStartBeaconURL);
+            //}
+            //catch { }
         }
 
         private delegate void ConfirmDownloadUpdateCall();

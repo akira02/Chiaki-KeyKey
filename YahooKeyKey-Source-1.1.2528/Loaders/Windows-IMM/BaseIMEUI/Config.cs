@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Takao;
+//using Takao;
 
 namespace BaseIMEUI
 {
@@ -24,8 +24,9 @@ namespace BaseIMEUI
         {
             get
             {
-                Random random = new Random();                
-                return "http://tw.rd.yahoo.com/referurl/keykey/client/onekey/dictionary/" + VersionForSearch + (Tracker.Is64BitMode() ? "W64" : "W32") + "/*http://tw.yimg.com/i/tw/download/ykkimg/blank.gif?rand=" + random.Next();             
+                return "";
+            //    Random random = new Random();                
+            //    return "http://tw.rd.yahoo.com/referurl/keykey/client/onekey/dictionary/" + VersionForSearch + (Tracker.Is64BitMode() ? "W64" : "W32") + "/*http://tw.yimg.com/i/tw/download/ykkimg/blank.gif?rand=" + random.Next();             
             }
         }
 
@@ -33,8 +34,9 @@ namespace BaseIMEUI
         {
             get
             {
-                Random random = new Random();
-                return "http://tw.rd.yahoo.com/referurl/keykey/client/keykey/start/" + VersionForSearch + (Tracker.Is64BitMode() ? "W64" : "W32") + "/*http://tw.yimg.com/i/tw/download/ykkimg/blank.gif?rand=" + random.Next();
+                return "";
+                //Random random = new Random();
+                //return "http://tw.rd.yahoo.com/referurl/keykey/client/keykey/start/" + VersionForSearch + (Tracker.Is64BitMode() ? "W64" : "W32") + "/*http://tw.yimg.com/i/tw/download/ykkimg/blank.gif?rand=" + random.Next();
             }
         }
         public static string YahooDictionaryBeaconHTML = "<img src=\"" + YahooDictionaryBeaconURL + "\" style=\"display: none;\"/>";
