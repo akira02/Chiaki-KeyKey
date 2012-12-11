@@ -835,10 +835,10 @@ boolean BISHandleKey(
 		string value = IMEServer::SharedLoaderService()->loaderFeatureValue();
 
 		if (key == "SendTrackerRequest") {
-			TrackerMaker tm;
-			wstring wurl = OVUTF16::FromUTF8(tm.trackerURLString(value));
-			String ^csurl = gcnew String(wurl.c_str());
-			Tracker::SendTrackingURL(csurl);
+			//TrackerMaker tm;
+			//wstring wurl = OVUTF16::FromUTF8(tm.trackerURLString(value));
+			//String ^csurl = gcnew String(wurl.c_str());
+			//Tracker::SendTrackingURL(csurl);
 		}
 		else if (key == "LaunchApp") {
 			wcscpy_s(actionVerb, BISMaxStringLength, L"launchApp");

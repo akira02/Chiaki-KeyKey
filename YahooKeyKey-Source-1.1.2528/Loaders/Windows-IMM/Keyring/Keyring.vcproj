@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\Frameworks\Minotaur\Headers;..\..\..\Frameworks\OpenVanilla\Headers;&quot;..\..\..\ExternalLibraries\sqlite-crypto&quot;;&quot;..\..\..\ExternalLibraries\openssl-win32-x86\include&quot;"
+				AdditionalIncludeDirectories="..\..\..\Frameworks\Minotaur\Headers;..\..\..\Frameworks\OpenVanilla\Headers;..\..\..\ExternalLibraries\sqlite;&quot;..\..\..\ExternalLibraries\openssl-win32-x86\include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"

@@ -45,7 +45,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\Frameworks\Minotaur\Headers;..\..\..\Frameworks\CareService\Headers;..\BaseIMEConfig;..\..\CrossPlatform;..\BaseIMERPC;..\LFPlatform\Headers;..\..\..\Frameworks\OpenVanilla\Headers;..\..\..\Frameworks\PlainVanilla\Headers;&quot;..\..\..\ExternalLibraries\sqlite-crypto&quot;;..\..\..\ModulePackages\StaticPack;..\..\..\Frameworks\Formosa\Headers;..\..\..\Frameworks\Manjusri\Headers;..\..\..\Distributions\Takao\Keyring;..\..\..\Distributions\Takao\TrackerMaker"
+				AdditionalIncludeDirectories="..\..\..\Frameworks\Minotaur\Headers;..\..\..\Frameworks\CareService\Headers;..\BaseIMEConfig;..\..\CrossPlatform;..\BaseIMERPC;..\LFPlatform\Headers;..\..\..\Frameworks\OpenVanilla\Headers;..\..\..\Frameworks\PlainVanilla\Headers;..\..\..\ExternalLibraries\sqlite;..\..\..\ModulePackages\StaticPack;..\..\..\Frameworks\Formosa\Headers;..\..\..\Frameworks\Manjusri\Headers;..\..\..\Distributions\Takao\Keyring;..\..\..\Distributions\Takao\TrackerMaker"
 				PreprocessorDefinitions="WIN32;_DEBUG;BASEIME_INSTALLER_VERSION=\&quot;1.1.2528\&quot;;BASEIME_COMPANY_NAME=\&quot;Yahoo!\&quot;;BASEIME_PRODUCT_NAME=\&quot;KeyKey\&quot;;BASEIME_RESOURCE_DESCRIPTION=\&quot;Yahoo! KeyKey\&quot;;BASEIME_RESOURCE_COPYRIGHT=\&quot;Copyright (c) 2008 Yahoo! Inc.\&quot;;PVLOADERPOLICY_LOADER_IDENTIFIER=\&quot;com.yahoo.KeyKey\&quot;;PVLOADERPOLICY_LOADER_NAME=\&quot;Yahoo! KeyKey\&quot;;SQLITE_HAS_CODEC=1;OV_USE_SQLITE;OVLOADER_USE_SQLITE_CRYPTO;BASEIME_LOADER_NAME=\&quot;Takao-Windows\&quot;;OPENVANILLA_CEROD_DATABASE_FILE=\&quot;KeyKey.db\&quot;;BASEIME_DATABASE_COMPONENT_NAME=\&quot;Takao-Database\&quot;"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
