@@ -21,17 +21,17 @@ file for terms.
 #include "Manjusri.h"
 #include "LMDBHelper.h"
 
-#ifdef PHASETOOL_USE_SQLITE_CRYPTO
-int sqlite3_key(
-   sqlite3 *db,        /* The connection from sqlite3_open() */
-   const void *pKey,   /* The key */
-   int nKey            /* Number of bytes in the key */
-);
-#endif
+//#ifdef PHASETOOL_USE_SQLITE_CRYPTO
+//int sqlite3_key(
+//   sqlite3 *db,        /* The connection from sqlite3_open() */
+//   const void *pKey,   /* The key */
+//   int nKey            /* Number of bytes in the key */
+//);
+//#endif
 
-#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
-int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
-#endif
+//#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
+//int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
+//#endif
 
 
 using namespace std;
@@ -56,10 +56,10 @@ int main(int argc, char* argv[])
         return 1;
     }
     
-    if (argc > 2) {
-        sqlite3_key(connection->connection(), argv[2], strlen(argv[2]));
-    }
-    
+//    if (argc > 2) {
+//        sqlite3_key(connection->connection(), argv[2], strlen(argv[2]));
+//    }
+
     LMDBHelper helper(connection, true);
 
     connection->execute("BEGIN");

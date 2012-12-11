@@ -6,7 +6,7 @@ file for terms.
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
-#import <DotMacKit/DotMacKit.h>
+//#import <DotMacKit/DotMacKit.h>
 #import "TakaoSettings.h"
 
 /*!

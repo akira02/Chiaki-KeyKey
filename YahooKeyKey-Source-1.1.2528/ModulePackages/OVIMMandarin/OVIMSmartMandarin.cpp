@@ -29,11 +29,11 @@
 #include "OVIMSmartMandarin.h"
 #include "OVIMMandarinConfig.h"
 
-#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
-using namespace std;
-pair<char*, size_t> ObtenirUserDonneCle();
-int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
-#endif
+//#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
+//using namespace std;
+//pair<char*, size_t> ObtenirUserDonneCle();
+//int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
+//#endif
 
 namespace OpenVanilla {
 
@@ -967,11 +967,11 @@ bool OVIMSmartMandarin::initialize(OVPathInfo* pathInfo, OVLoaderService* loader
 //     }
 
     if (userDB) {
-        pair<char*, size_t> cle = ObtenirUserDonneCle();
-        if (cle.first) {
-            sqlite3_key(userDB->connection(), cle.first, (int)cle.second);
-            free(cle.first);
-        }
+//        pair<char*, size_t> cle = ObtenirUserDonneCle();
+//        if (cle.first) {
+//            sqlite3_key(userDB->connection(), cle.first, (int)cle.second);
+//            free(cle.first);
+//        }
 
         OVSQLiteStatement* tryStatement;
         
@@ -986,11 +986,11 @@ bool OVIMSmartMandarin::initialize(OVPathInfo* pathInfo, OVLoaderService* loader
             userDB = OVSQLiteConnection::Open(dbPath);
             // loaderService->logger(OVIMMANDARIN_IDENTIFIER) << "DB is not openable, retrying with the old key" << endl;
             
-            pair<char*, size_t> cle = ObtenirUserDonneCle();
-            if (cle.first) {
-                sqlite3_key(userDB->connection(), cle.first, (int)cle.second);
-                free(cle.first);
-            }
+//            pair<char*, size_t> cle = ObtenirUserDonneCle();
+//            if (cle.first) {
+//                sqlite3_key(userDB->connection(), cle.first, (int)cle.second);
+//                free(cle.first);
+//            }
 
             tryStatement = userDB->prepare("SELECT * FROM sqlite_master");        
             if (!tryStatement) {
@@ -1000,9 +1000,9 @@ bool OVIMSmartMandarin::initialize(OVPathInfo* pathInfo, OVLoaderService* loader
             }
             else {          
                 // loaderService->logger(OVIMMANDARIN_IDENTIFIER) << "DB opened with the old key, rekeying" << endl;  
-                while (tryStatement->step() == SQLITE_ROW) {}            
-                sqlite3_rekey(userDB->connection(), "", 0);
-                delete tryStatement;
+//                while (tryStatement->step() == SQLITE_ROW) {}            
+//                sqlite3_rekey(userDB->connection(), "", 0);
+//                delete tryStatement;
             }
         }
     }
@@ -1081,21 +1081,21 @@ bool OVIMSmartMandarin::initialize(OVPathInfo* pathInfo, OVLoaderService* loader
         // close userDB, now we'll attach the new stuff
         delete userDB;
 
-        #ifndef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
+//        #ifndef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
             if (lmdb->execute("ATTACH DATABASE %Q AS userdb", dbPath.c_str()) == SQLITE_OK)
                 useUserTable = true;
-        #else
-            pair<char*, size_t> cle = ObtenirUserDonneCle();
-            if (cle.first) {        
-                char* key = (char*)calloc(1, cle.second + 1);
-                memcpy(key, cle.first, cle.second);            
-                if (lmdb->execute("ATTACH DATABASE %Q AS userdb KEY %Q", dbPath.c_str(), key) == SQLITE_OK)
-                    useUserTable = true;   
-                free(key);
-                free(cle.first);
-            }
-        #endif
-        
+//        #else
+//            pair<char*, size_t> cle = ObtenirUserDonneCle();
+//            if (cle.first) {        
+//                char* key = (char*)calloc(1, cle.second + 1);
+//                memcpy(key, cle.first, cle.second);            
+//                if (lmdb->execute("ATTACH DATABASE %Q AS userdb KEY %Q", dbPath.c_str(), key) == SQLITE_OK)
+//                    useUserTable = true;   
+//                free(key);
+//                free(cle.first);
+//            }
+//        #endif
+
     }
 
     // if (useUserTable)

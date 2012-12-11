@@ -6,14 +6,14 @@
 using namespace Minotaur;
 
 extern "C" {
-void sqlite3_activate_see(const char *zPassPhrase);
-void sqlite3_activate_cerod(const char *zKey);
+//void sqlite3_activate_see(const char *zPassPhrase);
+//void sqlite3_activate_cerod(const char *zKey);
 
-int sqlite3_key(
-   sqlite3 *db,        /* The connection from sqlite3_open() */
-   const void *pKey,   /* The key */
-   int nKey            /* Number of bytes in the key */
-);
+//int sqlite3_key(
+//   sqlite3 *db,        /* The connection from sqlite3_open() */
+//   const void *pKey,   /* The key */
+//   int nKey            /* Number of bytes in the key */
+//);
 }
 
 extern "C" {
@@ -43,19 +43,19 @@ void InitSQLiteCrypto(sqlite3* db)
 {
     // sqlite3_activate_see("7bb07b8d471d642e");
 
-    pair<char*, size_t> phrase = Minos::GetBack(VendorDonneCle + REAL_OFFSET(VendorDonneCleOffsetMask1, VendorDonneCleOffsetMask2), REAL_SIZE(VendorDonneCleSizeMask1, VendorDonneCleSizeMask2), VendorMotcle, VendorMotcleSize);
-    if (phrase.first) {
-//        cerr << "phrase: " << phrase.second << endl;
-        sqlite3_key(db, phrase.first, (int)phrase.second);
-        free(phrase.first);
-    }    
+//    pair<char*, size_t> phrase = Minos::GetBack(VendorDonneCle + REAL_OFFSET(VendorDonneCleOffsetMask1, VendorDonneCleOffsetMask2), REAL_SIZE(VendorDonneCleSizeMask1, VendorDonneCleSizeMask2), VendorMotcle, VendorMotcleSize);
+//    if (phrase.first) {
+////        cerr << "phrase: " << phrase.second << endl;
+//        sqlite3_key(db, phrase.first, (int)phrase.second);
+//        free(phrase.first);
+//    }    
 }
 
 string FetchSQLiteCERODKey(const string& filename)
 {
     // sqlite3_activate_see("7bb07b8d471d642e");
-	sqlite3_activate_cerod("7bb07b8d471d642e");
-	
+//	sqlite3_activate_cerod("7bb07b8d471d642e");
+
 	string result = ":cerod:";
 	
     pair<char*, size_t> phrase = Minos::GetBack(VendorDonneCle + REAL_OFFSET(VendorDonneCleOffsetMask1, VendorDonneCleOffsetMask2), REAL_SIZE(VendorDonneCleSizeMask1, VendorDonneCleSizeMask2), VendorMotcle, VendorMotcleSize);

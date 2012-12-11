@@ -5,10 +5,10 @@
 using namespace std;
 using namespace OpenVanilla;
 
-#ifdef OVLOADER_USE_SQLITE_CRYPTO
-pair<char*, size_t> ObtenirUserDonneCle();
-int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
-#endif
+// #ifdef OVLOADER_USE_SQLITE_CRYPTO
+// pair<char*, size_t> ObtenirUserDonneCle();
+// int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
+// #endif
 
 OVLoaderUserPersistence::OVLoaderUserPersistence(const string& userDatabasePath)
     : m_defaultDatabase(0)
@@ -16,11 +16,11 @@ OVLoaderUserPersistence::OVLoaderUserPersistence(const string& userDatabasePath)
 {
     m_userDatabase = OVSQLiteConnection::Open(userDatabasePath);
     if (m_userDatabase) {
-        pair<char*, size_t> cle = ObtenirUserDonneCle();
-        if (cle.first) {
-            sqlite3_key(m_userDatabase->connection(), cle.first, (int)cle.second);
-            free(cle.first);
-        }
+        // pair<char*, size_t> cle = ObtenirUserDonneCle();
+        // if (cle.first) {
+        //     sqlite3_key(m_userDatabase->connection(), cle.first, (int)cle.second);
+        //     free(cle.first);
+        // }
     }
     else {
         m_userDatabase = OVSQLiteConnection::Open(":memory:");

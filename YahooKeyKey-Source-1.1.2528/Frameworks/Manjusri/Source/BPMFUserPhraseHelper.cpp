@@ -9,11 +9,11 @@ file for terms.
 #include "StringVectorHelper.h"
 #include "Minotaur.h"
 
-#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
-using namespace std;
-pair<char*, size_t> ObtenirUserDonneCle();
-int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
-#endif
+//#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
+//using namespace std;
+//pair<char*, size_t> ObtenirUserDonneCle();
+//int sqlite3_rekey(sqlite3 *db, const void *pKey, int nKey);
+//#endif
 
 #define MANJUSRI_EXPORT_KEY     "mjsrexport"
 
@@ -239,13 +239,13 @@ OVSQLiteConnection* BPMFUserPhraseHelper::OpenUserPhraseDB(OVPathInfo* pathInfo,
     loaderService->logger("BPMFUserPhraseHelper") << "attempting to open " << filename << endl;
     OVSQLiteConnection* userDB = OVSQLiteConnection::Open(filename);
 
-	#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
-    pair<char*, size_t> cle = ObtenirUserDonneCle();
-    if (cle.first) {
-        sqlite3_key(userDB->connection(), cle.first, (int)cle.second);
-        free(cle.first);
-    }
-	#endif
+//	#ifdef OVIMSMARTMANDARIN_USE_SQLITE_CRYPTO
+//    pair<char*, size_t> cle = ObtenirUserDonneCle();
+//    if (cle.first) {
+//        sqlite3_key(userDB->connection(), cle.first, (int)cle.second);
+//        free(cle.first);
+//    }
+//	#endif
 
     return userDB;
 }
