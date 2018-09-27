@@ -1,7 +1,8 @@
 KEYPHRASE = $(shell cat ../Keyring/DevVendorDBKeyPhrase.txt)
 # KEYPARAM = -key '$(KEYPHRASE)'
 KEYPARAM =
-SQLITE3 = ../PrecompiledTools/sqlite3-cerod-see $(KEYPARAM)
+# SQLITE3 = ../PrecompiledTools/sqlite3-cerod-see $(KEYPARAM)
+SQLITE3 = /usr/bin/sqlite3
 PHRASETOOL = ../PrecompiledTools/PhraseTool
 CEROD_BUILD = ../PrecompiledTools/cerod_build 
 

@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Runtime;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
-// using Takao;
 
 namespace BaseIMEUI
 {
@@ -25,17 +24,6 @@ namespace BaseIMEUI
         {
 			int Desc;
 			return InternetGetConnectedState(out Desc, 0);
-			//if (NetworkInterface.GetIsNetworkAvailable() == false)
-			//    return false;
-			//try
-			//{
-			//    Dns.GetHostEntry("tw.yahoo.com");
-			//    return true;
-			//}
-			//catch
-			//{
-			//    return false; // host not reachable. 
-			//}
         }
 
         private void InstallServerTimer()
@@ -95,11 +83,11 @@ namespace BaseIMEUI
             ThreadStart threadStart = new ThreadStart(FetchOnlineDataAndCheckForUpdateInThread);
             Thread thread = new Thread(threadStart);
             thread.Start();
-            
+
             BIServerConnector callback = BIServerConnector.SharedInstance;
             if (callback != null) {
                 callback.startUpdateServerDataThread();
-            }            
+            }
         }
 
         #region Auto update
@@ -121,7 +109,7 @@ namespace BaseIMEUI
                 this.Invoke(new ConfirmDownloadUpdateCall(ConfirmDownloadUpdate));
                 return;
             }
-            
+
             TakaoPreference.PanelUpdate.LaunchDownloadUpdateAppMute();
         }
 

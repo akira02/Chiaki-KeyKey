@@ -564,32 +564,32 @@ file for terms.
 	NSColor *fromColor = nil;
 	NSColor *toColor = nil;
 	
-#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_4	
-	if ([aColor colorSpaceName] == NSDeviceWhiteColorSpace || [aColor colorSpaceName] ==NSCalibratedWhiteColorSpace) {
-		fromColor = [NSColor colorWithCalibratedRed:1.0 green:1.0 blue:1.0 alpha:[aColor alphaComponent]];
-	}
-	else if ([aColor colorSpaceName] == NSDeviceBlackColorSpace || [aColor colorSpaceName] ==NSCalibratedBlackColorSpace) {
-		fromColor = [NSColor colorWithCalibratedRed:0.0 green:0.0 blue:0.0 alpha:[aColor alphaComponent]];
-	} 
-	else {
-		fromColor = aColor;
-	}
-	
-	float hue = [fromColor hueComponent];
-	float saturation = [fromColor saturationComponent];
-	float brightness = [fromColor brightnessComponent] / 3.0;
-	toColor = [NSColor colorWithCalibratedHue:hue saturation:saturation brightness:brightness alpha:1.0];
-#endif	
+//#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_4	
+//	if ([aColor colorSpaceName] == NSDeviceWhiteColorSpace || [aColor colorSpaceName] ==NSCalibratedWhiteColorSpace) {
+//		fromColor = [NSColor colorWithCalibratedRed:1.0 green:1.0 blue:1.0 alpha:[aColor alphaComponent]];
+//	}
+//	else if ([aColor colorSpaceName] == NSDeviceBlackColorSpace || [aColor colorSpaceName] ==NSCalibratedBlackColorSpace) {
+//		fromColor = [NSColor colorWithCalibratedRed:0.0 green:0.0 blue:0.0 alpha:[aColor alphaComponent]];
+//	} 
+//	else {
+//		fromColor = aColor;
+//	}
+//	
+//	float hue = [fromColor hueComponent];
+//	float saturation = [fromColor saturationComponent];
+//	float brightness = [fromColor brightnessComponent] / 3.0;
+//	toColor = [NSColor colorWithCalibratedHue:hue saturation:saturation brightness:brightness alpha:1.0];
+//#endif	
 	
 	[image lockFocus];	
-#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_4
-	NSGradient *g = [[[NSGradient alloc] initWithStartingColor:fromColor endingColor:toColor] autorelease];
-	[g drawInRect:NSMakeRect(0, 0, [image size].width, [image size].height) angle:270.0]; 
-#else	
+//#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_4
+//	NSGradient *g = [[[NSGradient alloc] initWithStartingColor:fromColor endingColor:toColor] autorelease];
+//	[g drawInRect:NSMakeRect(0, 0, [image size].width, [image size].height) angle:270.0];
+//#else
 	[aColor setFill];
 	[NSBezierPath fillRect:NSMakeRect(0, 0, [image size].width, [image size].height)];
-#endif
-	[[NSColor blackColor] setStroke];	
+//#endif
+	[[NSColor blackColor] setStroke];
 	[NSBezierPath strokeRect:NSMakeRect(0, 0, [image size].width, [image size].height)];	
 	[image unlockFocus];
 	

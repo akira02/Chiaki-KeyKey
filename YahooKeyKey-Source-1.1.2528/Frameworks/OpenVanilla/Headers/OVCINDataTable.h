@@ -529,7 +529,7 @@ namespace OpenVanilla {
             char first;
             int blockMode = 0;
             
-            while (first = *m_scanner) {
+            while ((first = *m_scanner)) {
                 if (blockMode) {
                     if (first == '\r' || first == '\n') {
                         m_scanner++;
@@ -657,7 +657,7 @@ namespace OpenVanilla {
         void skipUntilEitherCRLF()
         {
             char nextChar;
-            while (nextChar = *m_scanner) {
+            while ((nextChar = *m_scanner)) {
                 if (nextChar == '\r' || nextChar == '\n') break;
                 m_scanner++;
             }
@@ -666,7 +666,7 @@ namespace OpenVanilla {
         void skipUntilNeitherCRLF()
         {
             char nextChar;
-            while (nextChar = *m_scanner) {
+            while ((nextChar = *m_scanner)) {
                 if (!(nextChar == '\r' || nextChar == '\n')) break;
                 m_scanner++;
             }
@@ -675,12 +675,12 @@ namespace OpenVanilla {
         void skipToLineEndAndMarkAndForwardWithoutTrailingSpace()
         {
             char nextChar;
-            while (nextChar = *m_scanner) {
+            while ((nextChar = *m_scanner)) {
                 if (nextChar == ' ' || nextChar == '\t') {
                     char* begin = m_scanner;
                     
                     m_scanner++;                    
-                    while (nextChar = *m_scanner) {
+                    while ((nextChar = *m_scanner)) {
                         if (!(nextChar == ' ' || nextChar == '\t')) break;
                         m_scanner++;
                     }

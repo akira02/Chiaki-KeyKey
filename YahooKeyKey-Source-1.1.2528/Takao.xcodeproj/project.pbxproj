@@ -4978,6 +4978,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/YKAFWordCount/YKAFWordCountPackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -4985,6 +4986,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKAFWordCount;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -4999,6 +5001,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/YKAFWordCount/YKAFWordCountPackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -5006,6 +5009,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKAFWordCount;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -5019,6 +5023,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				OTHER_LDFLAGS = (
@@ -5028,6 +5033,7 @@
 					CoreFoundation,
 				);
 				PRODUCT_NAME = ModuleSign;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -5038,6 +5044,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				OTHER_LDFLAGS = (
@@ -5047,6 +5054,7 @@
 					CoreFoundation,
 				);
 				PRODUCT_NAME = ModuleSign;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5059,9 +5067,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = Manjusri;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5073,9 +5083,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = Manjusri;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5087,9 +5099,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = ManjusriBuilder;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5100,9 +5114,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = ManjusriBuilder;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5139,11 +5155,13 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = "";
 				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Frameworks/OpenVanilla/OpenVanilla-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = OpenVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5163,12 +5181,14 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = "";
 				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Frameworks/OpenVanilla/OpenVanilla-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_NAME = OpenVanilla;
+				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -5184,8 +5204,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = "UnitTest++";
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5198,8 +5220,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = "UnitTest++";
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5212,9 +5236,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = OpenVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5227,9 +5253,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = OpenVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5241,12 +5269,14 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 				);
 				PRODUCT_NAME = TestOpenVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5257,12 +5287,14 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 				);
 				PRODUCT_NAME = TestOpenVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5280,6 +5312,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Frameworks/LFExtensions/LFExtensions-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
@@ -5289,6 +5322,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = LFExtensions;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5308,6 +5342,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Frameworks/LFExtensions/LFExtensions-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
@@ -5318,6 +5353,7 @@
 				);
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_NAME = LFExtensions;
+				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -5338,6 +5374,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Frameworks/PlainVanilla/PlainVanilla-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_CFLAGS = "";
@@ -5348,6 +5385,7 @@
 					CoreFoundation,
 				);
 				PRODUCT_NAME = PlainVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5365,6 +5403,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Frameworks/PlainVanilla/PlainVanilla-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_CFLAGS = "";
@@ -5375,6 +5414,7 @@
 					CoreFoundation,
 				);
 				PRODUCT_NAME = PlainVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5400,6 +5440,7 @@
 					OV_USE_SQLITE,
 					"OPENVANILLA_DATABASE_COMPONENT_NAME=\\\"Takao-OSX-Database\\\"",
 				);
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Loaders/OSX-IMK/Takao-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -5414,6 +5455,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = "Yahoo! KeyKey";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -5442,6 +5484,7 @@
 					OV_USE_SQLITE,
 					"OPENVANILLA_DATABASE_COMPONENT_NAME=\\\"Takao-OSX-Database\\\"",
 				);
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Loaders/OSX-IMK/Takao-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -5457,6 +5500,7 @@
 				);
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
 				PRODUCT_NAME = "Yahoo! KeyKey";
+				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -5472,6 +5516,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = "Takao-All";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -5482,6 +5527,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				PRODUCT_NAME = "Takao-All";
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5498,6 +5544,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyServiceTiger\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/DownloadUpdateOSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -5507,6 +5554,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = DownloadUpdateTiger;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -5521,6 +5569,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyServiceTiger\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/DownloadUpdateOSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -5530,6 +5579,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = DownloadUpdateTiger;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5545,6 +5595,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
@@ -5554,6 +5605,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = LFWebAPIToolbox;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -5567,6 +5619,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_LDFLAGS = (
@@ -5576,6 +5629,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = LFWebAPIToolbox;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5592,6 +5646,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyServiceTiger\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -5601,6 +5656,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = PreferencesTiger;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -5617,6 +5673,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyServiceTiger\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -5626,6 +5683,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = PreferencesTiger;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -5646,6 +5704,7 @@
 					"OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED=\\\"Generic-*;Mandarin-bpmf-cin\\\"",
 					"OVAFREVERSELOOKUP_IDENTIFIER_PREFIX=\\\"ReverseLookup\\\"",
 				);
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/OVAFReverseLookup/YKReverseLookup-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_CFLAGS = "";
@@ -5654,6 +5713,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKReverseLookup;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -5672,6 +5732,7 @@
 					"OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED=\\\"Generic-*;Mandarin-bpmf-cin\\\"",
 					"OVAFREVERSELOOKUP_IDENTIFIER_PREFIX=\\\"ReverseLookup\\\"",
 				);
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/OVAFReverseLookup/YKReverseLookup-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
@@ -5681,6 +5742,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKReverseLookup;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -5694,8 +5756,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = PhraseTool;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -5706,8 +5770,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = PhraseTool;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5723,6 +5789,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/YKAFPhraseAware/YKAFPhraseAwarePackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -5730,6 +5797,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKAFPhraseAware;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -5744,6 +5812,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/YKAFPhraseAware/YKAFPhraseAwarePackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -5751,6 +5820,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKAFPhraseAware;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -5777,6 +5847,7 @@
 					"OVAFASSOCIATEDPHRASE_IDENTIFIER=\\\"AssociatedPhrase\\\"",
 					"OVAFEVAL_IDENTIFIER=\\\"Evaluator\\\"",
 				);
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5784,6 +5855,7 @@
 				);
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = TakaoModulePackages;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5808,6 +5880,7 @@
 					"OVAFASSOCIATEDPHRASE_IDENTIFIER=\\\"AssociatedPhrase\\\"",
 					"OVAFEVAL_IDENTIFIER=\\\"Evaluator\\\"",
 				);
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5815,6 +5888,7 @@
 				);
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = TakaoModulePackages;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5827,9 +5901,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = Keyring;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5841,9 +5917,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = Keyring;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5855,6 +5933,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5862,6 +5941,7 @@
 				);
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = VersionInfoMaker;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5872,6 +5952,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/bin;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5879,6 +5960,7 @@
 				);
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = VersionInfoMaker;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5891,9 +5973,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = PlainVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5906,9 +5990,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = PlainVanilla;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5925,6 +6011,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OVAFPHRASECONVERTER_IDENTIFIER=\\\"YKAFPhraseConverter\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/OVAFPhraseConverter/YKAFPhraseConverter-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_CFLAGS = "";
@@ -5933,6 +6020,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKAFPhraseConverter;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -5948,6 +6036,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OVAFPHRASECONVERTER_IDENTIFIER=\\\"YKAFPhraseConverter\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/OVAFPhraseConverter/YKAFPhraseConverter-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_CFLAGS = "";
@@ -5956,6 +6045,7 @@
 					Carbon,
 				);
 				PRODUCT_NAME = YKAFPhraseConverter;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -5969,9 +6059,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = Formosa;
+				SDKROOT = macosx;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -5984,9 +6076,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = Formosa;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -6000,9 +6094,11 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = CareService;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -6014,9 +6110,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				PRODUCT_NAME = CareService;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -6033,6 +6131,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyService\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = Utilities/PhraseEditor/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6042,6 +6141,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = PhraseEditor;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -6056,6 +6156,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyService\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = Utilities/PhraseEditor/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6065,6 +6166,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = PhraseEditor;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -6081,6 +6183,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyService\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/DownloadUpdateOSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6090,6 +6193,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = DownloadUpdate;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -6104,6 +6208,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyService\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/DownloadUpdateOSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6113,6 +6218,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = DownloadUpdate;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -6128,6 +6234,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Distributions/Takao/Installer-OSX-UI/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6137,6 +6244,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = Installer;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -6150,6 +6258,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Distributions/Takao/Installer-OSX-UI/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6159,6 +6268,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = Installer;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -6178,6 +6288,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyService\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6187,6 +6298,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = Preferences;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -6206,6 +6318,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyService\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = PreferenceApplications/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6215,6 +6328,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = Preferences;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -6231,6 +6345,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Distributions/Takao/Installer-OSX-Help/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6240,6 +6355,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = InstallerHelp;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -6252,6 +6368,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Distributions/Takao/Installer-OSX-Help/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6261,6 +6378,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = InstallerHelp;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -6277,6 +6395,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyServiceTiger\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = Utilities/PhraseEditor/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6286,6 +6405,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = PhraseEditorTiger;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -6300,6 +6420,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "OPENVANILLA_DO_CONNECTION_NAME=@\\\"YahooKeyKeyServiceTiger\\\"";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = Utilities/PhraseEditor/OSX/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -6309,6 +6430,7 @@
 					AppKit,
 				);
 				PRODUCT_NAME = PhraseEditorTiger;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
