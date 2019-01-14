@@ -9,17 +9,28 @@
 	<key>CFBundleIconFile</key>
 	<string>Yahoo</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yahoo.inputmethod.KeyKey</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>	
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>YHOO</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Yahoo! KeyKey</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ykeykey</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-    <string>1.1.2528</string>
+	<string>1.1.2528</string>
 	<key>InputMethodConnectionName</key>
 	<string>YahooKeyKey_1_Connection</string>
 	<key>InputMethodServerControllerClass</key>
@@ -30,6 +41,19 @@
 	<string>1</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.5.0</string>
+	<key>LSMinimumSystemVersionByArchitecture</key>
+	<dict>
+		<key>i386</key>
+		<string>10.5.0</string>
+		<key>ppc</key>
+		<string>10.5.0</string>
+		<key>ppc64</key>
+		<string>10.6.0</string>
+		<key>x86_64</key>
+		<string>10.6.0</string>
+	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>All Rights Reserved.</string>
 	<key>NSMainNibFile</key>
@@ -47,29 +71,5 @@
 	</array>
 	<key>tsInputMethodIconFileKey</key>
 	<string>Yahoo16.icns</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>Yahoo! KeyKey</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>ykeykey</string>
-			</array>
-		</dict>
-	</array>	
-	<key>LSMinimumSystemVersion</key>
-	<string>10.5.0</string>
-	<key>LSMinimumSystemVersionByArchitecture</key>
-	<dict>
-		<key>i386</key>
-		<string>10.5.0</string>
-		<key>ppc</key>
-		<string>10.5.0</string>
-		<key>ppc64</key>
-		<string>10.6.0</string>
-		<key>x86_64</key>
-		<string>10.6.0</string>
-	</dict>		
 </dict>
 </plist>

@@ -4,10 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Reverse Lookup</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yahoo.Keykey.ReverseLookup</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -15,12 +17,10 @@
 	<key>CFBundleSignature</key>
 	<string>YHOO</string>
 	<key>CFBundleVersion</key>
-    <string>1.1.2528</string>
+	<string>1.1.2528</string>
 	<key>CSResourcesFileMapped</key>
 	<string>yes</string>
-    <key>LSHasLocalizedDisplayName</key>
-    <true/>
-    <key>CFBundleDisplayName</key>
-    <string>Reverse Lookup</string>	
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 </dict>
 </plist>

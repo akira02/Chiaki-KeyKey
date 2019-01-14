@@ -243,8 +243,8 @@
 		6A4773150D5C607200C6C744 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A4772FD0D5C607200C6C744 /* main.mm */; };
 		6A4773170D5C607200C6C744 /* OpenVanillaController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A4773010D5C607200C6C744 /* OpenVanillaController.mm */; };
 		6A4773180D5C607200C6C744 /* OpenVanillaLoader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A4773030D5C607200C6C744 /* OpenVanillaLoader.mm */; };
-		6A47735B0D5C60D300C6C744 /* OpenVanilla.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A476EE70D5C48CE00C6C744 /* OpenVanilla.framework */; };
-		6A47735C0D5C60D300C6C744 /* LFExtensions.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A4771630D5C5E3900C6C744 /* LFExtensions.framework */; };
+		6A47735B0D5C60D300C6C744 /* OpenVanilla.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A476EE70D5C48CE00C6C744 /* OpenVanilla.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6A47735C0D5C60D300C6C744 /* LFExtensions.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A4771630D5C5E3900C6C744 /* LFExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6A4773730D5C61E600C6C744 /* NSBezierPathAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A4771560D5C5DF400C6C744 /* NSBezierPathAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A4773740D5C61E600C6C744 /* NSBezierPathAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4771570D5C5DF400C6C744 /* NSBezierPathAdditions.m */; };
 		6A4773790D5C621400C6C744 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4773760D5C621400C6C744 /* AppKit.framework */; };
@@ -491,7 +491,7 @@
 		D4BAC60C0DA95ED5008E90A4 /* package.icns in Resources */ = {isa = PBXBuildFile; fileRef = D4BAC60B0DA95ED5008E90A4 /* package.icns */; };
 		D4BAC6150DA9659C008E90A4 /* speak.gif in Copy Files (WebUI) */ = {isa = PBXBuildFile; fileRef = D4BAC6140DA96585008E90A4 /* speak.gif */; };
 		D4C2FFB710623345005DB6AF /* TakaoLoadedModule.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C2FFB510623345005DB6AF /* TakaoLoadedModule.m */; };
-		D4CB39590D9D7665000F7DE9 /* DotMacKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D4CB39580D9D7665000F7DE9 /* DotMacKit.framework */; };
+		D4CB39590D9D7665000F7DE9 /* DotMacKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D4CB39580D9D7665000F7DE9 /* DotMacKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D4D0BC710EEDAB06007CACEA /* PEMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D0BC700EEDAB06007CACEA /* PEMainWindow.m */; };
 		D4DCDB8110665240003FAFB5 /* TakaoReverseLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DCDB7F10665240003FAFB5 /* TakaoReverseLookup.m */; };
 		D4DCDB8E106652BC003FAFB5 /* TakaoReverseLookup.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DCDB8B106652BC003FAFB5 /* TakaoReverseLookup.xib */; };
@@ -3709,7 +3709,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 6A476EDC0D5C48AB00C6C744 /* Build configuration list for PBXProject "Takao" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -4708,6 +4708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4722,6 +4723,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.KeyKey.YKAFWordCountPackage;
 				PRODUCT_NAME = YKAFWordCount;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -4732,6 +4734,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -4745,6 +4748,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.KeyKey.YKAFWordCountPackage;
 				PRODUCT_NAME = YKAFWordCount;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -4756,6 +4760,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -4778,6 +4783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
@@ -4799,6 +4805,7 @@
 		6A2D56130D5D889600E710D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4816,6 +4823,7 @@
 		6A2D56140D5D889600E710D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -4832,6 +4840,7 @@
 		6A428A2F0D74066E00ABCDA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -4848,6 +4857,7 @@
 		6A428A300D74066E00ABCDA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
@@ -4863,25 +4873,32 @@
 		6A476EDA0D5C48AB00C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		6A476EDB0D5C48AB00C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		6A476EEA0D5C48CF00C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4897,6 +4914,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.openvanilla.framework;
 				PRODUCT_NAME = OpenVanilla;
 				SDKROOT = macosx;
 				ZERO_LINK = YES;
@@ -4906,7 +4924,7 @@
 		6A476EEB0D5C48CF00C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -4924,6 +4942,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openvanilla.framework;
 				PRODUCT_NAME = OpenVanilla;
 				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
@@ -4936,6 +4955,7 @@
 		6A476FFF0D5C510C00C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4952,7 +4972,7 @@
 		6A4770000D5C510C00C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -4968,6 +4988,7 @@
 		6A47702C0D5C521600C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -4985,7 +5006,7 @@
 		6A47702D0D5C521600C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5002,6 +5023,7 @@
 		6A4770560D5C529400C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -5021,6 +5043,7 @@
 		6A4770570D5C529400C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
@@ -5039,6 +5062,7 @@
 		6A4771650D5C5E3A00C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -5058,6 +5082,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lithoglyph.LFExtensions;
 				PRODUCT_NAME = LFExtensions;
 				SDKROOT = macosx;
 				ZERO_LINK = YES;
@@ -5067,7 +5092,7 @@
 		6A4771660D5C5E3A00C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -5089,6 +5114,7 @@
 					AppKit,
 				);
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lithoglyph.LFExtensions;
 				PRODUCT_NAME = LFExtensions;
 				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
@@ -5101,6 +5127,7 @@
 		6A4771710D5C5E5600C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -5121,6 +5148,7 @@
 					"-framework",
 					CoreFoundation,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.PlainVanilla;
 				PRODUCT_NAME = PlainVanilla;
 				SDKROOT = macosx;
 				ZERO_LINK = YES;
@@ -5130,7 +5158,7 @@
 		6A4771720D5C5E5600C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5150,6 +5178,7 @@
 					"-framework",
 					CoreFoundation,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.PlainVanilla;
 				PRODUCT_NAME = PlainVanilla;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -5159,6 +5188,7 @@
 		6A4772980D5C5FCE00C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5184,6 +5214,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -5191,6 +5222,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey;
 				PRODUCT_NAME = "Yahoo! KeyKey";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -5201,7 +5233,7 @@
 		6A4772990D5C5FCE00C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -5228,6 +5260,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/build/Debug\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "-fvisibility=hidden";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -5236,6 +5269,7 @@
 					AppKit,
 				);
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey;
 				PRODUCT_NAME = "Yahoo! KeyKey";
 				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
@@ -5248,10 +5282,12 @@
 		6A514CE00DA268C500464D51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = "Takao-All";
 				SDKROOT = macosx;
 			};
@@ -5260,9 +5296,11 @@
 		6A514CE10DA268C500464D51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = "Takao-All";
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -5273,6 +5311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5282,7 +5321,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -5290,7 +5329,6 @@
 					AppKit,
 				);
 				PRODUCT_NAME = LFWebAPIToolbox;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -5298,6 +5336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5306,7 +5345,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				GCC_VERSION = "";
 				INSTALL_PATH = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -5314,7 +5353,6 @@
 					AppKit,
 				);
 				PRODUCT_NAME = LFWebAPIToolbox;
-				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -5323,6 +5361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5342,6 +5381,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.Keykey.ReverseLookup;
 				PRODUCT_NAME = YKReverseLookup;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -5352,6 +5392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5365,12 +5406,12 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "ModulePackages/OVAFReverseLookup/YKReverseLookup-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.Keykey.ReverseLookup;
 				PRODUCT_NAME = YKReverseLookup;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -5382,6 +5423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -5397,6 +5439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
@@ -5412,6 +5455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5426,6 +5470,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.KeyKey.YKAFPhraseAwarePackage;
 				PRODUCT_NAME = YKAFPhraseAware;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -5436,6 +5481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5449,6 +5495,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.KeyKey.YKAFPhraseAwarePackage;
 				PRODUCT_NAME = YKAFPhraseAware;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -5459,6 +5506,7 @@
 		6ACA0C500D5C87FB00514BC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5493,6 +5541,7 @@
 		6ACA0C510D5C87FB00514BC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5526,6 +5575,7 @@
 		6AD3225A0D76DA3F005083D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5543,6 +5593,7 @@
 		6AD3225B0D76DA3F005083D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5559,6 +5610,7 @@
 		6AE3FA7F0D76771400C7D18D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -5579,6 +5631,7 @@
 		6AE3FA800D76771400C7D18D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
@@ -5598,6 +5651,7 @@
 		6AE3FA960D76776200C7D18D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5615,7 +5669,7 @@
 		6AE3FA970D76776200C7D18D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5633,6 +5687,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5649,6 +5704,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.KeyKey.AFPhraseConverter;
 				PRODUCT_NAME = YKAFPhraseConverter;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -5659,6 +5715,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5674,6 +5731,7 @@
 					"-framework",
 					Carbon,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.KeyKey.AFPhraseConverter;
 				PRODUCT_NAME = YKAFPhraseConverter;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -5684,6 +5742,7 @@
 		6AEBD0060D5D7E0D00ABF19D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5701,7 +5760,7 @@
 		6AEBD0070D5D7E0D00ABF19D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5719,6 +5778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5736,6 +5796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5753,6 +5814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5770,6 +5832,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.PhraseEditor;
 				PRODUCT_NAME = PhraseEditor;
 				SDKROOT = macosx;
 			};
@@ -5779,6 +5842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5795,6 +5859,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.PhraseEditor;
 				PRODUCT_NAME = PhraseEditor;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -5805,6 +5870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5822,6 +5888,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.DownloadUpdate;
 				PRODUCT_NAME = DownloadUpdate;
 				SDKROOT = macosx;
 			};
@@ -5831,6 +5898,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5847,6 +5915,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.DownloadUpdate;
 				PRODUCT_NAME = DownloadUpdate;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -5857,6 +5926,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5873,6 +5943,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.InstallerUI;
 				PRODUCT_NAME = Installer;
 				SDKROOT = macosx;
 			};
@@ -5882,6 +5953,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5897,6 +5969,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.InstallerUI;
 				PRODUCT_NAME = Installer;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -5906,6 +5979,7 @@
 		D47D5E330D5EDD660093524C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5927,6 +6001,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.Preferences;
 				PRODUCT_NAME = Preferences;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -5937,6 +6012,7 @@
 		D47D5E340D5EDD660093524C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5957,6 +6033,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.Preferences;
 				PRODUCT_NAME = Preferences;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -5968,6 +6045,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5984,6 +6062,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.InstallerHelp;
 				PRODUCT_NAME = InstallerHelp;
 				SDKROOT = macosx;
 			};
@@ -5993,6 +6072,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_MODEL_TUNING = G5;
@@ -6007,6 +6087,7 @@
 					"-framework",
 					AppKit,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yahoo.inputmethod.KeyKey.InstallerHelp;
 				PRODUCT_NAME = InstallerHelp;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
