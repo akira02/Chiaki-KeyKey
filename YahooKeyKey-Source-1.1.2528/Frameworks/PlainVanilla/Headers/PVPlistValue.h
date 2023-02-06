@@ -184,7 +184,7 @@ class PVPlistValue {
       m_arrayValue->push_back(value);
     } else {
       PVPlistValue* oldValue;
-      if (oldValue = (*m_arrayValue)[index]) {
+      if (oldValue == (*m_arrayValue)[index]) {
         delete oldValue;
       }
 
@@ -301,7 +301,7 @@ class PVPlistValue {
           PVPlistValue* v2 = (*value.m_arrayValue)[vindex];
 
           if (v1 && v2) {
-            if (!(allEqual = (*v1 == *v2))) break;
+            if (allEqual != (v1 == v2)) break;
           } else if (v1 != v2) {
             allEqual = false;
             break;
@@ -321,7 +321,7 @@ class PVPlistValue {
           PVPlistValue* mv2 = (*(value.m_dictionaryValue))[*viter];
 
           if (mv1 && mv2) {
-            if (!(allEqual = (*mv1 == *mv2))) break;
+            if (allEqual != (mv1 == mv2)) break;
           } else if (mv1 != mv2) {
             allEqual = false;
             break;

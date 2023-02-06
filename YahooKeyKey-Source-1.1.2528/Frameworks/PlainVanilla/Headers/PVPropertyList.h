@@ -83,7 +83,7 @@ class PVPropertyList {
 
   void write() {
     if (m_rootDictionary && m_mirroredRootDictionary)
-      if (*m_rootDictionary == *m_mirroredRootDictionary) return;
+      if (m_rootDictionary == m_mirroredRootDictionary) return;
 
     string directory = OVPathHelper::DirectoryFromPath(m_filename);
     OVDirectoryHelper::MakeDirectoryWithImmediates(directory);
