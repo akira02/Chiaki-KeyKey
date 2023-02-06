@@ -3721,10 +3721,7 @@
 			knownRegions = (
 				zh_CN,
 				zh_TW,
-				de,
-				ja,
 				en,
-				fr,
 				Base,
 			);
 			mainGroup = 6A476ED70D5C48AB00C6C744;
