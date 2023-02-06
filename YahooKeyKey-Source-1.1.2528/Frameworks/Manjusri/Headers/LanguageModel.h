@@ -498,7 +498,7 @@ inline const BigramVector LanguageModel::findBigrams(const string& queryString,
 
 #ifdef MANJUSRI_USE_CACHE
   m_bigramCache.forcePush(queryString, results);
-#endif MANJUSRI_USE_CACHE
+#endif
 
   return results;
 }
