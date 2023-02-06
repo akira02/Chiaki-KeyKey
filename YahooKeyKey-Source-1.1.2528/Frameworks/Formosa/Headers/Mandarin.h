@@ -253,18 +253,10 @@ class BopomofoKeyboardLayout {
 
   const string keySequenceFromSyllable(BPMF syllable) const {
     string sequence;
-
-    BPMF::Component c;
-    char k;
-#define STKS_COMBINE(component)                          \
-  if (c = component) {                                   \
-    if (k = componentToKey(c)) sequence += string(1, k); \
-  }
-    STKS_COMBINE(syllable.consonantComponent());
-    STKS_COMBINE(syllable.middleVowelComponent());
-    STKS_COMBINE(syllable.vowelComponent());
-    STKS_COMBINE(syllable.toneMarkerComponent());
-#undef STKS_COMBINE
+    sequence += string(1, componentToKey(syllable.consonantComponent()));
+    sequence += string(1, componentToKey(syllable.middleVowelComponent()));
+    sequence += string(1, componentToKey(syllable.vowelComponent()));
+    sequence += string(1, componentToKey(syllable.toneMarkerComponent()));
     return sequence;
   }
 
