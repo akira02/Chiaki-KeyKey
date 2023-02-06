@@ -16,33 +16,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5B3CE6B2299150C300641F53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6A1D4C7510613D600085AFA3;
+			remoteInfo = ModuleSign;
+		};
 		6A67C1790DC47006007349E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6ABC3E8D0DBF625C00146A8B;
 			remoteInfo = PhraseTool;
-		};
-		6ABC3E7A0DBF615C00146A8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6AF261400D9F969E00F499FB;
-			remoteInfo = "Takao (TSM Component)";
-		};
-		6ABC3E7C0DBF615C00146A8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6A83663A0DA27DC100848277;
-			remoteInfo = "DownloadUpdate (OSX-TSM)";
-		};
-		6ABC3E7E0DBF615C00146A8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6A83664C0DA27DD100848277;
-			remoteInfo = "CustomerCare (OSX-TSM)";
 		};
 		6ABC3E800DBF615C00146A8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -85,20 +71,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 6A4772930D5C5FCE00C6C744;
 			remoteInfo = "Takao (Loader OSX-IMK)";
-		};
-		6AE06B060D8A1E9100941AF6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6A4770E50D5C54A000C6C744;
-			remoteInfo = "sqlite3-crypto (Library)";
-		};
-		6AE06B080D8A1E9100941AF6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6A4770ED0D5C54D700C6C744;
-			remoteInfo = "sqlite3-crypto (Shell Tool)";
 		};
 		6AE06B0A0D8A1E9100941AF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -191,20 +163,6 @@
 			remoteGlobalIDString = D4B3E71B0DC7A643000980D8;
 			remoteInfo = InstallerHelp;
 		};
-		D42E879B0E0900460024DCCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D429EC6E0DCA2327002A2436;
-			remoteInfo = CinInstaller;
-		};
-		D42E879D0E0900460024DCCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D429EC9D0DCA24E3002A2436;
-			remoteInfo = "CinInstaller (OSX-TSM)";
-		};
 		D43E2C5E0EBEEF7200557B95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
@@ -232,13 +190,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 6AEB823C0EADC1EE005F82AB;
 			remoteInfo = YKAFPhraseConverter;
-		};
-		D495914A0E4603DC000FFED5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6A7E64FC0E1BAF790071ED92;
-			remoteInfo = "sqlite3-cerod-see (Library)";
 		};
 		D495914C0E4603DC000FFED5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -268,40 +219,12 @@
 			remoteGlobalIDString = D4466C470D916B9200A530D4;
 			remoteInfo = DownloadUpdate;
 		};
-		D4FF19530D9635A700C22A86 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D4FE38940D8AF7B900A1FD8B;
-			remoteInfo = CustomerCare;
-		};
-		D4FF19550D9635A700C22A86 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6AB89EE70D8A25A600D087E3;
-			remoteInfo = "Takao (Loader OSX-TSM Server)";
-		};
-		D4FF19570D9635A700C22A86 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6AB89F1B0D8A25C400D087E3;
-			remoteInfo = "Preferences (for OSX-TSM)";
-		};
 		D4FF19590D9635A700C22A86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6AED2FA10D8BCEF600E6D3F8;
 			remoteInfo = "CareService (Library)";
-		};
-		D4FF7E170F45ADC8006F4025 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6AE06AE80D8A1E9100941AF6 /* Takao.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D4FCBBF50EE416E900D9788A;
-			remoteInfo = "PhraseEditor (for OSX-TSM)";
 		};
 		D4FF7E190F45ADC8006F4025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -383,16 +306,11 @@
 			isa = PBXGroup;
 			children = (
 				6AE06B050D8A1E9100941AF6 /* Yahoo! KeyKey.app */,
-				D4FF19560D9635A700C22A86 /* KeyKeyServer.app */,
-				6ABC3E7B0DBF615C00146A8B /* Yahoo! KeyKey.bundle */,
 				6AE06AFF0D8A1E9100941AF6 /* libOpenVanilla.a */,
 				6AE06AFD0D8A1E9100941AF6 /* OpenVanilla.framework */,
 				6AE06B1B0D8A1E9100941AF6 /* libPlainVanilla.a */,
 				6AE06B030D8A1E9100941AF6 /* PlainVanilla.framework */,
 				6AE06B010D8A1E9100941AF6 /* LFExtensions.framework */,
-				6AE06B070D8A1E9100941AF6 /* libsqlite3-crypto.a */,
-				6AE06B090D8A1E9100941AF6 /* sqlite3-crypto */,
-				D495914B0E4603DC000FFED5 /* libsqlite3-cerod-see.a */,
 				6AE06B0B0D8A1E9100941AF6 /* libFormosa.a */,
 				6AE06B0D0D8A1E9100941AF6 /* libManjusri.a */,
 				6AE06B0F0D8A1E9100941AF6 /* libTakaoModulePackages.a */,
@@ -404,15 +322,8 @@
 				6A67C17A0DC47006007349E9 /* PhraseTool */,
 				6AE06B150D8A1E9100941AF6 /* Preferences.app */,
 				D4FF19520D9635A700C22A86 /* DownloadUpdate.app */,
-				D4FF19540D9635A700C22A86 /* CustomerCare.app */,
 				D43E2C610EBEEF7200557B95 /* PhraseEditor.app */,
-				D42E879C0E0900460024DCCB /* CinInstaller.app */,
 				6AE06B1D0D8A1E9100941AF6 /* libKeyring.a */,
-				D4FF19580D9635A700C22A86 /* PreferencesTiger.app */,
-				6ABC3E7D0DBF615C00146A8B /* DownloadUpdateTiger.app */,
-				6ABC3E7F0DBF615C00146A8B /* CustomerCareTiger.app */,
-				D4FF7E180F45ADC8006F4025 /* PhraseEditorTiger.app */,
-				D42E879E0E0900460024DCCB /* CinInstallerTiger.app */,
 				6ABC3E810DBF615C00146A8B /* Installer.app */,
 				D42E879A0E0900460024DCCB /* InstallerHelp.app */,
 				D495914D0E4603DC000FFED5 /* libLFWebAPIToolbox.a */,
@@ -420,6 +331,7 @@
 				D45B6FAA0EAE069700227A74 /* YKAFPhraseConverter.bundle */,
 				D43E2C5F0EBEEF7200557B95 /* YKAFPhraseAware.bundle */,
 				D4FF7E1A0F45ADC8006F4025 /* YKAFWordCount.bundle */,
+				5B3CE6B3299150C300641F53 /* ModuleSign */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -481,9 +393,16 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "LithoglyphModules" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* LithoglyphModules */;
 			productRefGroup = 6AE06AC30D8A1CEA00941AF6 /* Products */;
 			projectDirPath = "";
@@ -502,32 +421,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5B3CE6B3299150C300641F53 /* ModuleSign */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ModuleSign;
+			remoteRef = 5B3CE6B2299150C300641F53 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		6A67C17A0DC47006007349E9 /* PhraseTool */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = PhraseTool;
 			remoteRef = 6A67C1790DC47006007349E9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6ABC3E7B0DBF615C00146A8B /* Yahoo! KeyKey.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Yahoo! KeyKey.bundle";
-			remoteRef = 6ABC3E7A0DBF615C00146A8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6ABC3E7D0DBF615C00146A8B /* DownloadUpdateTiger.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = DownloadUpdateTiger.app;
-			remoteRef = 6ABC3E7C0DBF615C00146A8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6ABC3E7F0DBF615C00146A8B /* CustomerCareTiger.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CustomerCareTiger.app;
-			remoteRef = 6ABC3E7E0DBF615C00146A8B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6ABC3E810DBF615C00146A8B /* Installer.app */ = {
@@ -570,20 +475,6 @@
 			fileType = wrapper.application;
 			path = "Yahoo! KeyKey.app";
 			remoteRef = 6AE06B040D8A1E9100941AF6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6AE06B070D8A1E9100941AF6 /* libsqlite3-crypto.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libsqlite3-crypto.a";
-			remoteRef = 6AE06B060D8A1E9100941AF6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6AE06B090D8A1E9100941AF6 /* sqlite3-crypto */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "sqlite3-crypto";
-			remoteRef = 6AE06B080D8A1E9100941AF6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6AE06B0B0D8A1E9100941AF6 /* libFormosa.a */ = {
@@ -663,20 +554,6 @@
 			remoteRef = D42E87990E0900460024DCCB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D42E879C0E0900460024DCCB /* CinInstaller.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CinInstaller.app;
-			remoteRef = D42E879B0E0900460024DCCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D42E879E0E0900460024DCCB /* CinInstallerTiger.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CinInstallerTiger.app;
-			remoteRef = D42E879D0E0900460024DCCB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		D43E2C5F0EBEEF7200557B95 /* YKAFPhraseAware.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -705,13 +582,6 @@
 			remoteRef = D45B6FA90EAE069700227A74 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D495914B0E4603DC000FFED5 /* libsqlite3-cerod-see.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libsqlite3-cerod-see.a";
-			remoteRef = D495914A0E4603DC000FFED5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		D495914D0E4603DC000FFED5 /* libLFWebAPIToolbox.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -726,39 +596,11 @@
 			remoteRef = D4FF19510D9635A700C22A86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D4FF19540D9635A700C22A86 /* CustomerCare.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CustomerCare.app;
-			remoteRef = D4FF19530D9635A700C22A86 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D4FF19560D9635A700C22A86 /* KeyKeyServer.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = KeyKeyServer.app;
-			remoteRef = D4FF19550D9635A700C22A86 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D4FF19580D9635A700C22A86 /* PreferencesTiger.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = PreferencesTiger.app;
-			remoteRef = D4FF19570D9635A700C22A86 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		D4FF195A0D9635A700C22A86 /* libCareService.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCareService.a;
 			remoteRef = D4FF19590D9635A700C22A86 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D4FF7E180F45ADC8006F4025 /* PhraseEditorTiger.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = PhraseEditorTiger.app;
-			remoteRef = D4FF7E170F45ADC8006F4025 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D4FF7E1A0F45ADC8006F4025 /* YKAFWordCount.bundle */ = {
@@ -836,13 +678,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -850,11 +690,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
@@ -872,13 +710,13 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				INFOPLIST_FILE = "ModulePackages/OVOFEscape/OVOFEscapePackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Carbon,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = OVOFEscapePackage;
-				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -896,13 +734,13 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				INFOPLIST_FILE = "ModulePackages/OVOFEscape/OVOFEscapePackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Carbon,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = OVOFEscapePackage;
-				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
@@ -921,6 +759,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				INFOPLIST_FILE = "ModulePackages/YKAFWordCount/YKAFWordCountPackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Carbon,
@@ -943,6 +782,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				INFOPLIST_FILE = "ModulePackages/YKAFWordCount/YKAFWordCountPackage-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Carbon,
