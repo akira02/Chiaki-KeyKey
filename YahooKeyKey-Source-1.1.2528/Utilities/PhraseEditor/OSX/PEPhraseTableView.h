@@ -8,10 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface PEPhraseTableView : NSTableView 
-{
-
+@interface PEPhraseTableView : NSTableView {
 }
 
 - (void)cancelEditing:(NSText *)text;

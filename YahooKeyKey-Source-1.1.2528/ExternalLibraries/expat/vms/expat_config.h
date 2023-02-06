@@ -44,9 +44,11 @@
 
 #ifndef HAVE_MEMMOVE
 #ifdef HAVE_BCOPY
-#define memmove(d,s,l) bcopy((s),(d),(l))
+#define memmove(d, s, l) bcopy((s), (d), (l))
 #else
-#define memmove(d,s,l) ;punting on memmove;
+#define memmove(d, s, l) \
+  ;                      \
+  punting on memmove;
 #endif
 
 #endif

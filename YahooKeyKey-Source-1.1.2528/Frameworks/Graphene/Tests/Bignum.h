@@ -31,46 +31,45 @@
 #include <string>
 
 namespace Graphene {
-    using namespace std;
+using namespace std;
 
-    class BNWrapper {
-    public:
-        BNWrapper();
-        BNWrapper(int i = 0);
-        BNWrapper(const BNWrapper&);
-        BNWrapper(const string&, size_t base = 10);
-        ~BNWrapper();        
-        BNWrapper& operator=(const BNWrapper&);        
-        const BNWrapper operator+(const BNWrapper&);
-        const BNWrapper operator-(const BNWrapper&);
-        const BNWrapper operator*(const BNWrapper&);
-        const BNWrapper operator/(const BNWrapper&);
-        const BNWrapper operator%(const BNWrapper&);        
-        bool operator==(const BNWrapper&);
-        bool operator<(const BNWrapper&);
-        bool operator>(const BNWrapper&);
-        bool operator!=(const BNWrapper&);
-        
-        const string decString();
-        
-    protected:
-        BNWrapper(void*);
-        void* m_bn;
-        
-    protected:
-        static void* SharedContext();
-        static void DeleteContext();
-        static void* c_context;
-    };
-    
-    class DecFPN {
-    public:
-        DecFPN();
-        DecFPN(long long i);
-        DecFPN(double d);
-        DecFPN(const string& )
-        ~DecFPN();
-    };
+class BNWrapper {
+ public:
+  BNWrapper();
+  BNWrapper(int i = 0);
+  BNWrapper(const BNWrapper&);
+  BNWrapper(const string&, size_t base = 10);
+  ~BNWrapper();
+  BNWrapper& operator=(const BNWrapper&);
+  const BNWrapper operator+(const BNWrapper&);
+  const BNWrapper operator-(const BNWrapper&);
+  const BNWrapper operator*(const BNWrapper&);
+  const BNWrapper operator/(const BNWrapper&);
+  const BNWrapper operator%(const BNWrapper&);
+  bool operator==(const BNWrapper&);
+  bool operator<(const BNWrapper&);
+  bool operator>(const BNWrapper&);
+  bool operator!=(const BNWrapper&);
+
+  const string decString();
+
+ protected:
+  BNWrapper(void*);
+  void* m_bn;
+
+ protected:
+  static void* SharedContext();
+  static void DeleteContext();
+  static void* c_context;
 };
+
+class DecFPN {
+ public:
+  DecFPN();
+  DecFPN(long long i);
+  DecFPN(double d);
+  DecFPN(const string&) ~DecFPN();
+};
+};  // namespace Graphene
 
 #endif

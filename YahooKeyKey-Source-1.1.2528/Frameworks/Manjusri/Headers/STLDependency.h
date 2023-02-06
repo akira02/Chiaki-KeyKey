@@ -7,18 +7,18 @@ file for terms.
 #ifndef STLDependency
 #define STLDependency
 
-#include <vector>
 #include <set>
+#include <vector>
 
 namespace Manjusri {
-    using namespace std;
-    
-    typedef double Score;
-    typedef pair<size_t, size_t> Location;
-    typedef pair<Location, string> LocationStringPair;
-    typedef pair<string, Score> StringScorePair;
-    typedef vector<StringScorePair> StringScorePairVector;
-    typedef map<string, Score> StringScoreMap;
-};
+using namespace std;
+
+typedef double Score;
+typedef pair<size_t, size_t> Location;
+typedef pair<Location, string> LocationStringPair;
+typedef pair<string, Score> StringScorePair;
+typedef vector<StringScorePair> StringScorePairVector;
+typedef map<string, Score> StringScoreMap;
+};  // namespace Manjusri
 
 #endif

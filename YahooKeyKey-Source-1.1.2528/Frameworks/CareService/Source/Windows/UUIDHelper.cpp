@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -29,27 +29,25 @@
 #include <rpc.h>
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "UUIDHelper.h"
 
-namespace CareService
-{
+namespace CareService {
 
 using namespace OpenVanilla;
 
-const string UUIDHelper::CreateUUID()
-{
-    UUID uuid;
-    UuidCreateSequential(&uuid);
-    RPC_WSTR rpcString;
-    UuidToString(&uuid, &rpcString);    
-	string result = OVUTF8::FromUTF16((wchar_t*)rpcString);
-    RpcStringFree(&rpcString);
-    return result;
+const string UUIDHelper::CreateUUID() {
+  UUID uuid;
+  UuidCreateSequential(&uuid);
+  RPC_WSTR rpcString;
+  UuidToString(&uuid, &rpcString);
+  string result = OVUTF8::FromUTF16((wchar_t*)rpcString);
+  RpcStringFree(&rpcString);
+  return result;
 }
-    
-};
+
+};  // namespace CareService

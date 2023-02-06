@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,31 +30,29 @@
 #define OVMPUppercasePackage_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "OVIMUppercase.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVIMUppercasePackage : public OVModulePackage {
-    public:
-        OVIMUppercasePackage()
-        {
-            // add OVIMUppercase to our module package
-            m_moduleVector.push_back(new OVModuleClassWrapper<OVIMUppercase>);
-        }
-        
-        virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-        {
-            loaderService->logger("OVIMUppercasePacakge") << "Initialized" << endl;
-            return true;
-        }        
-    };
-    
+class OVIMUppercasePackage : public OVModulePackage {
+ public:
+  OVIMUppercasePackage() {
+    // add OVIMUppercase to our module package
+    m_moduleVector.push_back(new OVModuleClassWrapper<OVIMUppercase>);
+  }
+
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    loaderService->logger("OVIMUppercasePacakge") << "Initialized" << endl;
+    return true;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

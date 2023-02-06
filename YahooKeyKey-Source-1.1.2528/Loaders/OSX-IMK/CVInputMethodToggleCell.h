@@ -2,10 +2,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface CVInputMethodToggleCell : NSCell
-{
-	BOOL _isHighlighted;
+@interface CVInputMethodToggleCell : NSCell {
+  BOOL _isHighlighted;
 }
 
 - (void)setHighlighted:(BOOL)flag;

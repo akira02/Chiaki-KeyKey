@@ -1,8 +1,11 @@
-#define OVServiceLoadedModulePackageIdentifierKey	@"OVServiceLoadedModulePackageIdentifierKey"
-#define OVServiceLoadedModulePackageLocalizedNameKey	@"OVServiceLoadedModulePackageLocalizedNameKey"
-#define OVServiceLoadedModulePackageBundlePathKey	@"OVServiceLoadedModulePackageBundlePathKey"
-#define OVServiceLoadedModulePackageEnabledKey		@"OVServiceLoadedModulePackageEnabledKey"
-
+#define OVServiceLoadedModulePackageIdentifierKey \
+  @"OVServiceLoadedModulePackageIdentifierKey"
+#define OVServiceLoadedModulePackageLocalizedNameKey \
+  @"OVServiceLoadedModulePackageLocalizedNameKey"
+#define OVServiceLoadedModulePackageBundlePathKey \
+  @"OVServiceLoadedModulePackageBundlePathKey"
+#define OVServiceLoadedModulePackageEnabledKey \
+  @"OVServiceLoadedModulePackageEnabledKey"
 
 @protocol OpenVanillaService
 - (oneway void)reloadOpenVanilla;
@@ -18,7 +21,8 @@
 #pragma mark Version update
 
 - (NSDictionary *)shouldUpdate;
-- (bool)validateFile:(NSString *)filename againstSignature:(NSString *)signatureFilename;
+- (bool)validateFile:(NSString *)filename
+    againstSignature:(NSString *)signatureFilename;
 - (NSString *)randomTemporaryFilenameWithFullpath;
 - (NSString *)version;
 - (NSString *)databaseVersion;
@@ -31,7 +35,8 @@
 - (void)setBlackListOfPackageIdentifers:(NSArray *)inIdentifiers;
 
 // returns nil if component needs no change
-- (NSDictionary *)shouldComponentNamed:(NSString *)component versionInfoXMLFile:(NSString *)filename; 
+- (NSDictionary *)shouldComponentNamed:(NSString *)component
+                    versionInfoXMLFile:(NSString *)filename;
 - (NSString *)userInformationForCareService;
 
 - (oneway void)searchDictionary:(NSString *)keyword;

@@ -9,15 +9,12 @@
 #include <string>
 
 namespace WindowsVanilla {
-    using namespace std;
-    
-    class RemoteDataFetcherDelegate {
-    public:
-        virtual void handleFetchResult(const char* data, size_t size)
-        {
-        }
-    };
+using namespace std;
+
+class RemoteDataFetcherDelegate {
+ public:
+  virtual void handleFetchResult(const char* data, size_t size) {}
 };
+};  // namespace WindowsVanilla
 
 #endif
-

@@ -2,7 +2,7 @@
 
 #include <Cocoa/Cocoa.h>
 
-@interface NSString (SplitBySpaceWithQuote) 
+@interface NSString (SplitBySpaceWithQuote)
 + (NSString *)stringByColor:(NSColor *)c;
 - (NSString *)stringByQuoting;
 - (NSString *)stringByChomping;

@@ -26,30 +26,29 @@
 //
 
 #include "OVBase.h"
-#include "OVKeyValueMap.h"
 #include "OVFileHelper.h"
+#include "OVKeyValueMap.h"
 #include "PVPlistValue.h"
 #include "PVPropertyList.h"
 
 using namespace OpenVanilla;
 
-int main(int argc, char* argv[])
-{
-    if (argc < 3) {
-        cerr << "usage: TestPVExpatBasedPropertyList filename output" << endl;
-        return 1;
-    }
-    
-    cerr << "reading: " << argv[1] << endl;
+int main(int argc, char* argv[]) {
+  if (argc < 3) {
+    cerr << "usage: TestPVExpatBasedPropertyList filename output" << endl;
+    return 1;
+  }
 
-    PVPropertyList plist(argv[1]);
+  cerr << "reading: " << argv[1] << endl;
 
-    cout << "plist read:" << endl;
-    cout << *(plist.rootDictionary()) << endl;
+  PVPropertyList plist(argv[1]);
 
-    PVPropertyList plist2(argv[2]);
-    plist2.setRootDictionary(plist.rootDictionary(), true);
-    plist2.write();
-    
-    return 0;
+  cout << "plist read:" << endl;
+  cout << *(plist.rootDictionary()) << endl;
+
+  PVPropertyList plist2(argv[2]);
+  plist2.setRootDictionary(plist.rootDictionary(), true);
+  plist2.write();
+
+  return 0;
 }

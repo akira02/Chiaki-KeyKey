@@ -8,9 +8,9 @@ file for terms.
 #define Manjusri_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "Graph.h"

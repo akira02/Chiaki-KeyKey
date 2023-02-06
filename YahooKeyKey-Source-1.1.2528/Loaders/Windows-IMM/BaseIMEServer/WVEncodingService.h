@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,31 +30,33 @@
 #define WVEncodingService_h
 
 #define WIN32_LEAN_AND_MEAN
+#include <OpenVanilla.h>
 #include <Windows.h>
 
-#include <OpenVanilla.h>
 #include <set>
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class WVEncodingService : public OVEncodingService
-    {
-    public:
-        WVEncodingService();
-        virtual ~WVEncodingService();
-        virtual bool codepointSupportedByEncoding(const string&, const string&);
-        virtual bool codepointSupportedBySystem(const string&);
-        virtual const vector<string> supportedEncodings();
-        virtual bool isEncodingSupported(const string& encoding);
+class WVEncodingService : public OVEncodingService {
+ public:
+  WVEncodingService();
+  virtual ~WVEncodingService();
+  virtual bool codepointSupportedByEncoding(const string&, const string&);
+  virtual bool codepointSupportedBySystem(const string&);
+  virtual const vector<string> supportedEncodings();
+  virtual bool isEncodingSupported(const string& encoding);
 
-        virtual bool isEncodingConversionSupported(const string& fromEncoding, const string& toEncoding);
-        virtual const pair<bool, string> convertEncoding(const string& fromEncoding, const string& toEncoding, const string& text);
-        
-    protected:
-        set<UINT32> m_systemFontSupportedCharacters;
-    };
-    
+  virtual bool isEncodingConversionSupported(const string& fromEncoding,
+                                             const string& toEncoding);
+  virtual const pair<bool, string> convertEncoding(const string& fromEncoding,
+                                                   const string& toEncoding,
+                                                   const string& text);
+
+ protected:
+  set<UINT32> m_systemFontSupportedCharacters;
 };
+
+};  // namespace OpenVanilla
 
 #endif

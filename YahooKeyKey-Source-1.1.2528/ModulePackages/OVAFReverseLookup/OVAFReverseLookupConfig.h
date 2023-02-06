@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,33 +30,36 @@
 #define OVAFReverseLookupConfig_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #ifndef OVAFREVERSELOOKUP_IDENTIFIER_PREFIX
-	#define OVAFREVERSELOOKUP_IDENTIFIER_PREFIX "OVAFReverseLookup"
+#define OVAFREVERSELOOKUP_IDENTIFIER_PREFIX "OVAFReverseLookup"
 #endif
 
 #ifndef OVAFREVERSELOOKUP_SOURCE_TABLE_PREFIX
-    #define OVAFREVERSELOOKUP_SOURCE_TABLE_PREFIX "OVIMGeneric"
+#define OVAFREVERSELOOKUP_SOURCE_TABLE_PREFIX "OVIMGeneric"
 #endif
 
 #ifndef OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED
-    #define OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED OVAFREVERSELOOKUP_SOURCE_TABLE_PREFIX "-*"
+#define OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED \
+  OVAFREVERSELOOKUP_SOURCE_TABLE_PREFIX "-*"
 #endif
 
 #ifndef OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_IF_ENCOUNTERED_TABLE_NAME
-    #define OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_IF_ENCOUNTERED_TABLE_NAME "*Mandarin-bpmf*"
+#define OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_IF_ENCOUNTERED_TABLE_NAME \
+  "*Mandarin-bpmf*"
 #endif
 
 #ifndef OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_TABLE_NAME_SUFFIX
-    #define OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_TABLE_NAME_SUFFIX "-HanyuPinyin"
+#define OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_TABLE_NAME_SUFFIX \
+  "-HanyuPinyin"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;    
+using namespace std;
 };
 
 #endif

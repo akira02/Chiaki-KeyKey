@@ -1,34 +1,34 @@
 #ifndef UNITTEST_XMLTESTREPORTER_H
 #define UNITTEST_XMLTESTREPORTER_H
 
-#include "DeferredTestReporter.h"
-
 #include <iosfwd>
 
-namespace UnitTest
-{
+#include "DeferredTestReporter.h"
 
-class XmlTestReporter : public DeferredTestReporter
-{
-public:
-    explicit XmlTestReporter(std::ostream& ostream);
+namespace UnitTest {
 
-    virtual void ReportSummary(int totalTestCount, int failedTestCount, int failureCount, float secondsElapsed);
+class XmlTestReporter : public DeferredTestReporter {
+ public:
+  explicit XmlTestReporter(std::ostream& ostream);
 
-private:
-    XmlTestReporter(XmlTestReporter const&);
-    XmlTestReporter& operator=(XmlTestReporter const&);
+  virtual void ReportSummary(int totalTestCount, int failedTestCount,
+                             int failureCount, float secondsElapsed);
 
-    void AddXmlElement(std::ostream& os, char const* encoding);
-    void BeginResults(std::ostream& os, int totalTestCount, int failedTestCount, int failureCount, float secondsElapsed);
-    void EndResults(std::ostream& os);
-    void BeginTest(std::ostream& os, DeferredTestResult const& result);
-    void AddFailure(std::ostream& os, DeferredTestResult const& result);
-    void EndTest(std::ostream& os, DeferredTestResult const& result);
+ private:
+  XmlTestReporter(XmlTestReporter const&);
+  XmlTestReporter& operator=(XmlTestReporter const&);
 
-    std::ostream& m_ostream;
+  void AddXmlElement(std::ostream& os, char const* encoding);
+  void BeginResults(std::ostream& os, int totalTestCount, int failedTestCount,
+                    int failureCount, float secondsElapsed);
+  void EndResults(std::ostream& os);
+  void BeginTest(std::ostream& os, DeferredTestResult const& result);
+  void AddFailure(std::ostream& os, DeferredTestResult const& result);
+  void EndTest(std::ostream& os, DeferredTestResult const& result);
+
+  std::ostream& m_ostream;
 };
 
-}
+}  // namespace UnitTest
 
 #endif

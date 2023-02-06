@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,39 +30,44 @@
 #define OVAFPhraseConverter_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVAFPhraseConverter;
-    
-    class OVAFPhraseConverterContext : public OVEventHandlingContext {
-    public:
-        OVAFPhraseConverterContext(OVAFPhraseConverter* module);
+class OVAFPhraseConverter;
 
-        virtual bool handleDirectText(const vector<string>&, OVTextBuffer* readingText, OVTextBuffer* composingText, OVCandidateService* candidateService, OVLoaderService* loaderService);
-    protected:
-        OVAFPhraseConverter* m_module;        
-    };
-    
-    class OVAFPhraseConverter : public OVAroundFilter {
-    public:
-        ~OVAFPhraseConverter();
-        
-        virtual OVEventHandlingContext* createContext();
-        virtual const string identifier() const;
-        virtual const string localizedName(const string& locale);
-        virtual bool initialize(OVPathInfo* pathInfo, OVLoaderService* loaderService);
-        
-    protected:
-        friend class OVAFPhraseConverterContext;
-		
-		OVCINDataTable* m_dataTable;
-    }; 
+class OVAFPhraseConverterContext : public OVEventHandlingContext {
+ public:
+  OVAFPhraseConverterContext(OVAFPhraseConverter* module);
+
+  virtual bool handleDirectText(const vector<string>&,
+                                OVTextBuffer* readingText,
+                                OVTextBuffer* composingText,
+                                OVCandidateService* candidateService,
+                                OVLoaderService* loaderService);
+
+ protected:
+  OVAFPhraseConverter* m_module;
 };
+
+class OVAFPhraseConverter : public OVAroundFilter {
+ public:
+  ~OVAFPhraseConverter();
+
+  virtual OVEventHandlingContext* createContext();
+  virtual const string identifier() const;
+  virtual const string localizedName(const string& locale);
+  virtual bool initialize(OVPathInfo* pathInfo, OVLoaderService* loaderService);
+
+ protected:
+  friend class OVAFPhraseConverterContext;
+
+  OVCINDataTable* m_dataTable;
+};
+};  // namespace OpenVanilla
 
 #endif

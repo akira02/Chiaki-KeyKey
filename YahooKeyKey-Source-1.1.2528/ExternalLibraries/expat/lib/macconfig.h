@@ -11,9 +11,8 @@
 #ifndef MACCONFIG_H
 #define MACCONFIG_H
 
-
 /* 1234 = LIL_ENDIAN, 4321 = BIGENDIAN */
-#define BYTEORDER  4321
+#define BYTEORDER 4321
 
 /* Define to 1 if you have the `bcopy' function. */
 #undef HAVE_BCOPY
@@ -44,10 +43,9 @@
 #undef const
 
 /* Define to `long' if <sys/types.h> does not define. */
-#define off_t  long
+#define off_t long
 
 /* Define to `unsigned' if <sys/types.h> does not define. */
 #undef size_t
-
 
 #endif /* ifndef MACCONFIG_H */

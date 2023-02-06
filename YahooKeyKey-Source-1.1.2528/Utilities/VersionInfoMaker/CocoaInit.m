@@ -6,7 +6,4 @@ file for terms.
 // [AUTO_HEADER]
 #import <Cocoa/Cocoa.h>
 
-void CocoaInit()
-{
-    id arp = [NSAutoreleasePool new];    
-}
+void CocoaInit() { id arp = [NSAutoreleasePool new]; }

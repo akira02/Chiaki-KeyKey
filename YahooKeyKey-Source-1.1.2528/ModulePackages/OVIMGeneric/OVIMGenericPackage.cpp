@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,30 +30,34 @@
 
 namespace OpenVanilla {
 
-bool OVIMGenericPackage::initialize(OVPathInfo* , OVLoaderService* loaderService)
-{
-    vector<OVDatabaseService*> services;
-    
-    if (loaderService->SQLiteDatabaseService())
-        services.push_back(loaderService->SQLiteDatabaseService());
-        
-    if (loaderService->CINDatabaseService())
-        services.push_back(loaderService->CINDatabaseService());
-        
-    for (vector<OVDatabaseService*>::iterator iter = services.begin() ; iter != services.end() ; ++iter)
-    {
-		OVDatabaseService *service = *iter;
-        vector<string> tables = service->tables(string(OVIMGENERIC_TABLE_PREFIX));
-        for (vector<string>::iterator siter = tables.begin() ; siter != tables.end() ; ++siter) {
-            m_tableMap[*siter] = *iter;
-//            loaderService->logger(OVIMGENERIC_IDENTIFIER_PREFIX) << "adding module " << *siter << " from service " << *iter << endl;
-        }
-    }
-    
-    for (map<string, OVDatabaseService*>::iterator miter = m_tableMap.begin() ; miter != m_tableMap.end() ; ++miter)
-        m_tableNames.push_back((*miter).first);
+bool OVIMGenericPackage::initialize(OVPathInfo*,
+                                    OVLoaderService* loaderService) {
+  vector<OVDatabaseService*> services;
 
-    return true;
-}        
-	
-};
+  if (loaderService->SQLiteDatabaseService())
+    services.push_back(loaderService->SQLiteDatabaseService());
+
+  if (loaderService->CINDatabaseService())
+    services.push_back(loaderService->CINDatabaseService());
+
+  for (vector<OVDatabaseService*>::iterator iter = services.begin();
+       iter != services.end(); ++iter) {
+    OVDatabaseService* service = *iter;
+    vector<string> tables = service->tables(string(OVIMGENERIC_TABLE_PREFIX));
+    for (vector<string>::iterator siter = tables.begin(); siter != tables.end();
+         ++siter) {
+      m_tableMap[*siter] = *iter;
+      //            loaderService->logger(OVIMGENERIC_IDENTIFIER_PREFIX) <<
+      //            "adding module " << *siter << " from service " << *iter <<
+      //            endl;
+    }
+  }
+
+  for (map<string, OVDatabaseService*>::iterator miter = m_tableMap.begin();
+       miter != m_tableMap.end(); ++miter)
+    m_tableNames.push_back((*miter).first);
+
+  return true;
+}
+
+};  // namespace OpenVanilla

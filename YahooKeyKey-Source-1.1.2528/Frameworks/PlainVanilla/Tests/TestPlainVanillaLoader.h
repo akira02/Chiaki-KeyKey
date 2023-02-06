@@ -29,9 +29,9 @@
 #define TestPlainVanillaLoader_h
 
 #if defined(__APPLE__)
-    #include <PlainVanilla/PlainVanilla.h>
+#include <PlainVanilla/PlainVanilla.h>
 #else
-    #include "PlainVanilla.h"
+#include "PlainVanilla.h"
 #endif
 
 int TestPlainVanillaLoader(const char* loadPath);

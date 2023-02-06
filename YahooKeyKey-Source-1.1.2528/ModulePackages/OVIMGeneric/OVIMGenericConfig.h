@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,27 +30,26 @@
 #define OVIMGenericConfig_h
 
 #ifndef OV_USE_SQLITE
-    #define OV_USE_SQLITE
+#define OV_USE_SQLITE
 #endif
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #ifndef OVIMGENERIC_IDENTIFIER_PREFIX
-	#define OVIMGENERIC_IDENTIFIER_PREFIX "OVIMGeneric"
+#define OVIMGENERIC_IDENTIFIER_PREFIX "OVIMGeneric"
 #endif
 
 #ifndef OVIMGENERIC_TABLE_PREFIX
-    #define OVIMGENERIC_TABLE_PREFIX OVIMGENERIC_IDENTIFIER_PREFIX "-*"
+#define OVIMGENERIC_TABLE_PREFIX OVIMGENERIC_IDENTIFIER_PREFIX "-*"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    
 };
 
 #endif

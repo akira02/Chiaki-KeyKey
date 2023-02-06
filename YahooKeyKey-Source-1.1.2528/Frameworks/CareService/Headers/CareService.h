@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,13 +30,13 @@
 #define CareService_h
 
 #if defined(__APPLE__)
-    #include <CareService/Version.h>
-    #include <CareService/SystemInfo.h>
-    #include <CareService/UUIDHelper.h>
+#include <CareService/SystemInfo.h>
+#include <CareService/UUIDHelper.h>
+#include <CareService/Version.h>
 #else
-    #include "Version.h"
-    #include "SystemInfo.h"
-    #include "UUIDHelper.h"
+#include "SystemInfo.h"
+#include "UUIDHelper.h"
+#include "Version.h"
 #endif
 
 #endif

@@ -3,11 +3,11 @@
 //
 // Copyright (c) 2004-2008 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions
 // are met:
-// 
+//
 // 1. Redistributions of source code must retain the above copyright
 //    notice, this list of conditions and the following disclaimer.
 // 2. Redistributions in binary form must reproduce the above copyright
@@ -16,7 +16,7 @@
 // 3. Neither the name of OpenVanilla nor the names of its contributors
 //    may be used to endorse or promote products derived from this software
 //    without specific prior written permission.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -31,29 +31,32 @@
 
 #import <Carbon/Carbon.h>
 #import <Cocoa/Cocoa.h>
+
 #import "InputMethodKitTiger.h"
 
-#define TSC_MENU_ITEM_INDEX_BASE    1000
+#define TSC_MENU_ITEM_INDEX_BASE 1000
 
-@interface TextServiceContext : NSObject
-{
-    ComponentInstance _componentInstance;
-	size_t _lastUpdateLength;
-    NSString *_contextID;
+@interface TextServiceContext : NSObject {
+  ComponentInstance _componentInstance;
+  size_t _lastUpdateLength;
+  NSString *_contextID;
 }
 - (id)initWithComponentInstance:(ComponentInstance)instance;
-- (NSString*)contextID;
-- (void)setContextID:(NSString*)contextID;
-- (void)setMarkedText:(NSAttributedString*)text selectionRange:(NSRange)selRange replacementRange:(NSRange)rplRange;
-- (void)overrideKeyboardWithKeyboardNamed:(NSString*)keyboardName;
-- (void)insertText:(NSString*)text replacementRange:(NSRange)rplRange;
-- (NSDictionary*)attributesForCharacterIndex:(int)index lineHeightRectangle:(NSRect*)returnRect;
-- (NSString*)bundleIdentifier;
+- (NSString *)contextID;
+- (void)setContextID:(NSString *)contextID;
+- (void)setMarkedText:(NSAttributedString *)text
+       selectionRange:(NSRange)selRange
+     replacementRange:(NSRange)rplRange;
+- (void)overrideKeyboardWithKeyboardNamed:(NSString *)keyboardName;
+- (void)insertText:(NSString *)text replacementRange:(NSRange)rplRange;
+- (NSDictionary *)attributesForCharacterIndex:(int)index
+                          lineHeightRectangle:(NSRect *)returnRect;
+- (NSString *)bundleIdentifier;
 
 // InputMethodKitTiger-specific
 + (void)setSharedMenu:(MenuRef)menu;
 + (MenuRef)sharedMenu;
-- (void)refreshMenu:(NSArray*)menuItems;
+- (void)refreshMenu:(NSArray *)menuItems;
 @end
 
 //

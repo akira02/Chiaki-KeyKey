@@ -39,39 +39,38 @@
 // * OVDatabaseService
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
-    #include <PlainVanilla/PVBasicKeyValueMapImpl.h>
-    #include <PlainVanilla/PVBundleLoadingSystem.h>
-    #include <PlainVanilla/PVCandidate.h>
-    #include <PlainVanilla/PVContextSandwich.h>
-    #include <PlainVanilla/PVKeyImpl.h>
-    #include <PlainVanilla/PVLoaderPolicy.h>
-    #include <PlainVanilla/PVLoaderService.h>
-    #include <PlainVanilla/PVLoaderSystem.h>
-    #include <PlainVanilla/PVModulePackageSystem.h>
-    #include <PlainVanilla/PVModuleSystem.h>
-    #include <PlainVanilla/PVPlistValue.h>
-    #include <PlainVanilla/PVPropertyList.h>    
-    #include <PlainVanilla/PVTextBuffer.h>
+#include <OpenVanilla/OpenVanilla.h>
+#include <PlainVanilla/PVBasicKeyValueMapImpl.h>
+#include <PlainVanilla/PVBundleLoadingSystem.h>
+#include <PlainVanilla/PVCandidate.h>
+#include <PlainVanilla/PVContextSandwich.h>
+#include <PlainVanilla/PVKeyImpl.h>
+#include <PlainVanilla/PVLoaderPolicy.h>
+#include <PlainVanilla/PVLoaderService.h>
+#include <PlainVanilla/PVLoaderSystem.h>
+#include <PlainVanilla/PVModulePackageSystem.h>
+#include <PlainVanilla/PVModuleSystem.h>
+#include <PlainVanilla/PVPlistValue.h>
+#include <PlainVanilla/PVPropertyList.h>
+#include <PlainVanilla/PVTextBuffer.h>
 #else
-    #include "OpenVanilla.h"
-    #include "PVBasicKeyValueMapImpl.h"
-    #include "PVCandidate.h"
-    #include "PVContextSandwich.h"
-    #include "PVTextBuffer.h"
-    #include "PVKeyImpl.h"
-    #include "PVLoaderPolicy.h"
-    #include "PVLoaderService.h"
-    #include "PVLoaderSystem.h"
-    #include "PVModulePackageSystem.h"
-    #include "PVModuleSystem.h"    
-    #include "PVPlistValue.h"
-    #include "PVPropertyList.h"
-    #include "PVTextBuffer.h"
+#include "OpenVanilla.h"
+#include "PVBasicKeyValueMapImpl.h"
+#include "PVCandidate.h"
+#include "PVContextSandwich.h"
+#include "PVKeyImpl.h"
+#include "PVLoaderPolicy.h"
+#include "PVLoaderService.h"
+#include "PVLoaderSystem.h"
+#include "PVModulePackageSystem.h"
+#include "PVModuleSystem.h"
+#include "PVPlistValue.h"
+#include "PVPropertyList.h"
+#include "PVTextBuffer.h"
 #endif
 
 #if defined(WIN32)
-	#include "PVDLLLoadingSystem.h"
+#include "PVDLLLoadingSystem.h"
 #endif
 
 #endif

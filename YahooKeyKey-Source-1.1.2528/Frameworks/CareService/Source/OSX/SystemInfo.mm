@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -29,31 +29,31 @@
 #import <Cocoa/Cocoa.h>
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
-#include "SystemInfo.h"
 #include <sstream>
 
-namespace CareService
-{
+#include "SystemInfo.h"
 
-const string SystemInfo::PlatformSummary()
-{
-    SInt32 OSXVersionMajor;
-    SInt32 OSXVersionMinor;
-    SInt32 OSXVersionTiny;
-	
-	assert(noErr == Gestalt(gestaltSystemVersionMajor, &OSXVersionMajor));
-	assert(noErr == Gestalt(gestaltSystemVersionMinor, &OSXVersionMinor));
-	assert(noErr == Gestalt(gestaltSystemVersionBugFix, &OSXVersionTiny));
-	
-	stringstream s;
-	s << "Mac OS X " << OSXVersionMajor << "." << OSXVersionMinor<< "." << OSXVersionTiny;
-	
-	return s.str();
+namespace CareService {
+
+const string SystemInfo::PlatformSummary() {
+  SInt32 OSXVersionMajor;
+  SInt32 OSXVersionMinor;
+  SInt32 OSXVersionTiny;
+
+  assert(noErr == Gestalt(gestaltSystemVersionMajor, &OSXVersionMajor));
+  assert(noErr == Gestalt(gestaltSystemVersionMinor, &OSXVersionMinor));
+  assert(noErr == Gestalt(gestaltSystemVersionBugFix, &OSXVersionTiny));
+
+  stringstream s;
+  s << "Mac OS X " << OSXVersionMajor << "." << OSXVersionMinor << "."
+    << OSXVersionTiny;
+
+  return s.str();
 }
-    
+
 };

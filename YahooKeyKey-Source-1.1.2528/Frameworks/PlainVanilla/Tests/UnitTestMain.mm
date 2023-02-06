@@ -25,26 +25,27 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#include "TestPlainVanilla.h"
-#include <string>
-#include <iostream>
 #import <Cocoa/Cocoa.h>
+
+#include <iostream>
+#include <string>
+
+#include "TestPlainVanilla.h"
 
 using namespace std;
 using namespace OpenVanilla;
 
 string g_modulePackageLoadPath;
 
-int main(int argc, char* argv[])
-{
-    if (argc > 1) {
-        g_modulePackageLoadPath = argv[1];
-    }
+int main(int argc, char* argv[]) {
+  if (argc > 1) {
+    g_modulePackageLoadPath = argv[1];
+  }
 
-    id pool = [NSAutoreleasePool new];
-    int ret = UnitTest::RunAllTests();
+  id pool = [NSAutoreleasePool new];
+  int ret = UnitTest::RunAllTests();
 
-    [pool drain];
-    [pool release];
-    return ret;
+  [pool drain];
+  [pool release];
+  return ret;
 }

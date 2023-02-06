@@ -10,9 +10,7 @@ file for terms.
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface ZBTargetView : NSView {
-
 }
 
 @end

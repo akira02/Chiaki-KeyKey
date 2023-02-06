@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,17 +30,17 @@
 #define OVAFPhraseConverterConfig_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #ifndef OVAFPHRASECONVERTER_IDENTIFIER
-	#define OVAFPHRASECONVERTER_IDENTIFIER "OVAFPhraseConverter"
+#define OVAFPHRASECONVERTER_IDENTIFIER "OVAFPhraseConverter"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;    
+using namespace std;
 };
 
 #endif

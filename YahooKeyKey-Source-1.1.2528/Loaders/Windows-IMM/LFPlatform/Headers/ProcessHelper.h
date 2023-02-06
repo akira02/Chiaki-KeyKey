@@ -10,18 +10,19 @@
 #include <string>
 
 namespace LFPlatform {
-    using namespace std;
+using namespace std;
 
-    class ProcessHelper {
-    public:
-        static bool LaunchProgram(const string& executable, const string& launchPath);
-        static const string CurrentProcessImageName();
-        
-        static bool IsSystemUser();
-        static bool ProcessNameExistsForCurrentUser(const string& expression, size_t* count = 0);
-        
-        static bool IsRunningUnderWow64();
-    };
+class ProcessHelper {
+ public:
+  static bool LaunchProgram(const string& executable, const string& launchPath);
+  static const string CurrentProcessImageName();
+
+  static bool IsSystemUser();
+  static bool ProcessNameExistsForCurrentUser(const string& expression,
+                                              size_t* count = 0);
+
+  static bool IsRunningUnderWow64();
 };
+};  // namespace LFPlatform
 
 #endif

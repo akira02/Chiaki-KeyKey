@@ -2,11 +2,11 @@
    See the file COPYING for copying permission.
 */
 
+#include <fcntl.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
-#include <fcntl.h>
 
 #ifdef COMPILED_FROM_DSP
 #include "winconfig.h"
@@ -21,9 +21,9 @@
 #endif /* ndef COMPILED_FROM_DSP */
 
 #include "expat.h"
+#include "filemap.h"
 #include "xmlfile.h"
 #include "xmltchar.h"
-#include "filemap.h"
 
 #if (defined(_MSC_VER) || (defined(__WATCOMC__) && !defined(__LINUX__)))
 #include <io.h>
@@ -48,92 +48,74 @@
 #ifdef _DEBUG
 #define READ_SIZE 16
 #else
-#define READ_SIZE (1024*8)
+#define READ_SIZE (1024 * 8)
 #endif
-
 
 typedef struct {
   XML_Parser parser;
   int *retPtr;
 } PROCESS_ARGS;
 
-static void
-reportError(XML_Parser parser, const XML_Char *filename)
-{
+static void reportError(XML_Parser parser, const XML_Char *filename) {
   enum XML_Error code = XML_GetErrorCode(parser);
   const XML_Char *message = XML_ErrorString(code);
   if (message)
     ftprintf(stdout, T("%s:%" XML_FMT_INT_MOD "u:%" XML_FMT_INT_MOD "u: %s\n"),
-             filename,
-             XML_GetErrorLineNumber(parser),
-             XML_GetErrorColumnNumber(parser),
-             message);
+             filename, XML_GetErrorLineNumber(parser),
+             XML_GetErrorColumnNumber(parser), message);
   else
     ftprintf(stderr, T("%s: (unknown message %d)\n"), filename, code);
 }
- 
+
 /* This implementation will give problems on files larger than INT_MAX. */
-static void
-processFile(const void *data, size_t size,
-            const XML_Char *filename, void *args)
-{
+static void processFile(const void *data, size_t size, const XML_Char *filename,
+                        void *args) {
   XML_Parser parser = ((PROCESS_ARGS *)args)->parser;
   int *retPtr = ((PROCESS_ARGS *)args)->retPtr;
   if (XML_Parse(parser, (const char *)data, (int)size, 1) == XML_STATUS_ERROR) {
     reportError(parser, filename);
     *retPtr = 0;
-  }
-  else
+  } else
     *retPtr = 1;
 }
 
 #if (defined(WIN32) || defined(__WATCOMC__))
 
-static int
-isAsciiLetter(XML_Char c)
-{
+static int isAsciiLetter(XML_Char c) {
   return (T('a') <= c && c <= T('z')) || (T('A') <= c && c <= T('Z'));
 }
 
 #endif /* WIN32 */
 
-static const XML_Char *
-resolveSystemId(const XML_Char *base, const XML_Char *systemId,
-                XML_Char **toFree)
-{
+static const XML_Char *resolveSystemId(const XML_Char *base,
+                                       const XML_Char *systemId,
+                                       XML_Char **toFree) {
   XML_Char *s;
   *toFree = 0;
-  if (!base
-      || *systemId == T('/')
+  if (!base || *systemId == T('/')
 #if (defined(WIN32) || defined(__WATCOMC__))
-      || *systemId == T('\\')
-      || (isAsciiLetter(systemId[0]) && systemId[1] == T(':'))
+      || *systemId == T('\\') ||
+      (isAsciiLetter(systemId[0]) && systemId[1] == T(':'))
 #endif
-     )
+  )
     return systemId;
-  *toFree = (XML_Char *)malloc((tcslen(base) + tcslen(systemId) + 2)
-                               * sizeof(XML_Char));
-  if (!*toFree)
-    return systemId;
+  *toFree = (XML_Char *)malloc((tcslen(base) + tcslen(systemId) + 2) *
+                               sizeof(XML_Char));
+  if (!*toFree) return systemId;
   tcscpy(*toFree, base);
   s = *toFree;
-  if (tcsrchr(s, T('/')))
-    s = tcsrchr(s, T('/')) + 1;
+  if (tcsrchr(s, T('/'))) s = tcsrchr(s, T('/')) + 1;
 #if (defined(WIN32) || defined(__WATCOMC__))
-  if (tcsrchr(s, T('\\')))
-    s = tcsrchr(s, T('\\')) + 1;
+  if (tcsrchr(s, T('\\'))) s = tcsrchr(s, T('\\')) + 1;
 #endif
   tcscpy(s, systemId);
   return *toFree;
 }
 
-static int
-externalEntityRefFilemap(XML_Parser parser,
-                         const XML_Char *context,
-                         const XML_Char *base,
-                         const XML_Char *systemId,
-                         const XML_Char *publicId)
-{
+static int externalEntityRefFilemap(XML_Parser parser, const XML_Char *context,
+                                    const XML_Char *base,
+                                    const XML_Char *systemId,
+                                    const XML_Char *publicId) {
   int result;
   XML_Char *s;
   const XML_Char *filename;
@@ -143,21 +125,18 @@ externalEntityRefFilemap(XML_Parser parser,
   args.parser = entParser;
   filename = resolveSystemId(base, systemId, &s);
   XML_SetBase(entParser, filename);
-  if (!filemap(filename, processFile, &args))
-    result = 0;
+  if (!filemap(filename, processFile, &args)) result = 0;
   free(s);
   XML_ParserFree(entParser);
   return result;
 }
 
-static int
-processStream(const XML_Char *filename, XML_Parser parser)
-{
+static int processStream(const XML_Char *filename, XML_Parser parser) {
   /* passing NULL for filename means read intput from stdin */
-  int fd = 0;   /* 0 is the fileno for stdin */
+  int fd = 0; /* 0 is the fileno for stdin */
 
   if (filename != NULL) {
-    fd = topen(filename, O_BINARY|O_RDONLY);
+    fd = topen(filename, O_BINARY | O_RDONLY);
     if (fd < 0) {
       tperror(filename);
       return 0;
@@ -167,8 +146,7 @@ processStream(const XML_Char *filename, XML_Parser parser)
     int nread;
     char *buf = (char *)XML_GetBuffer(parser, READ_SIZE);
     if (!buf) {
-      if (filename != NULL)
-        close(fd);
+      if (filename != NULL) close(fd);
       ftprintf(stderr, T("%s: out of memory\n"),
                filename != NULL ? filename : "xmlwf");
       return 0;
@@ -176,32 +154,27 @@ processStream(const XML_Char *filename, XML_Parser parser)
     nread = read(fd, buf, READ_SIZE);
     if (nread < 0) {
       tperror(filename != NULL ? filename : "STDIN");
-      if (filename != NULL)
-        close(fd);
+      if (filename != NULL) close(fd);
       return 0;
     }
     if (XML_ParseBuffer(parser, nread, nread == 0) == XML_STATUS_ERROR) {
       reportError(parser, filename != NULL ? filename : "STDIN");
-      if (filename != NULL)
-        close(fd);
+      if (filename != NULL) close(fd);
       return 0;
     }
     if (nread == 0) {
-      if (filename != NULL)
-        close(fd);
-      break;;
+      if (filename != NULL) close(fd);
+      break;
+      ;
     }
   }
   return 1;
 }
 
-static int
-externalEntityRefStream(XML_Parser parser,
-                        const XML_Char *context,
-                        const XML_Char *base,
-                        const XML_Char *systemId,
-                        const XML_Char *publicId)
-{
+static int externalEntityRefStream(XML_Parser parser, const XML_Char *context,
+                                   const XML_Char *base,
+                                   const XML_Char *systemId,
+                                   const XML_Char *publicId) {
   XML_Char *s;
   const XML_Char *filename;
   int ret;
@@ -214,11 +187,8 @@ externalEntityRefStream(XML_Parser parser,
   return ret;
 }
 
-int
-XML_ProcessFile(XML_Parser parser,
-                const XML_Char *filename,
-                unsigned flags)
-{
+int XML_ProcessFile(XML_Parser parser, const XML_Char *filename,
+                    unsigned flags) {
   int result;
 
   if (!XML_SetBase(parser, filename)) {
@@ -227,18 +197,15 @@ XML_ProcessFile(XML_Parser parser,
   }
 
   if (flags & XML_EXTERNAL_ENTITIES)
-      XML_SetExternalEntityRefHandler(parser,
-                                      (flags & XML_MAP_FILE)
-                                      ? externalEntityRefFilemap
-                                      : externalEntityRefStream);
+    XML_SetExternalEntityRefHandler(parser, (flags & XML_MAP_FILE)
+                                                ? externalEntityRefFilemap
+                                                : externalEntityRefStream);
   if (flags & XML_MAP_FILE) {
     PROCESS_ARGS args;
     args.retPtr = &result;
     args.parser = parser;
-    if (!filemap(filename, processFile, &args))
-      result = 0;
-  }
-  else
+    if (!filemap(filename, processFile, &args)) result = 0;
+  } else
     result = processStream(filename, parser);
   return result;
 }

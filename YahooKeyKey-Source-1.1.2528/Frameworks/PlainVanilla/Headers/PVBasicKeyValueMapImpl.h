@@ -29,71 +29,51 @@
 #define PVBasicKeyValueImpl_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include <map>
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class PVBasicKeyValueMapImpl : public OVKeyValueMapImpl {
-    public:
-        PVBasicKeyValueMapImpl()
-            : m_readOnly(false)
-        {
-        }
-        
-        virtual bool shouldDelete()
-        {
-            return false;
-        }
+class PVBasicKeyValueMapImpl : public OVKeyValueMapImpl {
+ public:
+  PVBasicKeyValueMapImpl() : m_readOnly(false) {}
 
-        virtual OVKeyValueMapImpl* copy()
-        {
-            return this;
-        }
+  virtual bool shouldDelete() { return false; }
 
-        virtual bool isReadOnly()
-        {
-            return m_readOnly;
-        }
-        
-        virtual bool setKeyStringValue(const string& key, const string& value)
-        {
-            if (m_readOnly)
-                return false;
-            
-            m_keyValueMap[key] = value;
-            return true;
-        }
-        virtual bool hasKey(const string& key)
-        {
-            map<string, string>::iterator it = m_keyValueMap.find(key);
-            return it != m_keyValueMap.end();
-        }
-        
-        virtual const string stringValueForKey(const string& key)
-        {
-            map<string, string>::iterator it = m_keyValueMap.find(key);
-            if (it == m_keyValueMap.end())
-                return string();
-            
-            return (*it).second;
-        }
+  virtual OVKeyValueMapImpl* copy() { return this; }
 
-    public:
-        virtual void setReadOnly(bool readOnly)
-        {
-            m_readOnly = readOnly;
-        }
-        
-    protected:
-        bool m_readOnly;
-        map<string, string> m_keyValueMap;
-    };    
+  virtual bool isReadOnly() { return m_readOnly; }
+
+  virtual bool setKeyStringValue(const string& key, const string& value) {
+    if (m_readOnly) return false;
+
+    m_keyValueMap[key] = value;
+    return true;
+  }
+  virtual bool hasKey(const string& key) {
+    map<string, string>::iterator it = m_keyValueMap.find(key);
+    return it != m_keyValueMap.end();
+  }
+
+  virtual const string stringValueForKey(const string& key) {
+    map<string, string>::iterator it = m_keyValueMap.find(key);
+    if (it == m_keyValueMap.end()) return string();
+
+    return (*it).second;
+  }
+
+ public:
+  virtual void setReadOnly(bool readOnly) { m_readOnly = readOnly; }
+
+ protected:
+  bool m_readOnly;
+  map<string, string> m_keyValueMap;
 };
+};  // namespace OpenVanilla
 
 #endif

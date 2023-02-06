@@ -8,10 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface PESettingTableView : NSTableView {
-	NSMutableArray *_array;
-
+  NSMutableArray *_array;
 }
 
 - (void)setArray:(NSArray *)array;

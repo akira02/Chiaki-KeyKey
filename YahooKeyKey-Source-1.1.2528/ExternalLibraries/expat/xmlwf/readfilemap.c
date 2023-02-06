@@ -2,11 +2,11 @@
    See the file COPYING for copying permission.
 */
 
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 #ifdef __WATCOMC__
 #ifndef __LINUX__
@@ -27,7 +27,7 @@
 #ifndef S_IFMT
 #define S_IFMT _S_IFMT
 #endif
-#define S_ISREG(m) (((m) & S_IFMT) == S_IFREG)
+#define S_ISREG(m) (((m)&S_IFMT) == S_IFREG)
 #endif /* not S_ISREG */
 
 #ifndef O_BINARY
@@ -40,18 +40,16 @@
 
 #include "filemap.h"
 
-int
-filemap(const char *name,
-        void (*processor)(const void *, size_t, const char *, void *arg),
-        void *arg)
-{
+int filemap(const char *name,
+            void (*processor)(const void *, size_t, const char *, void *arg),
+            void *arg) {
   size_t nbytes;
   int fd;
   int n;
   struct stat sb;
   void *p;
 
-  fd = open(name, O_RDONLY|O_BINARY);
+  fd = open(name, O_RDONLY | O_BINARY);
   if (fd < 0) {
     perror(name);
     return 0;

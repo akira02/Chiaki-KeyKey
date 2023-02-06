@@ -26,9 +26,9 @@
 //
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 namespace OpenVanilla {
@@ -37,9 +37,10 @@ const unsigned int OVFrameworkInfo::c_MinorVersion = 5;
 const unsigned int OVFrameworkInfo::c_TinyVersion = 0;
 
 #ifndef OPENVANILLA_SVN_VERSION
-    const unsigned int OVFrameworkInfo::c_FrameworkBuildNumber = 0;
+const unsigned int OVFrameworkInfo::c_FrameworkBuildNumber = 0;
 #else
-    const unsigned int OVFrameworkInfo::c_FrameworkBuildNumber = OPENVANILLA_SVN_VERSION;
+const unsigned int OVFrameworkInfo::c_FrameworkBuildNumber =
+    OPENVANILLA_SVN_VERSION;
 #endif
 
-}; // namespace OpenVanilla
+};  // namespace OpenVanilla

@@ -9,38 +9,37 @@ file for terms.
 #if (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
 #import <Carbon/Carbon.h>
 #endif
-#import "TakaoSettings.h"
 #import "NSStringExtension.h"
+#import "TakaoSettings.h"
 
 /*!
-	@header TakaoGlobal
+        @header TakaoGlobal
 */
 
-/*! 
-	@class TakaoGlobal
-	@abstract The class to interact with user interface and the 
-	global settings.
-*/	
-@interface TakaoGlobal : NSObject
-{
-	IBOutlet NSPopUpButton *_keyboardLayoutPopUpButton;
-	IBOutlet id _soundListPopUpButton;
-	IBOutlet id _soundCheckBox;
-	IBOutlet id _stopPlayiongButton;
-	IBOutlet id _highlightColorPopUpButton;
-	IBOutlet NSTableView *_moduleListTableView;
-	IBOutlet NSMatrix *_candidateWindowStyleMatrix;	
-	IBOutlet id _useUpdateCheckBox;
-	IBOutlet id _useCtrlBackSlashToggleInputMethod;
-	
-	NSMutableDictionary *_takaoDictionary;
-	NSString *_preferenceFilePath;
-	NSString *_customSoundFilePath;
-	NSSound *_sound;
-	NSMutableArray *_keyboardLayoutIdentifierArray;
-	NSMutableArray *_inputMethods;
-	
-	BOOL _init;
+/*!
+        @class TakaoGlobal
+        @abstract The class to interact with user interface and the
+        global settings.
+*/
+@interface TakaoGlobal : NSObject {
+  IBOutlet NSPopUpButton *_keyboardLayoutPopUpButton;
+  IBOutlet id _soundListPopUpButton;
+  IBOutlet id _soundCheckBox;
+  IBOutlet id _stopPlayiongButton;
+  IBOutlet id _highlightColorPopUpButton;
+  IBOutlet NSTableView *_moduleListTableView;
+  IBOutlet NSMatrix *_candidateWindowStyleMatrix;
+  IBOutlet id _useUpdateCheckBox;
+  IBOutlet id _useCtrlBackSlashToggleInputMethod;
+
+  NSMutableDictionary *_takaoDictionary;
+  NSString *_preferenceFilePath;
+  NSString *_customSoundFilePath;
+  NSSound *_sound;
+  NSMutableArray *_keyboardLayoutIdentifierArray;
+  NSMutableArray *_inputMethods;
+
+  BOOL _init;
 }
 
 #pragma mark Interface Builder actions
@@ -48,27 +47,27 @@ file for terms.
 - (void)setInputMethods:(NSArray *)modules;
 
 /*!
-	@method writePreference:
-	@abstract Writes the settings into the plist file.
-	@param sender The sender object.
+        @method writePreference:
+        @abstract Writes the settings into the plist file.
+        @param sender The sender object.
 */
 - (IBAction)writePreference:(id)sender;
 /*!
-	@method changeSound:
-	@abstract Changes the specified alert sound.
-	@param sender The sender object.
+        @method changeSound:
+        @abstract Changes the specified alert sound.
+        @param sender The sender object.
 */
 - (IBAction)changeSound:(id)sender;
 /*!
-	@method testSound:
-	@abstract Plays the specified alert sound for testing.
-	@param sender The sender object.
+        @method testSound:
+        @abstract Plays the specified alert sound for testing.
+        @param sender The sender object.
 */
 - (IBAction)testSound:(id)sender;
 /*!
-	@method stopSound:
-	@abstract Stops playing the specified alert sound.
-	@param sender The sender object.
+        @method stopSound:
+        @abstract Stops playing the specified alert sound.
+        @param sender The sender object.
 */
 - (IBAction)stopSound:(id)sender;
 - (IBAction)setKeyboardLayout:(id)sender;
@@ -76,13 +75,12 @@ file for terms.
 - (IBAction)setHighlightColor:(id)sender;
 @end
 
-@interface TakaoColorPopUpButton : NSPopUpButton
-{
-	IBOutlet TakaoGlobal *_controller;	
-	NSMenu *_colorMenu;
-	NSMenuItem *_customizedColorMenuItem;
-	NSMutableArray *_colors;
-	NSString *_initString;
+@interface TakaoColorPopUpButton : NSPopUpButton {
+  IBOutlet TakaoGlobal *_controller;
+  NSMenu *_colorMenu;
+  NSMenuItem *_customizedColorMenuItem;
+  NSMutableArray *_colors;
+  NSString *_initString;
 }
 
 - (IBAction)customize:(id)sender;

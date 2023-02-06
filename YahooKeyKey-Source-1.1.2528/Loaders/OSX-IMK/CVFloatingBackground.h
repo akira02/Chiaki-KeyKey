@@ -2,10 +2,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CVFloatingBackground : NSView
-{
-	NSColor *_backgroundFillColor;
-	NSColor *_borderColor;	
+@interface CVFloatingBackground : NSView {
+  NSColor *_backgroundFillColor;
+  NSColor *_borderColor;
 }
 - (void)setBackgroundFillColor:(NSColor *)aColor;
 - (void)setBorderColor:(NSColor *)aColor;

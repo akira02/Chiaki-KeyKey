@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,44 +30,41 @@
 #define OVIMGenericPackage_h
 
 #ifndef OV_USE_SQLITE
-    #define OV_USE_SQLITE
+#define OV_USE_SQLITE
 #endif
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "OVIMGeneric.h"
 #include "OVIMGenericConfig.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVIMGenericPackage : public OVModulePackage {
-    protected:
-        map<string, OVDatabaseService*> m_tableMap;
-        vector<string> m_tableNames;
-        
-    public:
-        virtual size_t numberOfModules(OVLoaderService*)
-        {
-            return m_tableNames.size();
-        }
-        
-        virtual OVModule* moduleAtIndex(size_t index, OVLoaderService*)
-        {        
-            if (index >= m_tableNames.size())
-                return 0;
+class OVIMGenericPackage : public OVModulePackage {
+ protected:
+  map<string, OVDatabaseService*> m_tableMap;
+  vector<string> m_tableNames;
 
-            string name = m_tableNames[index];
-            return new OVIMGeneric(name, m_tableMap[name]);
-        }
-        
-		virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService);
-    };
-    
+ public:
+  virtual size_t numberOfModules(OVLoaderService*) {
+    return m_tableNames.size();
+  }
+
+  virtual OVModule* moduleAtIndex(size_t index, OVLoaderService*) {
+    if (index >= m_tableNames.size()) return 0;
+
+    string name = m_tableNames[index];
+    return new OVIMGeneric(name, m_tableMap[name]);
+  }
+
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService);
 };
+
+};  // namespace OpenVanilla
 
 #endif

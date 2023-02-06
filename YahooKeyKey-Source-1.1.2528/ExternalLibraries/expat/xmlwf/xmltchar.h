@@ -1,8 +1,8 @@
 #ifdef XML_UNICODE
 #ifndef XML_UNICODE_WCHAR_T
-#error xmlwf requires a 16-bit Unicode-compatible wchar_t 
+#error xmlwf requires a 16-bit Unicode-compatible wchar_t
 #endif
-#define T(x) L ## x
+#define T(x) L##x
 #define ftprintf fwprintf
 #define tfopen _wfopen
 #define fputts fputws

@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -32,35 +32,33 @@
 #include "OVOFHanConvert.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    // we encourage people to do the real initialization in initialize
-    class OVOFHanConvertPackage : public OVModulePackage {
-    public:
-        virtual size_t numberOfModules(OVLoaderService*)
-        {
-            #ifdef OVOFHANCONVERT_USE_TC2SCONLY
-            return 1;
-            #else
-            return 2;
-            #endif
-        }
-        
-        virtual OVModule* moduleAtIndex(size_t index, OVLoaderService*)
-        {
-            switch(index) {
-            case 0:
-                return new OVOFHanConvert(true);
-                
-            #ifndef OVOFHANCONVERT_USE_TC2SCONLY                
-            case 1:
-                return new OVOFHanConvert(false);
-            #endif
-            }
-            return 0;
-        }
-    };
-    
+// we encourage people to do the real initialization in initialize
+class OVOFHanConvertPackage : public OVModulePackage {
+ public:
+  virtual size_t numberOfModules(OVLoaderService*) {
+#ifdef OVOFHANCONVERT_USE_TC2SCONLY
+    return 1;
+#else
+    return 2;
+#endif
+  }
+
+  virtual OVModule* moduleAtIndex(size_t index, OVLoaderService*) {
+    switch (index) {
+      case 0:
+        return new OVOFHanConvert(true);
+
+#ifndef OVOFHANCONVERT_USE_TC2SCONLY
+      case 1:
+        return new OVOFHanConvert(false);
+#endif
+    }
+    return 0;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

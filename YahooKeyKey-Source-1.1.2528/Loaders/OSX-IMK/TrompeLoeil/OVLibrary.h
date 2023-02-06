@@ -2,11 +2,11 @@
 //
 // Copyright (c) 2004-2007 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions
 // are met:
-// 
+//
 // 1. Redistributions of source code must retain the above copyright
 //    notice, this list of conditions and the following disclaimer.
 // 2. Redistributions in binary form must reproduce the above copyright
@@ -15,7 +15,7 @@
 // 3. Neither the name of OpenVanilla nor the names of its contributors
 //    may be used to endorse or promote products derived from this software
 //    without specific prior written permission.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -39,25 +39,25 @@
 // extern "C" OVModule *OVGetModuleFromLibrary(int idx);
 
 // wrapper macro for libraries that have exactly only one OVModule (IM/OF)
-#define OV_SINGLE_MODULE_WRAPPER(classname) \
-    extern "C" unsigned int OVGetLibraryVersion() { return OV_VERSION; } \
-    extern "C" int OVInitializeLibrary(OVService*, const char*) { return 1; } \
-    extern "C" OVModule *OVGetModuleFromLibrary(int idx) {\
-        return (idx==0) ? new classname : NULL; \
-    }
+#define OV_SINGLE_MODULE_WRAPPER(classname)                                   \
+  extern "C" unsigned int OVGetLibraryVersion() { return OV_VERSION; }        \
+  extern "C" int OVInitializeLibrary(OVService *, const char *) { return 1; } \
+  extern "C" OVModule *OVGetModuleFromLibrary(int idx) {                      \
+    return (idx == 0) ? new classname : NULL;                                 \
+  }
 
-// below are used for most OV Loader implementations, not needed by any 
+// below are used for most OV Loader implementations, not needed by any
 // loadable library
 
 typedef unsigned int _OVGetLibraryVersion_t();
 typedef int _OVInitializeLibrary_t(OVService *srv, const char *libpath);
-typedef OVModule* _OVGetModuleFromLibrary_t(int);
+typedef OVModule *_OVGetModuleFromLibrary_t(int);
 
 struct OVLoadedLibrary {
-    OVLoadedLibrary(_OVInitializeLibrary_t *i, _OVGetModuleFromLibrary_t *m) :
-        initialize(i), getModule(m) {}
-    _OVInitializeLibrary_t *initialize;
-    _OVGetModuleFromLibrary_t *getModule;
+  OVLoadedLibrary(_OVInitializeLibrary_t *i, _OVGetModuleFromLibrary_t *m)
+      : initialize(i), getModule(m) {}
+  _OVInitializeLibrary_t *initialize;
+  _OVGetModuleFromLibrary_t *getModule;
 };
 
 #endif

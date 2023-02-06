@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -32,12 +32,12 @@
 #include <string>
 
 namespace CareService {
-    using namespace std;
+using namespace std;
 
-    class SystemInfo {
-    public:
-        static const string PlatformSummary();
-    };    
+class SystemInfo {
+ public:
+  static const string PlatformSummary();
 };
+};  // namespace CareService
 
 #endif

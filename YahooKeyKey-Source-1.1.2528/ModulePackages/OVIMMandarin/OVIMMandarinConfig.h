@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,23 +30,23 @@
 #define OVIMMandarinConfig_h
 
 #ifndef OVIMMANDARIN_IDENTIFIER
-	#define OVIMMANDARIN_IDENTIFIER "OVIMMandarin"
+#define OVIMMANDARIN_IDENTIFIER "OVIMMandarin"
 #endif
 
 #ifndef OVIMMANDARIN_DATA_TABLE_PREFIX
-	#define OVIMMANDARIN_DATA_TABLE_PREFIX OVIMMANDARIN_IDENTIFIER
+#define OVIMMANDARIN_DATA_TABLE_PREFIX OVIMMANDARIN_IDENTIFIER
 #endif
 
 #ifndef OVIMMANDARIN_PUNCTUATIONS_TABLE_PREFIX
-	#define OVIMMANDARIN_PUNCTUATIONS_TABLE_PREFIX OVIMMANDARIN_IDENTIFIER
+#define OVIMMANDARIN_PUNCTUATIONS_TABLE_PREFIX OVIMMANDARIN_IDENTIFIER
 #endif
 
 #ifndef OVIMTRADITIONALMANDARIN_IDENTIFIER
-	#define OVIMTRADITIONALMANDARIN_IDENTIFIER "OVIMTraditionalMandarin"
+#define OVIMTRADITIONALMANDARIN_IDENTIFIER "OVIMTraditionalMandarin"
 #endif
 
 #ifndef OVIMSMARTMANDARIN_IDENTIFIER
-    #define OVIMSMARTMANDARIN_IDENTIFIER "OVIMSmartMandarin"
+#define OVIMSMARTMANDARIN_IDENTIFIER "OVIMSmartMandarin"
 #endif
 
 // #define OVIMTRADITIONALMANDARIN_USE_ABSOLUTE_ORDER_QUERY_STRING

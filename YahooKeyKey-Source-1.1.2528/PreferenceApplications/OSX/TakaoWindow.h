@@ -8,27 +8,26 @@ file for terms.
 #import <Cocoa/Cocoa.h>
 
 /*!
-	@header TakaoWindow
+        @header TakaoWindow
 */
 
 /*!
-	@class TakaoWindow
-	@abstract The main window of the preference tool.
+        @class TakaoWindow
+        @abstract The main window of the preference tool.
 */
 
-@interface TakaoWindow : NSWindow
-{
-	BOOL _useSlowMotion;
+@interface TakaoWindow : NSWindow {
+  BOOL _useSlowMotion;
 }
 
 /*!
-	@method useSlowMotion
-	@abstract Asks the window to use slow motion animation on resizing.
+        @method useSlowMotion
+        @abstract Asks the window to use slow motion animation on resizing.
 */
 - (void)useSlowMotion;
 /*!
-	@method stopSlowMotion
-	@abstract Asks the window to use stop motion animation on resizing.
+        @method stopSlowMotion
+        @abstract Asks the window to use stop motion animation on resizing.
 */
 - (void)stopSlowMotion;
 @end

@@ -8,19 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, char *argv[])
-{
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	NSString *appPath = [[NSBundle mainBundle] bundlePath];
-	NSString *dmgPath = [appPath stringByDeletingLastPathComponent];
-	NSString *pkgPath = [dmgPath stringByAppendingPathComponent:@".Package/KeyKey.pkg"];
-	// NSLog(@"path: %@", pkgPath);
-	if ([[NSWorkspace sharedWorkspace] openFile:pkgPath]) {
-		// NSLog(@"Succesfully open");
-	}
-	else {
-		NSLog(@"Failed to open");
-	}
-	[pool drain];	
-	return 0;
+int main(int argc, char *argv[]) {
+  NSAutoreleasePool *pool = [NSAutoreleasePool new];
+  NSString *appPath = [[NSBundle mainBundle] bundlePath];
+  NSString *dmgPath = [appPath stringByDeletingLastPathComponent];
+  NSString *pkgPath =
+      [dmgPath stringByAppendingPathComponent:@".Package/KeyKey.pkg"];
+  // NSLog(@"path: %@", pkgPath);
+  if ([[NSWorkspace sharedWorkspace] openFile:pkgPath]) {
+    // NSLog(@"Succesfully open");
+  } else {
+    NSLog(@"Failed to open");
+  }
+  [pool drain];
+  return 0;
 }

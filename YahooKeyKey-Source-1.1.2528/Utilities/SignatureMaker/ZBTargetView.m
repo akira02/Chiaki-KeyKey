@@ -10,21 +10,20 @@ file for terms.
 
 #import "ZBTargetView.h"
 
-
 @implementation ZBTargetView
 
 - (id)initWithFrame:(NSRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    return self;
+  self = [super initWithFrame:frame];
+  if (self) {
+    // Initialization code here.
+  }
+  return self;
 }
 
 - (void)drawRect:(NSRect)rect {
-    NSBezierPath *b = [NSBezierPath bezierPathWithRect:rect];
-	[[NSColor whiteColor] setStroke];
-	[b stroke];
+  NSBezierPath *b = [NSBezierPath bezierPathWithRect:rect];
+  [[NSColor whiteColor] setStroke];
+  [b stroke];
 }
 
 @end

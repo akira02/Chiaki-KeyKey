@@ -25,14 +25,13 @@
  * (Prior to 0.9.5a beta1, a different scheme was used: MMNNFFRBB for
  *  major minor fix final patch/beta)
  */
-#define OPENSSL_VERSION_NUMBER	0x0090807fL
+#define OPENSSL_VERSION_NUMBER 0x0090807fL
 #ifdef OPENSSL_FIPS
-#define OPENSSL_VERSION_TEXT	"OpenSSL 0.9.8g-fips 19 Oct 2007"
+#define OPENSSL_VERSION_TEXT "OpenSSL 0.9.8g-fips 19 Oct 2007"
 #else
-#define OPENSSL_VERSION_TEXT	"OpenSSL 0.9.8g 19 Oct 2007"
+#define OPENSSL_VERSION_TEXT "OpenSSL 0.9.8g 19 Oct 2007"
 #endif
-#define OPENSSL_VERSION_PTEXT	" part of " OPENSSL_VERSION_TEXT
-
+#define OPENSSL_VERSION_PTEXT " part of " OPENSSL_VERSION_TEXT
 
 /* The macros below are to be used for shared library (.so, .dll, ...)
  * versioning.  That kind of versioning works a bit differently between
@@ -84,6 +83,5 @@
  */
 #define SHLIB_VERSION_HISTORY ""
 #define SHLIB_VERSION_NUMBER "0.9.8"
-
 
 #endif /* HEADER_OPENSSLV_H */

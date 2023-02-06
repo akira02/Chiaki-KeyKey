@@ -31,9 +31,9 @@
 #include "UnitTest++.h"
 
 #if defined(__APPLE__)
-    #include <PlainVanilla/PlainVanilla.h>
+#include <PlainVanilla/PlainVanilla.h>
 #else
-    #include "PlainVanilla.h"
+#include "PlainVanilla.h"
 #endif
 
 #include <string>

@@ -880,6 +880,29 @@
 /* Begin PBXFileReference section */
 		5B3CE69229914F3900641F53 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5B3CE69529914FB900641F53 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5B3CE6D02991588100641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PreferenceApplications/DownloadUpdateOSX/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B3CE6D12991588100641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PreferenceApplications/DownloadUpdateOSX/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B3CE6D22991588100641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = PreferenceApplications/DownloadUpdateOSX/en.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		5B3CE6D32991588100641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ModulePackages/OVAFPhraseConverter/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B3CE6D42991588200641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ModulePackages/OVAFReverseLookup/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B3CE6D52991588200641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ModulePackages/YKAFWordCount/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B3CE6D62991588200641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Distributions/Takao/Installer-OSX-Help/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5B3CE6D72991588200641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Distributions/Takao/Installer-OSX-Help/en.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		5B3CE6D82991588200641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = "Distributions/Takao/Installer-OSX-Help/en.lproj/install.html"; sourceTree = "<group>"; };
+		5B3CE6D92991588300641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "Distributions/Takao/Installer-OSX-Help/en.lproj/preference.png"; sourceTree = "<group>"; };
+		5B3CE6DA2991588300641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Distributions/Takao/Installer-OSX-UI/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5B3CE6DB2991588300641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Loaders/OSX-IMK/en.lproj/AboutWindow.xib"; sourceTree = "<group>"; };
+		5B3CE6DC2991588300641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Loaders/OSX-IMK/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5B3CE6DD2991588300641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Loaders/OSX-IMK/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5B3CE6DE2991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PreferenceApplications/OSX/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B3CE6DF2991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PreferenceApplications/OSX/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B3CE6E02991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = PreferenceApplications/OSX/en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5B3CE6E12991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = PreferenceApplications/OSX/en.lproj/TakaoGenericSettings.xib; sourceTree = "<group>"; };
+		5B3CE6E22991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = PreferenceApplications/OSX/en.lproj/TakaoReverseLookup.xib; sourceTree = "<group>"; };
+		5B3CE6E32991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = PreferenceApplications/OSX/en.lproj/TakaoWordCount.xib; sourceTree = "<group>"; };
+		5B3CE6E42991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Utilities/PhraseEditor/OSX/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B3CE6E52991588500641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Utilities/PhraseEditor/OSX/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B3CE6E62991588500641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Utilities/PhraseEditor/OSX/en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6A0138EB0ED1D44200715577 /* YKAFWordCount.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKAFWordCount.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0138F20ED1D47900715577 /* YKAFWordCount.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YKAFWordCount.cpp; path = ModulePackages/YKAFWordCount/YKAFWordCount.cpp; sourceTree = "<group>"; };
 		6A0138F30ED1D47900715577 /* YKAFWordCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YKAFWordCount.h; path = ModulePackages/YKAFWordCount/YKAFWordCount.h; sourceTree = "<group>"; };
@@ -1058,7 +1081,6 @@
 		6A4773780D5C621400C6C744 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = /System/Library/Frameworks/InputMethodKit.framework; sourceTree = "<absolute>"; };
 		6A4773830D5C622A00C6C744 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		6A50DE720D767937002A7DAD /* CocoaInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CocoaInit.m; path = Utilities/VersionInfoMaker/CocoaInit.m; sourceTree = "<group>"; };
-		6A52DB781095CB9000788A09 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = ModulePackages/YKAFWordCount/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A52DB7A1095CB9700788A09 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = ModulePackages/YKAFWordCount/zh_TW.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A52DB7B1095CB9900788A09 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = ModulePackages/YKAFWordCount/zh_CN.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A6CE73C0EC9C2B900244B97 /* OVLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVLocalization.h; sourceTree = "<group>"; };
@@ -1080,7 +1102,6 @@
 		6A859F620E41A6DF002C3544 /* TrackerSender.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TrackerSender.mm; path = Distributions/Takao/TrackerSender/OSX/TrackerSender.mm; sourceTree = "<group>"; };
 		6A85A1F50E41ADF9002C3544 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		6AACDEEF109855DD00128BB7 /* YKReverseLookup-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "YKReverseLookup-Info.plist"; path = "ModulePackages/OVAFReverseLookup/YKReverseLookup-Info.plist"; sourceTree = "<group>"; };
-		6AB5B3030D5C8D350040CD26 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = "Loaders/OSX-IMK/English.lproj/InfoPlist.strings"; sourceTree = "<group>"; usesTabs = 0; };
 		6AB5B30D0D5C8DBA0040CD26 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		6AB5B31A0D5C8E920040CD26 /* OVIMMandarinPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OVIMMandarinPackage.h; path = ModulePackages/OVIMMandarin/OVIMMandarinPackage.h; sourceTree = "<group>"; };
 		6AB5B31B0D5C8E920040CD26 /* OVIMTraditionalMandarin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OVIMTraditionalMandarin.cpp; path = ModulePackages/OVIMMandarin/OVIMTraditionalMandarin.cpp; sourceTree = "<group>"; };
@@ -1104,10 +1125,8 @@
 		6ABC3E8D0DBF625C00146A8B /* PhraseTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PhraseTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABC3EB70DBF62A800146A8B /* LMDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMDBHelper.h; sourceTree = "<group>"; };
 		6ABC3EBB0DBF62BA00146A8B /* PhaseTool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhaseTool.cpp; path = Frameworks/Manjusri/Tools/PhaseTool.cpp; sourceTree = SOURCE_ROOT; };
-		6AC80D911095CFAC00F0B8F0 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = ModulePackages/OVAFPhraseConverter/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AC80DCE1095CFB100F0B8F0 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = ModulePackages/OVAFPhraseConverter/zh_TW.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AC80DCF1095CFB400F0B8F0 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = ModulePackages/OVAFPhraseConverter/zh_CN.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6AC80DD11095CFC600F0B8F0 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = ModulePackages/OVAFReverseLookup/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AC80DD31095CFCA00F0B8F0 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = ModulePackages/OVAFReverseLookup/zh_TW.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AC80DD41095CFCE00F0B8F0 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = ModulePackages/OVAFReverseLookup/zh_CN.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6AC898D00EB5F9BC009217C5 /* PackageMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PackageMain.cpp; sourceTree = "<group>"; };
@@ -1193,10 +1212,8 @@
 		D41C8F8C0EF3E0C600BA9742 /* SmileyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SmileyView.xib; path = "Loaders/OSX-IMK/Interface/SmileyView.xib"; sourceTree = "<group>"; };
 		D41DF9FD1062A3A000B73EFA /* TakaoWordCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakaoWordCount.h; path = PreferenceApplications/OSX/TakaoWordCount.h; sourceTree = "<group>"; };
 		D41DF9FE1062A3A000B73EFA /* TakaoWordCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakaoWordCount.m; path = PreferenceApplications/OSX/TakaoWordCount.m; sourceTree = "<group>"; };
-		D41DFA2F1062A7B100B73EFA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = PreferenceApplications/OSX/English.lproj/TakaoWordCount.xib; sourceTree = "<group>"; };
 		D41DFA941062B01500B73EFA /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_CN; path = PreferenceApplications/OSX/zh_CN.lproj/TakaoWordCount.xib; sourceTree = "<group>"; };
 		D41DFA951062B01A00B73EFA /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = PreferenceApplications/OSX/zh_TW.lproj/TakaoWordCount.xib; sourceTree = "<group>"; };
-		D42064260ECC51C600538EFC /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Utilities/PhraseEditor/OSX/English.lproj/Localizable.strings; sourceTree = "<group>"; wrapsLines = 1; };
 		D420642E0ECC56E200538EFC /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = Utilities/PhraseEditor/OSX/zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; wrapsLines = 1; };
 		D427E5840D63A7B700A9E73A /* OVAFAssociatedPhrase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OVAFAssociatedPhrase.cpp; path = ModulePackages/OVIMMandarin/OVAFAssociatedPhrase.cpp; sourceTree = "<group>"; wrapsLines = 1; };
 		D427E5850D63A7B700A9E73A /* OVAFAssociatedPhrase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OVAFAssociatedPhrase.h; path = ModulePackages/OVIMMandarin/OVAFAssociatedPhrase.h; sourceTree = "<group>"; };
@@ -1208,13 +1225,10 @@
 		D42B09EA0EBDD36900AB5B7A /* PEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PEController.h; path = Utilities/PhraseEditor/OSX/PEController.h; sourceTree = "<group>"; };
 		D42B09EB0EBDD36900AB5B7A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Utilities/PhraseEditor/OSX/main.m; sourceTree = "<group>"; };
 		D42B09EC0EBDD36900AB5B7A /* PESettingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PESettingTableView.m; path = Utilities/PhraseEditor/OSX/PESettingTableView.m; sourceTree = "<group>"; };
-		D42B09F80EBDD37B00AB5B7A /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = Utilities/PhraseEditor/OSX/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D42B09FA0EBDD37B00AB5B7A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Utilities/PhraseEditor/OSX/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D42B0A080EBDD3BA00AB5B7A /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = Utilities/PhraseEditor/OSX/zh_TW.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D42B0A090EBDD3BE00AB5B7A /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = Utilities/PhraseEditor/OSX/zh_CN.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D42C002D0E1912CD002CD18F /* NSStringExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringExtension.h; path = "Loaders/OSX-IMK/NSStringExtension.h"; sourceTree = "<group>"; };
 		D42C002E0E1912CD002CD18F /* NSStringExtension.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSStringExtension.mm; path = "Loaders/OSX-IMK/NSStringExtension.mm"; sourceTree = "<group>"; };
-		D42EEF9E0D924E9900C6053C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = PreferenceApplications/DownloadUpdateOSX/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D42EEFB00D9251CD00C6053C /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = PreferenceApplications/DownloadUpdateOSX/zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D42EEFB20D92522F00C6053C /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_CN; path = PreferenceApplications/DownloadUpdateOSX/zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D42EEFB80D92528E00C6053C /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = PreferenceApplications/DownloadUpdateOSX/zh_TW.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1230,8 +1244,6 @@
 		D4466C770D916D4500A530D4 /* DownloadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DownloadController.h; path = PreferenceApplications/DownloadUpdateOSX/DownloadController.h; sourceTree = "<group>"; wrapsLines = 1; };
 		D4466C780D916D4500A530D4 /* DownloadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownloadController.m; path = PreferenceApplications/DownloadUpdateOSX/DownloadController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		D4466C7A0D916D4500A530D4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PreferenceApplications/DownloadUpdateOSX/main.m; sourceTree = "<group>"; };
-		D4466C800D916D5800A530D4 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = PreferenceApplications/DownloadUpdateOSX/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D4466C820D916D5800A530D4 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = PreferenceApplications/DownloadUpdateOSX/English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		D44DB8D4106F0A3C001308F8 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload.png; path = Utilities/PhraseEditor/OSX/Images/reload.png; sourceTree = "<group>"; };
 		D450DE5A0D5F1117009A9C2A /* Yahoo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Yahoo.icns; path = "Loaders/OSX-IMK/Images/Yahoo.icns"; sourceTree = "<group>"; };
 		D450DE5B0D5F1117009A9C2A /* Yahoo16.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Yahoo16.icns; path = "Loaders/OSX-IMK/Images/Yahoo16.icns"; sourceTree = "<group>"; };
@@ -1244,7 +1256,6 @@
 		D462F3560EBEDBBC00958621 /* editPhrase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = editPhrase.png; path = Utilities/PhraseEditor/OSX/Images/editPhrase.png; sourceTree = "<group>"; };
 		D46B36460DA94EBC007A738E /* Installer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Installer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46B36530DA94EEE007A738E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Distributions/Takao/Installer-OSX-UI/main.m"; sourceTree = "<group>"; };
-		D46B36580DA94EFD007A738E /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = "Distributions/Takao/Installer-OSX-UI/English.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D46B365C0DA94F15007A738E /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_CN; path = "Distributions/Takao/Installer-OSX-UI/zh_CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D46B365F0DA94F31007A738E /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = "Distributions/Takao/Installer-OSX-UI/zh_TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D4788E890EBDD49000853873 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Utilities/PhraseEditor/OSX/Images/add.png; sourceTree = "<group>"; };
@@ -1280,8 +1291,6 @@
 		D47D5E6B0D5EDDDD0093524C /* TakaoUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakaoUpdate.m; path = PreferenceApplications/OSX/TakaoUpdate.m; sourceTree = "<group>"; };
 		D47D5E6C0D5EDDDD0093524C /* TakaoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakaoWindow.h; path = PreferenceApplications/OSX/TakaoWindow.h; sourceTree = "<group>"; };
 		D47D5E6D0D5EDDDD0093524C /* TakaoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakaoWindow.m; path = PreferenceApplications/OSX/TakaoWindow.m; sourceTree = "<group>"; };
-		D47D5E780D5EDE120093524C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = PreferenceApplications/OSX/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D47D5E7A0D5EDE120093524C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = PreferenceApplications/OSX/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D47D5E870D5EDE440093524C /* generic.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = generic.tiff; path = PreferenceApplications/OSX/Images/generic.tiff; sourceTree = "<group>"; };
 		D47D5E890D5EDE440093524C /* phrase.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = phrase.tiff; path = PreferenceApplications/OSX/Images/phrase.tiff; sourceTree = "<group>"; };
 		D47D5E8B0D5EDE440093524C /* simplex.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = simplex.tiff; path = PreferenceApplications/OSX/Images/simplex.tiff; sourceTree = "<group>"; };
@@ -1290,14 +1299,11 @@
 		D47D5E9A0D5EDE590093524C /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_CN; path = PreferenceApplications/OSX/zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D47D5E9D0D5EDE840093524C /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = PreferenceApplications/OSX/zh_TW.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D47D5E9E0D5EDE840093524C /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = PreferenceApplications/OSX/zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D47D5F290D5EEB0A0093524C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = "Loaders/OSX-IMK/English.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D47D5F2B0D5EEB300093524C /* zh_TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = zh_TW; path = "Loaders/OSX-IMK/zh_TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D47D5F2C0D5EEB560093524C /* zh_TW */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; fileEncoding = 4; name = zh_TW; path = "Loaders/OSX-IMK/zh_TW.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D47D75FE0ED0409400386753 /* PEDialogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PEDialogWindow.h; path = Utilities/PhraseEditor/OSX/PEDialogWindow.h; sourceTree = "<group>"; };
 		D47D75FF0ED0409400386753 /* PEDialogWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PEDialogWindow.m; path = Utilities/PhraseEditor/OSX/PEDialogWindow.m; sourceTree = "<group>"; };
 		D47D761C0ED0474D00386753 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = Utilities/PhraseEditor/OSX/zh_TW.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D47F7D380EC9F98600D0762B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = PreferenceApplications/OSX/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D47F7D3A0EC9F98600D0762B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = PreferenceApplications/OSX/English.lproj/TakaoGenericSettings.xib; sourceTree = "<group>"; };
 		D47F7D590EC9FA5F00D0762B /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = PreferenceApplications/OSX/zh_TW.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D47F7D5A0EC9FA6400D0762B /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_CN; path = PreferenceApplications/OSX/zh_CN.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D47F7D5B0EC9FA6C00D0762B /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = PreferenceApplications/OSX/zh_TW.lproj/TakaoGenericSettings.xib; sourceTree = "<group>"; };
@@ -1313,7 +1319,6 @@
 		D482C39F0ECB41D8005E8D68 /* DictionaryWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DictionaryWindow.xib; path = "Loaders/OSX-IMK/Interface/DictionaryWindow.xib"; sourceTree = "<group>"; };
 		D484CF590EC226850051B6CA /* CVAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVAboutController.h; path = "Loaders/OSX-IMK/CVAboutController.h"; sourceTree = "<group>"; };
 		D484CF5A0EC226850051B6CA /* CVAboutController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CVAboutController.mm; path = "Loaders/OSX-IMK/CVAboutController.mm"; sourceTree = "<group>"; };
-		D484CF650EC2277E0051B6CA /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = "Loaders/OSX-IMK/English.lproj/AboutWindow.xib"; sourceTree = "<group>"; };
 		D484CFA80EC22C1C0051B6CA /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = "Loaders/OSX-IMK/zh_TW.lproj/AboutWindow.xib"; sourceTree = "<group>"; };
 		D484CFA90EC22C210051B6CA /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_CN; path = "Loaders/OSX-IMK/zh_CN.lproj/AboutWindow.xib"; sourceTree = "<group>"; };
 		D493E9D6167775BE00BA9368 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libsqlite3.tbd; sourceTree = "<absolute>"; };
@@ -1328,10 +1333,6 @@
 		D4B3E7290DC7A68E000980D8 /* HelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpController.h; path = "Distributions/Takao/Installer-OSX-Help/HelpController.h"; sourceTree = "<group>"; };
 		D4B3E72A0DC7A68E000980D8 /* HelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpController.m; path = "Distributions/Takao/Installer-OSX-Help/HelpController.m"; sourceTree = "<group>"; };
 		D4B3E72C0DC7A68E000980D8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Distributions/Takao/Installer-OSX-Help/main.m"; sourceTree = "<group>"; };
-		D4B3E7340DC7A6C4000980D8 /* English */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = English; path = "Distributions/Takao/Installer-OSX-Help/English.lproj/preference.png"; sourceTree = "<group>"; };
-		D4B3E7360DC7A6C4000980D8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = "Distributions/Takao/Installer-OSX-Help/English.lproj/MainMenu.xib"; sourceTree = "<group>"; };
-		D4B3E7380DC7A6C4000980D8 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = "Distributions/Takao/Installer-OSX-Help/English.lproj/install.html"; sourceTree = "<group>"; wrapsLines = 1; };
-		D4B3E73A0DC7A6C4000980D8 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = "Distributions/Takao/Installer-OSX-Help/English.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D4B3E7FA0DC7A796000980D8 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zh_TW; path = "Distributions/Takao/Installer-OSX-Help/zh_TW.lproj/preference.png"; sourceTree = "<group>"; };
 		D4B3E7FB0DC7A796000980D8 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = "Distributions/Takao/Installer-OSX-Help/zh_TW.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		D4B3E7FC0DC7A796000980D8 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = zh_TW; path = "Distributions/Takao/Installer-OSX-Help/zh_TW.lproj/install.html"; sourceTree = "<group>"; };
@@ -1350,7 +1351,6 @@
 		D4D0BC700EEDAB06007CACEA /* PEMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PEMainWindow.m; path = Utilities/PhraseEditor/OSX/PEMainWindow.m; sourceTree = "<group>"; };
 		D4DCDB7E10665240003FAFB5 /* TakaoReverseLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakaoReverseLookup.h; path = PreferenceApplications/OSX/TakaoReverseLookup.h; sourceTree = "<group>"; };
 		D4DCDB7F10665240003FAFB5 /* TakaoReverseLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakaoReverseLookup.m; path = PreferenceApplications/OSX/TakaoReverseLookup.m; sourceTree = "<group>"; };
-		D4DCDB8C106652BC003FAFB5 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = PreferenceApplications/OSX/English.lproj/TakaoReverseLookup.xib; sourceTree = "<group>"; };
 		D4DCDC6B10665D1F003FAFB5 /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = PreferenceApplications/OSX/zh_TW.lproj/TakaoReverseLookup.xib; sourceTree = "<group>"; };
 		D4DCDC6D10665D70003FAFB5 /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_CN; path = PreferenceApplications/OSX/zh_CN.lproj/TakaoReverseLookup.xib; sourceTree = "<group>"; };
 		D4F40AD60D95372100287921 /* general.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = general.tiff; path = PreferenceApplications/OSX/Images/general.tiff; sourceTree = "<group>"; };
@@ -3716,15 +3716,15 @@
 			};
 			buildConfigurationList = 6A476EDC0D5C48AB00C6C744 /* Build configuration list for PBXProject "Takao" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				zh_CN,
 				zh_TW,
+				de,
+				ja,
+				en,
+				fr,
 			);
 			mainGroup = 6A476ED70D5C48AB00C6C744;
 			productRefGroup = 6A476EE80D5C48CE00C6C744 /* Products */;
@@ -4477,9 +4477,9 @@
 		6A52DB771095CB9000788A09 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6A52DB781095CB9000788A09 /* English */,
 				6A52DB7A1095CB9700788A09 /* zh_TW */,
 				6A52DB7B1095CB9900788A09 /* zh_CN */,
+				5B3CE6D52991588200641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4487,9 +4487,9 @@
 		6AB5B3020D5C8D350040CD26 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6AB5B3030D5C8D350040CD26 /* English */,
 				D47D5F2B0D5EEB300093524C /* zh_TW */,
 				D40E12E50D970A33008A60A9 /* zh_CN */,
+				5B3CE6DC2991588300641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4497,9 +4497,9 @@
 		6AC80D901095CFAC00F0B8F0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6AC80D911095CFAC00F0B8F0 /* English */,
 				6AC80DCE1095CFB100F0B8F0 /* zh_TW */,
 				6AC80DCF1095CFB400F0B8F0 /* zh_CN */,
+				5B3CE6D32991588100641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4507,9 +4507,9 @@
 		6AC80DD01095CFC600F0B8F0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6AC80DD11095CFC600F0B8F0 /* English */,
 				6AC80DD31095CFCA00F0B8F0 /* zh_TW */,
 				6AC80DD41095CFCE00F0B8F0 /* zh_CN */,
+				5B3CE6D42991588200641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4517,9 +4517,9 @@
 		D41DFA321062A7B400B73EFA /* TakaoWordCount.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D41DFA2F1062A7B100B73EFA /* English */,
 				D41DFA941062B01500B73EFA /* zh_CN */,
 				D41DFA951062B01A00B73EFA /* zh_TW */,
+				5B3CE6E32991588400641F53 /* en */,
 			);
 			name = TakaoWordCount.xib;
 			sourceTree = "<group>";
@@ -4527,9 +4527,9 @@
 		D42064250ECC51C600538EFC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D42064260ECC51C600538EFC /* English */,
 				D420642E0ECC56E200538EFC /* zh_TW */,
 				D4A1F1B00EE30DB60064FF77 /* zh_CN */,
+				5B3CE6E52991588500641F53 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4537,9 +4537,9 @@
 		D42B09F70EBDD37B00AB5B7A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D42B09F80EBDD37B00AB5B7A /* English */,
 				D42B0A080EBDD3BA00AB5B7A /* zh_TW */,
 				D42B0A090EBDD3BE00AB5B7A /* zh_CN */,
+				5B3CE6E42991588400641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4547,9 +4547,9 @@
 		D42B09F90EBDD37B00AB5B7A /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D42B09FA0EBDD37B00AB5B7A /* English */,
 				D47D761C0ED0474D00386753 /* zh_TW */,
 				D4A1F1A90EE30AF20064FF77 /* zh_CN */,
+				5B3CE6E62991588500641F53 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -4557,9 +4557,9 @@
 		D42EEFA80D924F2200C6053C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D42EEF9E0D924E9900C6053C /* English */,
 				D42EEFB00D9251CD00C6053C /* zh_TW */,
 				D42EEFB20D92522F00C6053C /* zh_CN */,
+				5B3CE6D12991588100641F53 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4567,9 +4567,9 @@
 		D4466C7F0D916D5800A530D4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4466C800D916D5800A530D4 /* English */,
 				D42EEFB80D92528E00C6053C /* zh_TW */,
 				D42EEFBA0D9252B300C6053C /* zh_CN */,
+				5B3CE6D02991588100641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4577,9 +4577,9 @@
 		D4466C810D916D5800A530D4 /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4466C820D916D5800A530D4 /* English */,
 				D42EEFBF0D9252E800C6053C /* zh_TW */,
 				D42EEFC20D9253A400C6053C /* zh_CN */,
+				5B3CE6D22991588100641F53 /* en */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -4587,9 +4587,9 @@
 		D46B36570DA94EFD007A738E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D46B36580DA94EFD007A738E /* English */,
 				D46B365C0DA94F15007A738E /* zh_CN */,
 				D46B365F0DA94F31007A738E /* zh_TW */,
+				5B3CE6DA2991588300641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4597,9 +4597,9 @@
 		D47D5E770D5EDE120093524C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D47D5E780D5EDE120093524C /* English */,
 				D47D5E990D5EDE590093524C /* zh_CN */,
 				D47D5E9D0D5EDE840093524C /* zh_TW */,
+				5B3CE6DE2991588400641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4607,9 +4607,9 @@
 		D47D5E790D5EDE120093524C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D47D5E7A0D5EDE120093524C /* English */,
 				D47D5E9A0D5EDE590093524C /* zh_CN */,
 				D47D5E9E0D5EDE840093524C /* zh_TW */,
+				5B3CE6DF2991588400641F53 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4617,9 +4617,9 @@
 		D47D5F280D5EEB0A0093524C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D47D5F290D5EEB0A0093524C /* English */,
 				D47D5F2C0D5EEB560093524C /* zh_TW */,
 				D40E12E30D9708F7008A60A9 /* zh_CN */,
+				5B3CE6DD2991588300641F53 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -4627,9 +4627,9 @@
 		D47F7D370EC9F98600D0762B /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D47F7D380EC9F98600D0762B /* English */,
 				D47F7D590EC9FA5F00D0762B /* zh_TW */,
 				D47F7D5A0EC9FA6400D0762B /* zh_CN */,
+				5B3CE6E02991588400641F53 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -4637,9 +4637,9 @@
 		D47F7D390EC9F98600D0762B /* TakaoGenericSettings.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D47F7D3A0EC9F98600D0762B /* English */,
 				D47F7D5B0EC9FA6C00D0762B /* zh_TW */,
 				D47F7D5C0EC9FA7100D0762B /* zh_CN */,
+				5B3CE6E12991588400641F53 /* en */,
 			);
 			name = TakaoGenericSettings.xib;
 			sourceTree = "<group>";
@@ -4647,9 +4647,9 @@
 		D484CF640EC2277E0051B6CA /* AboutWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D484CF650EC2277E0051B6CA /* English */,
 				D484CFA80EC22C1C0051B6CA /* zh_TW */,
 				D484CFA90EC22C210051B6CA /* zh_CN */,
+				5B3CE6DB2991588300641F53 /* en */,
 			);
 			name = AboutWindow.xib;
 			sourceTree = "<group>";
@@ -4657,9 +4657,9 @@
 		D4B3E7330DC7A6C4000980D8 /* preference.png */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4B3E7340DC7A6C4000980D8 /* English */,
 				D4B3E7FA0DC7A796000980D8 /* zh_TW */,
 				D4B3E8000DC7A7B0000980D8 /* zh_CN */,
+				5B3CE6D92991588300641F53 /* en */,
 			);
 			name = preference.png;
 			sourceTree = "<group>";
@@ -4667,9 +4667,9 @@
 		D4B3E7350DC7A6C4000980D8 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4B3E7360DC7A6C4000980D8 /* English */,
 				D4B3E7FB0DC7A796000980D8 /* zh_TW */,
 				D4B3E8010DC7A7B0000980D8 /* zh_CN */,
+				5B3CE6D72991588200641F53 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -4677,9 +4677,9 @@
 		D4B3E7370DC7A6C4000980D8 /* install.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4B3E7380DC7A6C4000980D8 /* English */,
 				D4B3E7FC0DC7A796000980D8 /* zh_TW */,
 				D4B3E8020DC7A7B0000980D8 /* zh_CN */,
+				5B3CE6D82991588200641F53 /* en */,
 			);
 			name = install.html;
 			sourceTree = "<group>";
@@ -4687,9 +4687,9 @@
 		D4B3E7390DC7A6C4000980D8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4B3E73A0DC7A6C4000980D8 /* English */,
 				D4B3E7FD0DC7A796000980D8 /* zh_TW */,
 				D4B3E8030DC7A7B0000980D8 /* zh_CN */,
+				5B3CE6D62991588200641F53 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4697,9 +4697,9 @@
 		D4DCDB8B106652BC003FAFB5 /* TakaoReverseLookup.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4DCDB8C106652BC003FAFB5 /* English */,
 				D4DCDC6B10665D1F003FAFB5 /* zh_TW */,
 				D4DCDC6D10665D70003FAFB5 /* zh_CN */,
+				5B3CE6E22991588400641F53 /* en */,
 			);
 			name = TakaoReverseLookup.xib;
 			sourceTree = "<group>";
@@ -4876,6 +4876,7 @@
 		6A476EDA0D5C48AB00C6C744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
@@ -4889,6 +4890,7 @@
 		6A476EDB0D5C48AB00C6C744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;

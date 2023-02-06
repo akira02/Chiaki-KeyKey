@@ -8,12 +8,10 @@ file for terms.
 
 using namespace OpenVanilla;
 
-extern "C" OVEXPORT OVModulePackage* OVModulePackageMain()
-{
-    return new YKAFWordCountPackage;
+extern "C" OVEXPORT OVModulePackage* OVModulePackageMain() {
+  return new YKAFWordCountPackage;
 }
 
-extern "C" OVEXPORT unsigned int OVModulePackageFrameworkVersion()
-{
-    return OVFrameworkInfo::Version();
+extern "C" OVEXPORT unsigned int OVModulePackageFrameworkVersion() {
+  return OVFrameworkInfo::Version();
 }

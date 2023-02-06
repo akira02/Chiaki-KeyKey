@@ -8,10 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface PEDialogWindow : NSWindow {
-	IBOutlet NSButton *_cancelButton;
-
+  IBOutlet NSButton *_cancelButton;
 }
 
 @end

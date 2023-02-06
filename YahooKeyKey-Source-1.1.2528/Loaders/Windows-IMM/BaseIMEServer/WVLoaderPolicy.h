@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -32,42 +32,39 @@
 #include <PlainVanilla.h>
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class WVLoaderPolicy : public PVLoaderPolicy {
-    public:
-        WVLoaderPolicy(const vector<string> loadPaths)
-            : PVLoaderPolicy(loadPaths)
-        {
-        }
+class WVLoaderPolicy : public PVLoaderPolicy {
+ public:
+  WVLoaderPolicy(const vector<string> loadPaths) : PVLoaderPolicy(loadPaths) {}
 
-        virtual const vector<string> modulePackageFilePatterns()
-        {
-            vector<string> result;            
-            // result.push_back("OV*.dll");
-            // result.push_back("YK*.dll");
-            
-            // Takao-only
-            result.push_back("*.ykmodule");
+  virtual const vector<string> modulePackageFilePatterns() {
+    vector<string> result;
+    // result.push_back("OV*.dll");
+    // result.push_back("YK*.dll");
 
-            return result;
-        }    
-        
-        virtual const OVPathInfo modulePackagePathInfoFromPath(const string& path)
-        {
-            OVPathInfo info;
-            string identifier = modulePackageIdentifierFromPath(path);            
-            info.loadedPath = OVPathHelper::DirectoryFromPath(path);
+    // Takao-only
+    result.push_back("*.ykmodule");
 
-            if (OVWildcard::Match(path, "*.ykmodule"))
-                info.resourcePath = path;
-            else
-                info.resourcePath = info.loadedPath;
+    return result;
+  }
 
-            info.writablePath = OVPathHelper::PathCat(OVDirectoryHelper::UserApplicationSupportDataDirectory(loaderName()), identifier);
-            return info;
-        }        
-    };    
+  virtual const OVPathInfo modulePackagePathInfoFromPath(const string& path) {
+    OVPathInfo info;
+    string identifier = modulePackageIdentifierFromPath(path);
+    info.loadedPath = OVPathHelper::DirectoryFromPath(path);
+
+    if (OVWildcard::Match(path, "*.ykmodule"))
+      info.resourcePath = path;
+    else
+      info.resourcePath = info.loadedPath;
+
+    info.writablePath = OVPathHelper::PathCat(
+        OVDirectoryHelper::UserApplicationSupportDataDirectory(loaderName()),
+        identifier);
+    return info;
+  }
 };
+};  // namespace OpenVanilla
 
 #endif

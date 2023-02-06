@@ -2,10 +2,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface CVFloatingWindow : NSWindow
-{
-	NSPoint _initialLocation;
+@interface CVFloatingWindow : NSWindow {
+  NSPoint _initialLocation;
 }
 
 @end

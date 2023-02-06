@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,43 +30,55 @@
 
 namespace OpenVanilla {
 
-bool OVAFReverseLookupPackage::initialize(OVPathInfo* , OVLoaderService* loaderService)
-{    
-    vector<string> matchPatterns = OVStringHelper::Split(OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED, ';');
- 
-//    loaderService->logger(OVAFREVERSELOOKUP_IDENTIFIER_PREFIX) << "Reverse table source patterns: " << OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED << " (" << matchPatterns.size() << " patterns)" << endl;
-    
-    vector<OVDatabaseService*> services;
-    
-    if (loaderService->SQLiteDatabaseService())
-        services.push_back(loaderService->SQLiteDatabaseService());
-        
-    if (loaderService->CINDatabaseService())
-        services.push_back(loaderService->CINDatabaseService());
-        
-    for (vector<OVDatabaseService*>::iterator iter = services.begin() ; iter != services.end() ; ++iter)
-    {
-		OVDatabaseService *service = *iter;
-        vector<string> tables = service->tables();
-        
-        for (vector<string>::iterator siter = tables.begin() ; siter != tables.end() ; ++siter) {
-            
-            if (OVWildcard::MultiWildcardMatchAny(*siter, matchPatterns) && service->tableSupportsValueToKeyLookup(*siter)) {
-//    			loaderService->logger(OVAFREVERSELOOKUP_IDENTIFIER_PREFIX) << "Found table: " << *siter << endl;
-                m_tableMap[*siter] = *iter;
-                
-                if (OVWildcard::Match(*siter, OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_IF_ENCOUNTERED_TABLE_NAME)) {
-                    m_tableMap[*siter + OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_TABLE_NAME_SUFFIX] = *iter;
-                }
-            }
-        }
-    }
-    
-    for (map<string, OVDatabaseService*>::iterator miter = m_tableMap.begin() ; miter != m_tableMap.end() ; ++miter) {
-        m_tableNames.push_back((*miter).first);
-    }
+bool OVAFReverseLookupPackage::initialize(OVPathInfo*,
+                                          OVLoaderService* loaderService) {
+  vector<string> matchPatterns = OVStringHelper::Split(
+      OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED, ';');
 
-    return true;
-}        
-	
-};
+  //    loaderService->logger(OVAFREVERSELOOKUP_IDENTIFIER_PREFIX) << "Reverse
+  //    table source patterns: " <<
+  //    OVAFREVERSELOOKUP_SOURCE_TABLE_PATTERNS_SEMICOLON_SEPARATED << " (" <<
+  //    matchPatterns.size() << " patterns)" << endl;
+
+  vector<OVDatabaseService*> services;
+
+  if (loaderService->SQLiteDatabaseService())
+    services.push_back(loaderService->SQLiteDatabaseService());
+
+  if (loaderService->CINDatabaseService())
+    services.push_back(loaderService->CINDatabaseService());
+
+  for (vector<OVDatabaseService*>::iterator iter = services.begin();
+       iter != services.end(); ++iter) {
+    OVDatabaseService* service = *iter;
+    vector<string> tables = service->tables();
+
+    for (vector<string>::iterator siter = tables.begin(); siter != tables.end();
+         ++siter) {
+      if (OVWildcard::MultiWildcardMatchAny(*siter, matchPatterns) &&
+          service->tableSupportsValueToKeyLookup(*siter)) {
+        //    			loaderService->logger(OVAFREVERSELOOKUP_IDENTIFIER_PREFIX)
+        //    << "Found table: " << *siter << endl;
+        m_tableMap[*siter] = *iter;
+
+        if (OVWildcard::Match(
+                *siter,
+                OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_IF_ENCOUNTERED_TABLE_NAME)) {
+          m_tableMap
+              [*siter +
+               OVAFREVERSELOOKUP_GENERATE_PINYIN_LOOKUP_TABLE_NAME_SUFFIX] =
+                  *iter;
+        }
+      }
+    }
+  }
+
+  for (map<string, OVDatabaseService*>::iterator miter = m_tableMap.begin();
+       miter != m_tableMap.end(); ++miter) {
+    m_tableNames.push_back((*miter).first);
+  }
+
+  return true;
+}
+
+};  // namespace OpenVanilla

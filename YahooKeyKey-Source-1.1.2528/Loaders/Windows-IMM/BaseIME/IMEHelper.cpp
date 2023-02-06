@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -26,47 +26,47 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#include <LFPlatform.h>
 #include "IMEHelper.h"
+
+#include <LFPlatform.h>
 
 namespace BaseIME {
 
 using namespace LFPlatform;
 
-DWORD IMEHelper::PostMessageToClient(HIMC hIMC, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-    Logger logger("IMEHelper");
-    logger.debug("PostIMEMessageToClient, imc = %08x, msg = %08x, wP = %08x, lP = %08x; IMMLock count = %d", hIMC, msg, wParam, lParam, ImmGetIMCLockCount(hIMC));
-    DWORD dwNumMsgBuf = 0;
-    
-	if (!hIMC)
-        return dwNumMsgBuf;
+DWORD IMEHelper::PostMessageToClient(HIMC hIMC, UINT msg, WPARAM wParam,
+                                     LPARAM lParam) {
+  Logger logger("IMEHelper");
+  logger.debug(
+      "PostIMEMessageToClient, imc = %08x, msg = %08x, wP = %08x, lP = %08x; "
+      "IMMLock count = %d",
+      hIMC, msg, wParam, lParam, ImmGetIMCLockCount(hIMC));
+  DWORD dwNumMsgBuf = 0;
 
-	INPUTCONTEXT *lpIMC = ImmLockIMC(hIMC);
-	if (!lpIMC)
-        return dwNumMsgBuf;
+  if (!hIMC) return dwNumMsgBuf;
 
-	HIMCC hBuf = ImmReSizeIMCC(lpIMC->hMsgBuf, (lpIMC->dwNumMsgBuf + 1) * sizeof(TRANSMSG));
-	if (hBuf)
-	{
-		lpIMC->hMsgBuf = hBuf;
-		TRANSMSG *pBuf = (TRANSMSG*)ImmLockIMCC(hBuf);
-		if(pBuf)
-		{
-			pBuf[lpIMC->dwNumMsgBuf].message = msg;
-            pBuf[lpIMC->dwNumMsgBuf].wParam = wParam;
-            pBuf[lpIMC->dwNumMsgBuf].lParam = lParam;
-			lpIMC->dwNumMsgBuf++;
-            dwNumMsgBuf = lpIMC->dwNumMsgBuf;
-			ImmUnlockIMCC(hBuf);
-		}
-	}
-	ImmUnlockIMC(hIMC);
+  INPUTCONTEXT *lpIMC = ImmLockIMC(hIMC);
+  if (!lpIMC) return dwNumMsgBuf;
 
-	if(dwNumMsgBuf != 0)
-        ImmGenerateMessage(hIMC);
+  HIMCC hBuf = ImmReSizeIMCC(lpIMC->hMsgBuf,
+                             (lpIMC->dwNumMsgBuf + 1) * sizeof(TRANSMSG));
+  if (hBuf) {
+    lpIMC->hMsgBuf = hBuf;
+    TRANSMSG *pBuf = (TRANSMSG *)ImmLockIMCC(hBuf);
+    if (pBuf) {
+      pBuf[lpIMC->dwNumMsgBuf].message = msg;
+      pBuf[lpIMC->dwNumMsgBuf].wParam = wParam;
+      pBuf[lpIMC->dwNumMsgBuf].lParam = lParam;
+      lpIMC->dwNumMsgBuf++;
+      dwNumMsgBuf = lpIMC->dwNumMsgBuf;
+      ImmUnlockIMCC(hBuf);
+    }
+  }
+  ImmUnlockIMC(hIMC);
 
-    return dwNumMsgBuf;
+  if (dwNumMsgBuf != 0) ImmGenerateMessage(hIMC);
+
+  return dwNumMsgBuf;
 }
 
-};
+};  // namespace BaseIME

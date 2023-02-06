@@ -2,16 +2,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@interface CVHorizontalCandidateControl : NSControl {
+  NSMutableArray *_candidateCellArray;
+  NSSize _autotSize;
 
-@interface CVHorizontalCandidateControl : NSControl
-{
-	NSMutableArray *_candidateCellArray;
-	NSSize _autotSize;
-	
-	BOOL _clickable;
-	int _clickedIndex;
-	
-	float _candidateTextHeight;	
+  BOOL _clickable;
+  int _clickedIndex;
+
+  float _candidateTextHeight;
 }
 - (NSSize)autoSize;
 - (void)setArray:(NSArray *)candidateArray;

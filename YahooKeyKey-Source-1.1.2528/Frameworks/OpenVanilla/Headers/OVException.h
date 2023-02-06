@@ -29,18 +29,18 @@
 #define OVException_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OVBase.h>
+#include <OpenVanilla/OVBase.h>
 #else
-    #include "OVBase.h"
+#include "OVBase.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVException {
-    public:
-        class OverflowException {};
-    };
+class OVException {
+ public:
+  class OverflowException {};
 };
+};  // namespace OpenVanilla
 
 #endif

@@ -29,27 +29,26 @@
 #define PVDLLLoadingSystem_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
-    #include <PlainVanilla/PVModuleSystem.h>
+#include <OpenVanilla/OpenVanilla.h>
+#include <PlainVanilla/PVModuleSystem.h>
 #else
-    #include "OpenVanilla.h"
-    #include "PVModuleSystem.h"
+#include "OpenVanilla.h"
+#include "PVModuleSystem.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class PVDLLLoadingSystem : public PVCommonPackageLoadingSystem
-    {
-    public:
-        PVDLLLoadingSystem(PVLoaderPolicy* policy);
-        virtual ~PVDLLLoadingSystem();
-        
-    protected:
-        virtual void* loadLibrary(const string& path);
-        virtual bool unloadLibrary(void* library);
-        virtual void* getFunctionNamed(void* library, const string& name);
-    };
+class PVDLLLoadingSystem : public PVCommonPackageLoadingSystem {
+ public:
+  PVDLLLoadingSystem(PVLoaderPolicy* policy);
+  virtual ~PVDLLLoadingSystem();
+
+ protected:
+  virtual void* loadLibrary(const string& path);
+  virtual bool unloadLibrary(void* library);
+  virtual void* getFunctionNamed(void* library, const string& name);
 };
+};  // namespace OpenVanilla
 
 #endif

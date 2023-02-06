@@ -26,42 +26,40 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #include "TestPlainVanillaLoader.h"
 
-int main(int argc, char* argv[])
-{
-    id pool = [NSAutoreleasePool new];
-    NSApplicationLoad();
+int main(int argc, char* argv[]) {
+  id pool = [NSAutoreleasePool new];
+  NSApplicationLoad();
 
-    int ret = 1;
-    
-    if (argc > 2) {
-        fprintf(stderr, "using analysis mode\n");
+  int ret = 1;
+
+  if (argc > 2) {
+    fprintf(stderr, "using analysis mode\n");
+  }
+
+  id pool2 = [NSAutoreleasePool new];
+
+  fprintf(stderr, "press any key to start\n");
+  fgetc(stdin);
+
+  if (argc > 1)
+    ret = TestPlainVanillaLoader(argv[1]);
+  else
+    fprintf(stderr, "usage: TestPlainVanillaLoader path\n");
+
+  [pool2 drain];
+  [pool2 release];
+
+  if (argc > 2) {
+    fprintf(stderr, "waiting for analysis mode to end\n");
+    while (1) {
     }
+  }
 
-    id pool2 = [NSAutoreleasePool new];
-    
-    fprintf(stderr, "press any key to start\n");
-    fgetc(stdin);
-    
-    
-    if (argc > 1)
-        ret = TestPlainVanillaLoader(argv[1]);
-    else
-        fprintf(stderr, "usage: TestPlainVanillaLoader path\n");
+  [pool drain];
+  [pool release];
 
-    [pool2 drain];
-    [pool2 release];
-
-    if (argc > 2) {
-        fprintf(stderr, "waiting for analysis mode to end\n");
-        while(1) {
-        }        
-    }
-
-    [pool drain];
-    [pool release];
-        
-    return ret;    
-    
+  return ret;
 }

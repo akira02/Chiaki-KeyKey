@@ -10,10 +10,8 @@ file for terms.
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface ZBMakerController : NSWindowController {
-	IBOutlet id u_dropTarget;
-
+  IBOutlet id u_dropTarget;
 }
 
 @end

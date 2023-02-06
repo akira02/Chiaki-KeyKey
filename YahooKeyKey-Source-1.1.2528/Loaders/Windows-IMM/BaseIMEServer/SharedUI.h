@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -33,17 +33,17 @@
 
 namespace BaseIMEServer {
 
-    using namespace BaseIMEUI;
+using namespace BaseIMEUI;
 
-    ref class SharedUI {
-    public:
-    	static BICandidateForm^ CandidatePanel = nullptr;
-    	static BIInputBufferForm^ InputBuffer = nullptr;
-    	static BIStatusBarForm^ StatusBar = nullptr;
-		static BIToolTipForm^ ToolTip = nullptr;
-    };
-
+ref class SharedUI {
+ public:
+  static BICandidateForm ^ CandidatePanel = nullptr;
+  static BIInputBufferForm ^ InputBuffer = nullptr;
+  static BIStatusBarForm ^ StatusBar = nullptr;
+  static BIToolTipForm ^ ToolTip = nullptr;
 };
+
+};  // namespace BaseIMEServer
 
 #pragma managed(pop)
 

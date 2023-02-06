@@ -2,13 +2,13 @@
    See the file COPYING for copying permission.
 */
 
-#include <sys/types.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <string.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <string.h>
-#include <stdio.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #ifndef MAP_FILE
@@ -17,11 +17,9 @@
 
 #include "filemap.h"
 
-int
-filemap(const char *name,
-        void (*processor)(const void *, size_t, const char *, void *arg),
-        void *arg)
-{
+int filemap(const char *name,
+            void (*processor)(const void *, size_t, const char *, void *arg),
+            void *arg) {
   int fd;
   size_t nbytes;
   struct stat sb;
@@ -52,7 +50,7 @@ filemap(const char *name,
     return 1;
   }
   p = (void *)mmap((caddr_t)0, (size_t)nbytes, PROT_READ,
-                   MAP_FILE|MAP_PRIVATE, fd, (off_t)0);
+                   MAP_FILE | MAP_PRIVATE, fd, (off_t)0);
   if (p == (void *)-1) {
     perror(name);
     close(fd);

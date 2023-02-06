@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,60 +30,61 @@
 #define IMEStatusBar_h
 
 #ifndef WINVER
-    #define WINVER 0x0501
+#define WINVER 0x0501
 #endif
 
 #ifndef _WIN32_WINNT
-    #define _WIN32_WINNT 0x0501
+#define _WIN32_WINNT 0x0501
 #endif
 
 #ifndef WIN32_LEAN_AND_MEAN
-    #define WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
 #endif
 
-#include <windows.h>
 #include <immdev.h>
 #include <tchar.h>
+#include <windows.h>
+
 #include <string>
 #include <vector>
 
 #include "IMEHelper.h"
 
 namespace BaseIME {
-	using namespace std;
+using namespace std;
 
-    class IMEStatusBar {
-    public:
-        static bool RegisterClass(HINSTANCE hInstance);
-        static bool Create(HWND parent);
-        static void Destroy();
-        static IMEStatusBar* SharedStatusBar();
-        static bool lastPosSet;
-        static int lastPosX, lastPosY;
-        static void SetServerLocale(const wchar_t * locale);
-        static wstring ServerLocale();
-        
-        void show();
-        void hide();
-        void moveTo(int x, int y);
-        void moveToRememberdLocation();
-        void updateContent(wchar_t* currentInputMethodName);
-        
-    protected:
-        IMEStatusBar();
-        
-        static HINSTANCE c_sharedHInstance;
-        static bool c_classRegistered;
-        static IMEStatusBar* c_sharedStatusBar;
-        static wstring* c_serverLocale;
-        static LRESULT WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-        
-    protected:
-        HWND m_window;
-		RECT m_buttonRect;
-        wstring m_currentInputMethodName;
-		wstring m_infoString;
-	};
+class IMEStatusBar {
+ public:
+  static bool RegisterClass(HINSTANCE hInstance);
+  static bool Create(HWND parent);
+  static void Destroy();
+  static IMEStatusBar* SharedStatusBar();
+  static bool lastPosSet;
+  static int lastPosX, lastPosY;
+  static void SetServerLocale(const wchar_t* locale);
+  static wstring ServerLocale();
+
+  void show();
+  void hide();
+  void moveTo(int x, int y);
+  void moveToRememberdLocation();
+  void updateContent(wchar_t* currentInputMethodName);
+
+ protected:
+  IMEStatusBar();
+
+  static HINSTANCE c_sharedHInstance;
+  static bool c_classRegistered;
+  static IMEStatusBar* c_sharedStatusBar;
+  static wstring* c_serverLocale;
+  static LRESULT WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+ protected:
+  HWND m_window;
+  RECT m_buttonRect;
+  wstring m_currentInputMethodName;
+  wstring m_infoString;
 };
+};  // namespace BaseIME
 
 #endif

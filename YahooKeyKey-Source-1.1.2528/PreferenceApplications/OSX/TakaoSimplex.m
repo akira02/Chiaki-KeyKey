@@ -6,99 +6,111 @@ file for terms.
 // [AUTO_HEADER]
 
 #import "TakaoSimplex.h"
+
 #import "TakaoHelper.h"
 
 @implementation TakaoSimplex
 
-- (void)dealloc
-{
-	[_preferenceFilePath release];
-	[_simplexDictionary release];
-	[super dealloc];
+- (void)dealloc {
+  [_preferenceFilePath release];
+  [_simplexDictionary release];
+  [super dealloc];
 }
-- (void)setUI
-{
-	if ([[_simplexDictionary valueForKey:@"ClearReadingBufferAtCompositionError"] isEqualToString:@"true"])
-		[_clearReadingBufferAtCompositionErrorCheckBox setIntValue:1];
-	else
-		[_clearReadingBufferAtCompositionErrorCheckBox setIntValue:0];	
+- (void)setUI {
+  if ([[_simplexDictionary valueForKey:@"ClearReadingBufferAtCompositionError"]
+          isEqualToString:@"true"])
+    [_clearReadingBufferAtCompositionErrorCheckBox setIntValue:1];
+  else
+    [_clearReadingBufferAtCompositionErrorCheckBox setIntValue:0];
 
-	if ([[_simplexDictionary valueForKey:@"ComposeWhileTyping"] isEqualToString:@"true"])
-		[_composeWhenTypingCheckBox setIntValue:1];
-	else
-		[_composeWhenTypingCheckBox setIntValue:0];	
+  if ([[_simplexDictionary valueForKey:@"ComposeWhileTyping"]
+          isEqualToString:@"true"])
+    [_composeWhenTypingCheckBox setIntValue:1];
+  else
+    [_composeWhenTypingCheckBox setIntValue:0];
 
-	if ([[_simplexDictionary valueForKey:@"UseCharactersSupportedByEncoding"] isEqualToString:@""])
-		[_useCharactersSupportedByEncodingCheckBox setIntValue:1];
-	else
-		[_useCharactersSupportedByEncodingCheckBox setIntValue:0];	
+  if ([[_simplexDictionary valueForKey:@"UseCharactersSupportedByEncoding"]
+          isEqualToString:@""])
+    [_useCharactersSupportedByEncodingCheckBox setIntValue:1];
+  else
+    [_useCharactersSupportedByEncodingCheckBox setIntValue:0];
 }
-- (void)awakeFromNib
-{
-	_simplexDictionary = [NSMutableDictionary new];
-	[_simplexDictionary setValue:@"false" forKey:@"ClearReadingBufferAtCompositionError"];
-	[_simplexDictionary setValue:@"false" forKey:@"ComposeWhileTyping"];
-	[_simplexDictionary setValue:@"false" forKey:@"ShouldUseAllUnicodePlanes"];	
-	LFRetainAssign(_preferenceFilePath, [TakaoHelper plistFilePath:PLIST_SIMPLEX_FILENAME]);
-	
-	NSData *data = [NSData dataWithContentsOfFile:_preferenceFilePath options:0 error:nil];
-	if (data) {
-		NSPropertyListFormat format;	
-		NSString *errorString = nil;		
-		NSMutableDictionary *dictionary = [NSPropertyListSerialization propertyListFromData:data mutabilityOption:NSPropertyListImmutable format: &format errorDescription:&errorString];
-		if (dictionary) {
-			[_simplexDictionary addEntriesFromDictionary:dictionary];
-		}
-	}
-	[self setUI];
-	[self writePreference:self];	
-}
+- (void)awakeFromNib {
+  _simplexDictionary = [NSMutableDictionary new];
+  [_simplexDictionary setValue:@"false"
+                        forKey:@"ClearReadingBufferAtCompositionError"];
+  [_simplexDictionary setValue:@"false" forKey:@"ComposeWhileTyping"];
+  [_simplexDictionary setValue:@"false" forKey:@"ShouldUseAllUnicodePlanes"];
+  LFRetainAssign(_preferenceFilePath,
+                 [TakaoHelper plistFilePath:PLIST_SIMPLEX_FILENAME]);
 
-- (void)updateDictionary
-{
-	if ([_clearReadingBufferAtCompositionErrorCheckBox intValue])
-		[_simplexDictionary setValue:@"true" forKey:@"ClearReadingBufferAtCompositionError"];
-	else
-		[_simplexDictionary setValue:@"false" forKey:@"ClearReadingBufferAtCompositionError"];	
-	
-	if ([_composeWhenTypingCheckBox intValue])
-		[_simplexDictionary setValue:@"true" forKey:@"ComposeWhileTyping"];
-	else
-		[_simplexDictionary setValue:@"false" forKey:@"ComposeWhileTyping"];
-
-	if ([_useCharactersSupportedByEncodingCheckBox intValue])
-		[_simplexDictionary setValue:@"" forKey:@"UseCharactersSupportedByEncoding"];
-	else
-		[_simplexDictionary setValue:@"BIG-5" forKey:@"UseCharactersSupportedByEncoding"];	
-}
-
-- (IBAction)setClearOnError:(id)sender
-{
-	if ([_clearReadingBufferAtCompositionErrorCheckBox intValue]) {
-		[_composeWhenTypingCheckBox setIntValue:0];
-	}
-	[self writePreference:sender];
-}
-- (IBAction)setAutoCompose:(id)sender
-{
-	if ([_composeWhenTypingCheckBox intValue]) {
-		[_clearReadingBufferAtCompositionErrorCheckBox setIntValue:0];
-	}
-	[self writePreference:sender];	
-}
-- (IBAction)writePreference:(id)sender
-{
+  NSData *data = [NSData dataWithContentsOfFile:_preferenceFilePath
+                                        options:0
+                                          error:nil];
+  if (data) {
+    NSPropertyListFormat format;
     NSString *errorString = nil;
-	[self updateDictionary];
-    NSData *data = [NSPropertyListSerialization dataFromPropertyList:_simplexDictionary format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorString];
+    NSMutableDictionary *dictionary = [NSPropertyListSerialization
+        propertyListFromData:data
+            mutabilityOption:NSPropertyListImmutable
+                      format:&format
+            errorDescription:&errorString];
+    if (dictionary) {
+      [_simplexDictionary addEntriesFromDictionary:dictionary];
+    }
+  }
+  [self setUI];
+  [self writePreference:self];
+}
 
-    if (errorString) {
-        [errorString release];
-	}
+- (void)updateDictionary {
+  if ([_clearReadingBufferAtCompositionErrorCheckBox intValue])
+    [_simplexDictionary setValue:@"true"
+                          forKey:@"ClearReadingBufferAtCompositionError"];
+  else
+    [_simplexDictionary setValue:@"false"
+                          forKey:@"ClearReadingBufferAtCompositionError"];
 
-    if (data) {
-        [data writeToFile:_preferenceFilePath atomically:YES];
-	}
+  if ([_composeWhenTypingCheckBox intValue])
+    [_simplexDictionary setValue:@"true" forKey:@"ComposeWhileTyping"];
+  else
+    [_simplexDictionary setValue:@"false" forKey:@"ComposeWhileTyping"];
+
+  if ([_useCharactersSupportedByEncodingCheckBox intValue])
+    [_simplexDictionary setValue:@""
+                          forKey:@"UseCharactersSupportedByEncoding"];
+  else
+    [_simplexDictionary setValue:@"BIG-5"
+                          forKey:@"UseCharactersSupportedByEncoding"];
+}
+
+- (IBAction)setClearOnError:(id)sender {
+  if ([_clearReadingBufferAtCompositionErrorCheckBox intValue]) {
+    [_composeWhenTypingCheckBox setIntValue:0];
+  }
+  [self writePreference:sender];
+}
+- (IBAction)setAutoCompose:(id)sender {
+  if ([_composeWhenTypingCheckBox intValue]) {
+    [_clearReadingBufferAtCompositionErrorCheckBox setIntValue:0];
+  }
+  [self writePreference:sender];
+}
+- (IBAction)writePreference:(id)sender {
+  NSString *errorString = nil;
+  [self updateDictionary];
+  NSData *data = [NSPropertyListSerialization
+      dataFromPropertyList:_simplexDictionary
+                    format:NSPropertyListXMLFormat_v1_0
+          errorDescription:&errorString];
+
+  if (errorString) {
+    [errorString release];
+  }
+
+  if (data) {
+    [data writeToFile:_preferenceFilePath atomically:YES];
+  }
 }
 
 @end

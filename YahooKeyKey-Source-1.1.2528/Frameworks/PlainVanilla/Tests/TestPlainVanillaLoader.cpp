@@ -26,45 +26,45 @@
 //
 
 #include "TestPlainVanillaLoader.h"
+
 #include <iostream>
 
 using namespace OpenVanilla;
 
-int TestPlainVanillaLoader(const char* loadPath)
-{
-    cout << "using path: " << loadPath << endl;
+int TestPlainVanillaLoader(const char* loadPath) {
+  cout << "using path: " << loadPath << endl;
 
-    vector<string> modulePackageLoadPaths;
-    modulePackageLoadPaths.push_back(loadPath);
-    PVLoaderPolicy* loaderPolicy = new PVLoaderPolicy(modulePackageLoadPaths);
-    PVLoaderService* loaderService = new PVLoaderService;
-    
-    #if defined(__APPLE__)
-        PVBundleLoadingSystem* dynamicLoadingSystem = new PVBundleLoadingSystem(loaderPolicy);
-    #elif defined(WIN32)
-	PVDLLLoadingSystem* dynamicLoadingSystem = new PVDLLLoadingSystem(loaderPolicy);
-	#else
-		#error Sorry, nothing for Linux yet
-	#endif
-    
-    
-    vector<PVModulePackageLoadingSystem*> loadingSystems;
-    loadingSystems.push_back(dynamicLoadingSystem);
-    
-    PVLoader* loader = new PVLoader(loaderPolicy, loaderService, loadingSystems);
+  vector<string> modulePackageLoadPaths;
+  modulePackageLoadPaths.push_back(loadPath);
+  PVLoaderPolicy* loaderPolicy = new PVLoaderPolicy(modulePackageLoadPaths);
+  PVLoaderService* loaderService = new PVLoaderService;
 
+#if defined(__APPLE__)
+  PVBundleLoadingSystem* dynamicLoadingSystem =
+      new PVBundleLoadingSystem(loaderPolicy);
+#elif defined(WIN32)
+  PVDLLLoadingSystem* dynamicLoadingSystem =
+      new PVDLLLoadingSystem(loaderPolicy);
+#else
+#error Sorry, nothing for Linux yet
+#endif
 
-    PVLoaderContext* context = loader->createContext();
-    OVKey key = loaderService->makeOVKey('a');
-    bool handled = context->handleKeyEvent(&key);
-    loaderService->logger("loader test") << "context returns " << handled << endl;
-    loaderService->logger("loader test") << "Deleteing everything." << endl;
-    delete context;
-        
-    delete loader;
-    delete dynamicLoadingSystem;
-    delete loaderService;
-    delete loaderPolicy;    
+  vector<PVModulePackageLoadingSystem*> loadingSystems;
+  loadingSystems.push_back(dynamicLoadingSystem);
 
-    return 0;
+  PVLoader* loader = new PVLoader(loaderPolicy, loaderService, loadingSystems);
+
+  PVLoaderContext* context = loader->createContext();
+  OVKey key = loaderService->makeOVKey('a');
+  bool handled = context->handleKeyEvent(&key);
+  loaderService->logger("loader test") << "context returns " << handled << endl;
+  loaderService->logger("loader test") << "Deleteing everything." << endl;
+  delete context;
+
+  delete loader;
+  delete dynamicLoadingSystem;
+  delete loaderService;
+  delete loaderPolicy;
+
+  return 0;
 }

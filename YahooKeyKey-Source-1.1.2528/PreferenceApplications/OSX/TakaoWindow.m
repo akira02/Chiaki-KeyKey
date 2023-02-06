@@ -7,25 +7,21 @@ file for terms.
 
 #import "TakaoWindow.h"
 
-
 @implementation TakaoWindow
 
-- (void)useSlowMotion
-{
-	_useSlowMotion = YES;
+- (void)useSlowMotion {
+  _useSlowMotion = YES;
 }
 
-- (void)stopSlowMotion
-{
-	_useSlowMotion = NO;
+- (void)stopSlowMotion {
+  _useSlowMotion = NO;
 }
 
-- (NSTimeInterval)animationResizeTime:(NSRect)newWindowFrame
-{
-	if (_useSlowMotion)
-		return (NSTimeInterval)1;
-	else
-		return (NSTimeInterval)0.1;
+- (NSTimeInterval)animationResizeTime:(NSRect)newWindowFrame {
+  if (_useSlowMotion)
+    return (NSTimeInterval)1;
+  else
+    return (NSTimeInterval)0.1;
 }
 
 @end

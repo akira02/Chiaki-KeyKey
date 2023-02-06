@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -26,25 +26,25 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#include "OVOFHanConvert.h"
 #include <iostream>
 #include <string>
+
+#include "OVOFHanConvert.h"
 
 using namespace std;
 using namespace OpenVanilla;
 
 int main() {
-    OVOFHanConvert module(true);
-    OVEventHandlingContext* context = module.createContext();
-    
-    while(!cin.eof()) {
-        string line;
-        getline(cin, line);
-        
-        cout << context->filterText(line, 0) << endl;
-        
-    }
-    
-    delete context;
-    return 0;
+  OVOFHanConvert module(true);
+  OVEventHandlingContext* context = module.createContext();
+
+  while (!cin.eof()) {
+    string line;
+    getline(cin, line);
+
+    cout << context->filterText(line, 0) << endl;
+  }
+
+  delete context;
+  return 0;
 }

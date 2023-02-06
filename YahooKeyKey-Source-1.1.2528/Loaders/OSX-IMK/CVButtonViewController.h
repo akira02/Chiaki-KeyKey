@@ -2,10 +2,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CVButtonViewController : NSObject
-{
-	NSView *_view;
-	NSMutableArray *_buttonArray;
+@interface CVButtonViewController : NSObject {
+  NSView *_view;
+  NSMutableArray *_buttonArray;
 }
 - (id)initWithDictionary:(NSDictionary *)d;
 - (NSView *)view;

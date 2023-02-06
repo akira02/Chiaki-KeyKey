@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,12 +30,10 @@
 
 using namespace OpenVanilla;
 
-extern "C" OVEXPORT OVModulePackage* OVModulePackageMain()
-{
-    return new OVIMMandarinPackage;
+extern "C" OVEXPORT OVModulePackage* OVModulePackageMain() {
+  return new OVIMMandarinPackage;
 }
 
-extern "C" OVEXPORT unsigned int OVModulePackageFrameworkVersion()
-{
-    return OVFrameworkInfo::Version();
+extern "C" OVEXPORT unsigned int OVModulePackageFrameworkVersion() {
+  return OVFrameworkInfo::Version();
 }

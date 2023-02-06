@@ -15,6 +15,5 @@
 #define XML_FMT_INT_MOD "l"
 #endif
 
-extern int XML_ProcessFile(XML_Parser parser,
-                           const XML_Char *filename,
+extern int XML_ProcessFile(XML_Parser parser, const XML_Char *filename,
                            unsigned flags);

@@ -29,120 +29,121 @@
 #define PVContextSandwich_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    struct PVContextSandwich : public OVBase
-    {
-        ~PVContextSandwich();
-        
-        void startAllContexts(OVLoaderService* loaderService);
-        void stopAllContexts(OVLoaderService* loaderService);
-        void clearAllContexts(OVLoaderService* loaderService);
+struct PVContextSandwich : public OVBase {
+  ~PVContextSandwich();
 
-        vector<OVEventHandlingContext*> preprocessors;
-        vector<OVEventHandlingContext*> aroundFilters;
-        vector<OVEventHandlingContext*> inputMethods;
-        vector<OVEventHandlingContext*> outputFilters;
+  void startAllContexts(OVLoaderService* loaderService);
+  void stopAllContexts(OVLoaderService* loaderService);
+  void clearAllContexts(OVLoaderService* loaderService);
 
-        void prepareShortcutContexts();
-        vector<OVEventHandlingContext*> keyHandlingContexts;
+  vector<OVEventHandlingContext*> preprocessors;
+  vector<OVEventHandlingContext*> aroundFilters;
+  vector<OVEventHandlingContext*> inputMethods;
+  vector<OVEventHandlingContext*> outputFilters;
 
-        bool isAroundFilterContext(OVEventHandlingContext* context);
+  void prepareShortcutContexts();
+  vector<OVEventHandlingContext*> keyHandlingContexts;
 
-    protected:
-        static void DeleteEach(vector<OVEventHandlingContext*>& contexts);
-        static void StartEach(vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService);
-        static void StopEach(vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService);
-        static void ClearEach(vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService);
-    };
-    
-    inline PVContextSandwich::~PVContextSandwich()
-    {        
-        DeleteEach(preprocessors);
-        DeleteEach(aroundFilters);
-        DeleteEach(inputMethods);
-        DeleteEach(outputFilters);
-    }
-    
-    inline void PVContextSandwich::startAllContexts(OVLoaderService* loaderService)
-    {
-        StartEach(preprocessors, loaderService);
-        StartEach(aroundFilters, loaderService);
-        StartEach(inputMethods, loaderService);
-        StartEach(outputFilters, loaderService);
-    }
+  bool isAroundFilterContext(OVEventHandlingContext* context);
 
-    inline void PVContextSandwich::stopAllContexts(OVLoaderService* loaderService)
-    {
-        StopEach(preprocessors, loaderService);
-        StopEach(aroundFilters, loaderService);
-        StopEach(inputMethods, loaderService);
-        StopEach(outputFilters, loaderService);
-    }
-
-    inline void PVContextSandwich::clearAllContexts(OVLoaderService* loaderService)
-    {
-        ClearEach(preprocessors, loaderService);
-        ClearEach(aroundFilters, loaderService);
-        ClearEach(inputMethods, loaderService);
-        ClearEach(outputFilters, loaderService);
-    }    
-
-    inline void PVContextSandwich::prepareShortcutContexts()
-    {
-        keyHandlingContexts.clear();        
-        keyHandlingContexts.insert(keyHandlingContexts.end(), preprocessors.begin(), preprocessors.end());
-        
-        // @todo reverse the order of around filter
-        keyHandlingContexts.insert(keyHandlingContexts.end(), aroundFilters.begin(), aroundFilters.end());
-        keyHandlingContexts.insert(keyHandlingContexts.end(), inputMethods.begin(), inputMethods.end());
-    }
-
-    inline void PVContextSandwich::DeleteEach(vector<OVEventHandlingContext*>& contexts)
-    {
-        for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin() ; iter != contexts.end() ; ++iter)
-            if (*iter)
-                delete *iter;
-        contexts.clear();        
-    }
-    
-    inline void PVContextSandwich::StartEach(vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService)
-    {
-        for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin() ; iter != contexts.end() ; ++iter)
-            if (*iter)
-                (*iter)->startSession(loaderService);
-    }
-    
-    inline void PVContextSandwich::StopEach(vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService)
-    {
-        for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin() ; iter != contexts.end() ; ++iter)
-            if (*iter)
-                (*iter)->stopSession(loaderService);
-    }
-
-    inline void PVContextSandwich::ClearEach(vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService)
-    {
-        for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin() ; iter != contexts.end() ; ++iter)
-            if (*iter)
-                (*iter)->clear(loaderService);
-    }
-    
-    inline bool PVContextSandwich::isAroundFilterContext(OVEventHandlingContext* context)
-    {
-        for (vector<OVEventHandlingContext*>::iterator iter = aroundFilters.begin() ; iter != aroundFilters.end() ; ++iter)
-        {
-            if (context == *iter)
-                return true;
-        }
-        
-        return false;
-    }
+ protected:
+  static void DeleteEach(vector<OVEventHandlingContext*>& contexts);
+  static void StartEach(vector<OVEventHandlingContext*>& contexts,
+                        OVLoaderService* loaderService);
+  static void StopEach(vector<OVEventHandlingContext*>& contexts,
+                       OVLoaderService* loaderService);
+  static void ClearEach(vector<OVEventHandlingContext*>& contexts,
+                        OVLoaderService* loaderService);
 };
+
+inline PVContextSandwich::~PVContextSandwich() {
+  DeleteEach(preprocessors);
+  DeleteEach(aroundFilters);
+  DeleteEach(inputMethods);
+  DeleteEach(outputFilters);
+}
+
+inline void PVContextSandwich::startAllContexts(
+    OVLoaderService* loaderService) {
+  StartEach(preprocessors, loaderService);
+  StartEach(aroundFilters, loaderService);
+  StartEach(inputMethods, loaderService);
+  StartEach(outputFilters, loaderService);
+}
+
+inline void PVContextSandwich::stopAllContexts(OVLoaderService* loaderService) {
+  StopEach(preprocessors, loaderService);
+  StopEach(aroundFilters, loaderService);
+  StopEach(inputMethods, loaderService);
+  StopEach(outputFilters, loaderService);
+}
+
+inline void PVContextSandwich::clearAllContexts(
+    OVLoaderService* loaderService) {
+  ClearEach(preprocessors, loaderService);
+  ClearEach(aroundFilters, loaderService);
+  ClearEach(inputMethods, loaderService);
+  ClearEach(outputFilters, loaderService);
+}
+
+inline void PVContextSandwich::prepareShortcutContexts() {
+  keyHandlingContexts.clear();
+  keyHandlingContexts.insert(keyHandlingContexts.end(), preprocessors.begin(),
+                             preprocessors.end());
+
+  // @todo reverse the order of around filter
+  keyHandlingContexts.insert(keyHandlingContexts.end(), aroundFilters.begin(),
+                             aroundFilters.end());
+  keyHandlingContexts.insert(keyHandlingContexts.end(), inputMethods.begin(),
+                             inputMethods.end());
+}
+
+inline void PVContextSandwich::DeleteEach(
+    vector<OVEventHandlingContext*>& contexts) {
+  for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin();
+       iter != contexts.end(); ++iter)
+    if (*iter) delete *iter;
+  contexts.clear();
+}
+
+inline void PVContextSandwich::StartEach(
+    vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService) {
+  for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin();
+       iter != contexts.end(); ++iter)
+    if (*iter) (*iter)->startSession(loaderService);
+}
+
+inline void PVContextSandwich::StopEach(
+    vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService) {
+  for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin();
+       iter != contexts.end(); ++iter)
+    if (*iter) (*iter)->stopSession(loaderService);
+}
+
+inline void PVContextSandwich::ClearEach(
+    vector<OVEventHandlingContext*>& contexts, OVLoaderService* loaderService) {
+  for (vector<OVEventHandlingContext*>::iterator iter = contexts.begin();
+       iter != contexts.end(); ++iter)
+    if (*iter) (*iter)->clear(loaderService);
+}
+
+inline bool PVContextSandwich::isAroundFilterContext(
+    OVEventHandlingContext* context) {
+  for (vector<OVEventHandlingContext*>::iterator iter = aroundFilters.begin();
+       iter != aroundFilters.end(); ++iter) {
+    if (context == *iter) return true;
+  }
+
+  return false;
+}
+};  // namespace OpenVanilla
 
 #endif

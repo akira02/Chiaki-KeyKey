@@ -6,31 +6,31 @@ file for terms.
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
+
 #import "TakaoSettings.h"
 
 /*
-	@header TakaoPhonetic
+        @header TakaoPhonetic
 */
 
-/*! 
-	@class TakaoPhonetic
-	@abstract The controller to interact with the user interface
-	and the settings of The Phonetic Input Method.
+/*!
+        @class TakaoPhonetic
+        @abstract The controller to interact with the user interface
+        and the settings of The Phonetic Input Method.
 */
-@interface TakaoPhonetic : NSObject
-{
-	IBOutlet id _keyboardLayoutPopUpButton;
-	IBOutlet id _useCharactersSupportedByEncodingCheckBox;
-	
-	NSMutableDictionary *_phoneticDictionary;
-	NSString *_preferenceFilePath;
+@interface TakaoPhonetic : NSObject {
+  IBOutlet id _keyboardLayoutPopUpButton;
+  IBOutlet id _useCharactersSupportedByEncodingCheckBox;
+
+  NSMutableDictionary *_phoneticDictionary;
+  NSString *_preferenceFilePath;
 }
 
 /*!
-	@method writePreference:
-	@abstract Writes the new setting into the plist file wile user 
-	click on any button or check box.
-	@param sender The sender object.
+        @method writePreference:
+        @abstract Writes the new setting into the plist file wile user
+        click on any button or check box.
+        @param sender The sender object.
 */
 - (IBAction)writePreference:(id)sender;
 

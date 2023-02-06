@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,33 +30,32 @@
 #define OVIMMandarinPackage_h
 
 #ifndef OV_USE_SQLITE
-    #define OV_USE_SQLITE
+#define OV_USE_SQLITE
 #endif
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
-#include "OVIMTraditionalMandarin.h"
-#include "OVIMSmartMandarin.h"
 #include "OVAFAssociatedPhrase.h"
+#include "OVIMSmartMandarin.h"
+#include "OVIMTraditionalMandarin.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVIMMandarinPackage : public OVModulePackage {
-    public:        
-        virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-        {
-            m_moduleVector.push_back(new OVModuleClassWrapper<OVIMTraditionalMandarin>);
-            m_moduleVector.push_back(new OVModuleClassWrapper<OVIMSmartMandarin>);
-            m_moduleVector.push_back(new OVModuleClassWrapper<OVAFAssociatedPhrase>);
-            return true;
-        }        
-    };
-    
+class OVIMMandarinPackage : public OVModulePackage {
+ public:
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    m_moduleVector.push_back(new OVModuleClassWrapper<OVIMTraditionalMandarin>);
+    m_moduleVector.push_back(new OVModuleClassWrapper<OVIMSmartMandarin>);
+    m_moduleVector.push_back(new OVModuleClassWrapper<OVAFAssociatedPhrase>);
+    return true;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

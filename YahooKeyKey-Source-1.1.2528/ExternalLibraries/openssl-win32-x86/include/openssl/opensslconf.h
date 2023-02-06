@@ -3,38 +3,38 @@
 
 /* OpenSSL was configured with the following options: */
 #ifndef OPENSSL_SYSNAME_WIN32
-# define OPENSSL_SYSNAME_WIN32
+#define OPENSSL_SYSNAME_WIN32
 #endif
 #ifndef OPENSSL_DOING_MAKEDEPEND
 
 #ifndef OPENSSL_NO_CAMELLIA
-# define OPENSSL_NO_CAMELLIA
+#define OPENSSL_NO_CAMELLIA
 #endif
 #ifndef OPENSSL_NO_GMP
-# define OPENSSL_NO_GMP
+#define OPENSSL_NO_GMP
 #endif
 #ifndef OPENSSL_NO_KRB5
-# define OPENSSL_NO_KRB5
+#define OPENSSL_NO_KRB5
 #endif
 #ifndef OPENSSL_NO_MDC2
-# define OPENSSL_NO_MDC2
+#define OPENSSL_NO_MDC2
 #endif
 #ifndef OPENSSL_NO_RC5
-# define OPENSSL_NO_RC5
+#define OPENSSL_NO_RC5
 #endif
 #ifndef OPENSSL_NO_RFC3779
-# define OPENSSL_NO_RFC3779
+#define OPENSSL_NO_RFC3779
 #endif
 #ifndef OPENSSL_NO_SEED
-# define OPENSSL_NO_SEED
+#define OPENSSL_NO_SEED
 #endif
 #ifndef OPENSSL_NO_TLSEXT
-# define OPENSSL_NO_TLSEXT
+#define OPENSSL_NO_TLSEXT
 #endif
 
 #endif /* OPENSSL_DOING_MAKEDEPEND */
 #ifndef OPENSSL_THREADS
-# define OPENSSL_THREADS
+#define OPENSSL_THREADS
 #endif
 
 /* The OPENSSL_NO_* macros are also defined as NO_* if the application
@@ -42,30 +42,30 @@
    who haven't had the time to do the appropriate changes in their
    applications.  */
 #ifdef OPENSSL_ALGORITHM_DEFINES
-# if defined(OPENSSL_NO_CAMELLIA) && !defined(NO_CAMELLIA)
-#  define NO_CAMELLIA
-# endif
-# if defined(OPENSSL_NO_GMP) && !defined(NO_GMP)
-#  define NO_GMP
-# endif
-# if defined(OPENSSL_NO_KRB5) && !defined(NO_KRB5)
-#  define NO_KRB5
-# endif
-# if defined(OPENSSL_NO_MDC2) && !defined(NO_MDC2)
-#  define NO_MDC2
-# endif
-# if defined(OPENSSL_NO_RC5) && !defined(NO_RC5)
-#  define NO_RC5
-# endif
-# if defined(OPENSSL_NO_RFC3779) && !defined(NO_RFC3779)
-#  define NO_RFC3779
-# endif
-# if defined(OPENSSL_NO_SEED) && !defined(NO_SEED)
-#  define NO_SEED
-# endif
-# if defined(OPENSSL_NO_TLSEXT) && !defined(NO_TLSEXT)
-#  define NO_TLSEXT
-# endif
+#if defined(OPENSSL_NO_CAMELLIA) && !defined(NO_CAMELLIA)
+#define NO_CAMELLIA
+#endif
+#if defined(OPENSSL_NO_GMP) && !defined(NO_GMP)
+#define NO_GMP
+#endif
+#if defined(OPENSSL_NO_KRB5) && !defined(NO_KRB5)
+#define NO_KRB5
+#endif
+#if defined(OPENSSL_NO_MDC2) && !defined(NO_MDC2)
+#define NO_MDC2
+#endif
+#if defined(OPENSSL_NO_RC5) && !defined(NO_RC5)
+#define NO_RC5
+#endif
+#if defined(OPENSSL_NO_RFC3779) && !defined(NO_RFC3779)
+#define NO_RFC3779
+#endif
+#if defined(OPENSSL_NO_SEED) && !defined(NO_SEED)
+#define NO_SEED
+#endif
+#if defined(OPENSSL_NO_TLSEXT) && !defined(NO_TLSEXT)
+#define NO_TLSEXT
+#endif
 #endif
 
 /* crypto/opensslconf.h.in */
@@ -177,7 +177,7 @@
 #endif
 
 #if defined(DES_RISC1) && defined(DES_RISC2)
-YOU SHOULD NOT HAVE BOTH DES_RISC1 AND DES_RISC2 DEFINED!!!!!
+YOU SHOULD NOT HAVE BOTH DES_RISC1 AND DES_RISC2 DEFINED !!!!!
 #endif
 
 /* Unroll the inner loop, this sometimes helps, sometimes hinders.
@@ -189,40 +189,41 @@ YOU SHOULD NOT HAVE BOTH DES_RISC1 AND DES_RISC2 DEFINED!!!!!
 /* These default values were supplied by
  * Peter Gutman <pgut001@cs.auckland.ac.nz>
  * They are only used if nothing else has been defined */
-#if !defined(DES_PTR) && !defined(DES_RISC1) && !defined(DES_RISC2) && !defined(DES_UNROLL)
+#if !defined(DES_PTR) && !defined(DES_RISC1) && !defined(DES_RISC2) && \
+    !defined(DES_UNROLL)
 /* Special defines which change the way the code is built depending on the
    CPU and OS.  For SGI machines you can use _MIPS_SZLONG (32 or 64) to find
    even newer MIPS CPU's, but at the moment one size fits all for
    optimization options.  Older Sparc's work better with only UNROLL, but
    there's no way to tell at compile time what it is you're running on */
- 
-#if defined( sun )		/* Newer Sparc's */
-#  define DES_PTR
-#  define DES_RISC1
-#  define DES_UNROLL
-#elif defined( __ultrix )	/* Older MIPS */
-#  define DES_PTR
-#  define DES_RISC2
-#  define DES_UNROLL
-#elif defined( __osf1__ )	/* Alpha */
-#  define DES_PTR
-#  define DES_RISC2
-#elif defined ( _AIX )		/* RS6000 */
-  /* Unknown */
-#elif defined( __hpux )		/* HP-PA */
-  /* Unknown */
-#elif defined( __aux )		/* 68K */
-  /* Unknown */
-#elif defined( __dgux )		/* 88K (but P6 in latest boxes) */
-#  define DES_UNROLL
-#elif defined( __sgi )		/* Newer MIPS */
-#  define DES_PTR
-#  define DES_RISC2
-#  define DES_UNROLL
-#elif defined(i386) || defined(__i386__)	/* x86 boxes, should be gcc */
-#  define DES_PTR
-#  define DES_RISC1
-#  define DES_UNROLL
+
+#if defined(sun) /* Newer Sparc's */
+#define DES_PTR
+#define DES_RISC1
+#define DES_UNROLL
+#elif defined(__ultrix) /* Older MIPS */
+#define DES_PTR
+#define DES_RISC2
+#define DES_UNROLL
+#elif defined(__osf1__) /* Alpha */
+#define DES_PTR
+#define DES_RISC2
+#elif defined(_AIX)   /* RS6000 */
+/* Unknown */
+#elif defined(__hpux) /* HP-PA */
+/* Unknown */
+#elif defined(__aux)  /* 68K */
+/* Unknown */
+#elif defined(__dgux) /* 88K (but P6 in latest boxes) */
+#define DES_UNROLL
+#elif defined(__sgi) /* Newer MIPS */
+#define DES_PTR
+#define DES_RISC2
+#define DES_UNROLL
+#elif defined(i386) || defined(__i386__) /* x86 boxes, should be gcc */
+#define DES_PTR
+#define DES_RISC1
+#define DES_UNROLL
 #endif /* Systems-specific speed defines */
 #endif
 

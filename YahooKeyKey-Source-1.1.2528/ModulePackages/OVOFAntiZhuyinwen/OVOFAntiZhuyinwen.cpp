@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -29,39 +29,35 @@
 #include "OVOFAntiZhuyinwen.h"
 
 namespace OpenVanilla {
-	
-const string OVOFAntiZhuyinwenContext::filterText(const string& inputText, OVLoaderService* loaderService)
-{    
-	
-	vector<string> words = OVUTF8Helper::SplitStringByCodePoint(inputText);
-	string returnString = "";
-	int i;
-	bool hasZhuyinwen = false;
-	
-	for (i = 0; i < words.size(); i ++) {
-		string word = words[i];
-		if (!checkText(word))
-			returnString += word;
-		else
-			hasZhuyinwen = true;
-	}
-	
-	if (hasZhuyinwen) {
-	    loaderService->notify("Please don't type BPMF text!");
-		// do something.
-	}
-	return returnString;
+
+const string OVOFAntiZhuyinwenContext::filterText(
+    const string& inputText, OVLoaderService* loaderService) {
+  vector<string> words = OVUTF8Helper::SplitStringByCodePoint(inputText);
+  string returnString = "";
+  int i;
+  bool hasZhuyinwen = false;
+
+  for (i = 0; i < words.size(); i++) {
+    string word = words[i];
+    if (!checkText(word))
+      returnString += word;
+    else
+      hasZhuyinwen = true;
+  }
+
+  if (hasZhuyinwen) {
+    loaderService->notify("Please don't type BPMF text!");
+    // do something.
+  }
+  return returnString;
 }
 
-bool OVOFAntiZhuyinwenContext::checkText(string theText)
-{
-	int i;
-	for (i = 0 ; i < m_bopomofo.size(); i++) {
-		if (theText == m_bopomofo[i])
-			return true;
-	}
-	return false;
+bool OVOFAntiZhuyinwenContext::checkText(string theText) {
+  int i;
+  for (i = 0; i < m_bopomofo.size(); i++) {
+    if (theText == m_bopomofo[i]) return true;
+  }
+  return false;
 }
 
-};
-
+};  // namespace OpenVanilla

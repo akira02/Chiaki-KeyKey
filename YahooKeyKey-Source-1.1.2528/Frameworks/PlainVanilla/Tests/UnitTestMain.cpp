@@ -26,16 +26,16 @@
 //
 
 #include <UnitTest++.h>
+
 #include <string>
 
 using namespace std;
 string g_modulePackageLoadPath;
 
-int main(int argc, char* argv[])
-{
-    if (argc > 1) {
-        g_modulePackageLoadPath = argv[1];
-    }
+int main(int argc, char* argv[]) {
+  if (argc > 1) {
+    g_modulePackageLoadPath = argv[1];
+  }
 
-	return UnitTest::RunAllTests();
+  return UnitTest::RunAllTests();
 }

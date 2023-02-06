@@ -33,14 +33,12 @@
 #include <vector>
 
 namespace OpenVanilla {
-    using namespace std;
-    
-    class OVBase {
-    public:
-        virtual ~OVBase()
-        {
-        }
-    };
+using namespace std;
+
+class OVBase {
+ public:
+  virtual ~OVBase() {}
 };
+};  // namespace OpenVanilla
 
 #endif

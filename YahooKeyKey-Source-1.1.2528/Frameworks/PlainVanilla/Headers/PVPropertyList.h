@@ -29,127 +29,105 @@
 #define PVPropertyList_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
-    #include <PlainVanilla/PVPlistValue.h>
+#include <OpenVanilla/OpenVanilla.h>
+#include <PlainVanilla/PVPlistValue.h>
 #else
-    #include "OpenVanilla.h"
-    #include "PVPlistValue.h"
+#include "OpenVanilla.h"
+#include "PVPlistValue.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class PVPropertyList {
-    public:
-        PVPropertyList(const string& filename, bool syncAtStart = true)
-            : m_filename(filename)
-            , m_mirroredRootDictionary(0)
-        {
-            m_timestamp = OVPathHelper::TimestampForPath(filename);
-            m_rootDictionary = new PVPlistValue(PVPlistValue::Dictionary);
-            m_mirroredRootDictionary = m_rootDictionary->copy();
-            
-            if (syncAtStart)
-                readSync(true);
-        }
-        
-        ~PVPropertyList()
-        {
-            if (m_rootDictionary)
-                delete m_rootDictionary;
-                
-            if (m_mirroredRootDictionary)
-                delete m_mirroredRootDictionary;
-        }
-        
-        bool shouldReadSync()
-        {
-            OVFileTimestamp timestamp = OVPathHelper::TimestampForPath(m_filename);
-            return timestamp > m_timestamp;
-        }
-        
-        void forceSyncForNextRound()
-        {
-            m_timestamp = OVFileTimestamp();
-        }
-        
-        void readSync(bool forced = false)
-        {
-            if (!forced)
-                if (!shouldReadSync())
-                    return;
-            
-            PVPlistValue* tmp = m_rootDictionary;
-            PVPlistValue* newDictionary = ParsePlist(m_filename);
+class PVPropertyList {
+ public:
+  PVPropertyList(const string& filename, bool syncAtStart = true)
+      : m_filename(filename), m_mirroredRootDictionary(0) {
+    m_timestamp = OVPathHelper::TimestampForPath(filename);
+    m_rootDictionary = new PVPlistValue(PVPlistValue::Dictionary);
+    m_mirroredRootDictionary = m_rootDictionary->copy();
 
-            if (m_mirroredRootDictionary)
-                delete m_mirroredRootDictionary;
-            
-            if (newDictionary) {
-                m_rootDictionary = newDictionary;
-                delete tmp;
-            }
-                
-            m_mirroredRootDictionary = m_rootDictionary->copy();            
-            m_timestamp = OVPathHelper::TimestampForPath(m_filename);            
-        }
-        
-        void write()
-        {
-            if (m_rootDictionary && m_mirroredRootDictionary)
-                if (*m_rootDictionary == *m_mirroredRootDictionary)
-                    return;
-                
-            string directory = OVPathHelper::DirectoryFromPath(m_filename);
-            OVDirectoryHelper::MakeDirectoryWithImmediates(directory);
-            
-            WritePlist(m_filename, m_rootDictionary);
-            m_timestamp = OVPathHelper::TimestampForPath(m_filename);
-            
-            if (m_mirroredRootDictionary)
-                delete m_mirroredRootDictionary;
-        
-            m_mirroredRootDictionary = m_rootDictionary->copy();
-        }
-        
-        PVPlistValue* rootDictionary()
-        {
-            return m_rootDictionary;
-        }
-        
-        void setRootDictionary(PVPlistValue* dictionary, bool useCopy = true)
-        {
-            if (m_rootDictionary == dictionary) 
-                return;
-                
-            PVPlistValue* tmp = m_rootDictionary;
-            if (useCopy) {
-                m_rootDictionary = dictionary->copy();
-            }
-            else {
-                m_rootDictionary = dictionary;
-            }
-            
-            delete tmp;
-        }
+    if (syncAtStart) readSync(true);
+  }
 
-        static PVPlistValue* ParsePlistFromString(const char* stringData);
-        
-    protected:
-        static PVPlistValue* ParsePlist(const string& filename);
-        static void WritePlist(const string& filename, PVPlistValue* rootDictionary);
-      
-        OVFileTimestamp m_timestamp;
-        string m_filename;
-        PVPlistValue* m_rootDictionary;
-        PVPlistValue* m_mirroredRootDictionary;
-		
-	public:
-		#if defined(__APPLE__)
-		// for facilitating C++-only tool
-		static void CreateNSAutoreleasePoolInMain();
-		#endif
-    };
+  ~PVPropertyList() {
+    if (m_rootDictionary) delete m_rootDictionary;
+
+    if (m_mirroredRootDictionary) delete m_mirroredRootDictionary;
+  }
+
+  bool shouldReadSync() {
+    OVFileTimestamp timestamp = OVPathHelper::TimestampForPath(m_filename);
+    return timestamp > m_timestamp;
+  }
+
+  void forceSyncForNextRound() { m_timestamp = OVFileTimestamp(); }
+
+  void readSync(bool forced = false) {
+    if (!forced)
+      if (!shouldReadSync()) return;
+
+    PVPlistValue* tmp = m_rootDictionary;
+    PVPlistValue* newDictionary = ParsePlist(m_filename);
+
+    if (m_mirroredRootDictionary) delete m_mirroredRootDictionary;
+
+    if (newDictionary) {
+      m_rootDictionary = newDictionary;
+      delete tmp;
+    }
+
+    m_mirroredRootDictionary = m_rootDictionary->copy();
+    m_timestamp = OVPathHelper::TimestampForPath(m_filename);
+  }
+
+  void write() {
+    if (m_rootDictionary && m_mirroredRootDictionary)
+      if (*m_rootDictionary == *m_mirroredRootDictionary) return;
+
+    string directory = OVPathHelper::DirectoryFromPath(m_filename);
+    OVDirectoryHelper::MakeDirectoryWithImmediates(directory);
+
+    WritePlist(m_filename, m_rootDictionary);
+    m_timestamp = OVPathHelper::TimestampForPath(m_filename);
+
+    if (m_mirroredRootDictionary) delete m_mirroredRootDictionary;
+
+    m_mirroredRootDictionary = m_rootDictionary->copy();
+  }
+
+  PVPlistValue* rootDictionary() { return m_rootDictionary; }
+
+  void setRootDictionary(PVPlistValue* dictionary, bool useCopy = true) {
+    if (m_rootDictionary == dictionary) return;
+
+    PVPlistValue* tmp = m_rootDictionary;
+    if (useCopy) {
+      m_rootDictionary = dictionary->copy();
+    } else {
+      m_rootDictionary = dictionary;
+    }
+
+    delete tmp;
+  }
+
+  static PVPlistValue* ParsePlistFromString(const char* stringData);
+
+ protected:
+  static PVPlistValue* ParsePlist(const string& filename);
+  static void WritePlist(const string& filename, PVPlistValue* rootDictionary);
+
+  OVFileTimestamp m_timestamp;
+  string m_filename;
+  PVPlistValue* m_rootDictionary;
+  PVPlistValue* m_mirroredRootDictionary;
+
+ public:
+#if defined(__APPLE__)
+  // for facilitating C++-only tool
+  static void CreateNSAutoreleasePoolInMain();
+#endif
 };
+};  // namespace OpenVanilla
 
 #endif

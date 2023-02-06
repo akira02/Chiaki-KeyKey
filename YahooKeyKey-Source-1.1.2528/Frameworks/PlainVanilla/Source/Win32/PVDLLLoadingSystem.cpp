@@ -25,32 +25,25 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#include <Windows.h>
 #include "PVDLLLoadingSystem.h"
+
+#include <Windows.h>
 
 using namespace OpenVanilla;
 
 PVDLLLoadingSystem::PVDLLLoadingSystem(PVLoaderPolicy* policy)
-    : PVCommonPackageLoadingSystem(policy)
-{
+    : PVCommonPackageLoadingSystem(policy) {}
+
+PVDLLLoadingSystem::~PVDLLLoadingSystem() { unloadAllUnloadables(); }
+
+void* PVDLLLoadingSystem::loadLibrary(const string& path) {
+  return (void*)LoadLibraryW(OVUTF16::FromUTF8(path).c_str());
 }
 
-PVDLLLoadingSystem::~PVDLLLoadingSystem()
-{
-    unloadAllUnloadables();
+bool PVDLLLoadingSystem::unloadLibrary(void* library) {
+  return FreeLibrary((HMODULE)library) == TRUE;
 }
 
-void* PVDLLLoadingSystem::loadLibrary(const string& path)
-{
-    return (void*)LoadLibraryW(OVUTF16::FromUTF8(path).c_str());
-}
-
-bool PVDLLLoadingSystem::unloadLibrary(void* library)
-{
-    return FreeLibrary((HMODULE)library) == TRUE;
-}
-
-void* PVDLLLoadingSystem::getFunctionNamed(void* library, const string& name)
-{
-    return (void*)GetProcAddress((HMODULE)library, name.c_str());
+void* PVDLLLoadingSystem::getFunctionNamed(void* library, const string& name) {
+  return (void*)GetProcAddress((HMODULE)library, name.c_str());
 }

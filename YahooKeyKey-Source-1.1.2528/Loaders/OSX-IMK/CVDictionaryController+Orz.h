@@ -1,9 +1,10 @@
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
+
 #import "CVDictionaryController.h"
 
-@interface CVDictionaryController(Orz)
+@interface CVDictionaryController (Orz)
 
 - (void)showOrzSong;
 

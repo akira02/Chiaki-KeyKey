@@ -8,29 +8,27 @@ file for terms.
 #define YKAFOneKeyPackage_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "YKAFOneKey.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class YKAFOneKeyPackage : public OVModulePackage {
-    public:
-        YKAFOneKeyPackage()
-        {
-            m_moduleVector.push_back(new OVModuleClassWrapper<YKAFOneKey>);
-        }
-        
-        virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-        {
-            return true;
-        }        
-    };
-    
+class YKAFOneKeyPackage : public OVModulePackage {
+ public:
+  YKAFOneKeyPackage() {
+    m_moduleVector.push_back(new OVModuleClassWrapper<YKAFOneKey>);
+  }
+
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    return true;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

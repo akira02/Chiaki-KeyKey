@@ -27,30 +27,33 @@
 
 #include <iostream>
 #include <set>
+
 #include "Mandarin.h"
 
 using namespace std;
 using namespace Formosa::Mandarin;
 
-int main(int argc, char *argv[])
-{
-    set<string> result;
-    
-    while(!cin.eof()) {
-        string line;
-        getline(cin, line);
+int main(int argc, char *argv[]) {
+  set<string> result;
 
-        if (line.size()) {
-            BPMF syllable = BopomofoKeyboardLayout::StandardLayout()->syllableFromKeySequence(line);
-            // cout << line << " -> " << syllable.composedString() << endl;
-            
-            result.insert(syllable.composedString());
-        }
+  while (!cin.eof()) {
+    string line;
+    getline(cin, line);
+
+    if (line.size()) {
+      BPMF syllable =
+          BopomofoKeyboardLayout::StandardLayout()->syllableFromKeySequence(
+              line);
+      // cout << line << " -> " << syllable.composedString() << endl;
+
+      result.insert(syllable.composedString());
     }
-    
-    for (set<string>::const_iterator ri = result.begin() ; ri != result.end() ; ++ri) {
-        cout << *ri << endl;
-    }
-    
-    return 0;
+  }
+
+  for (set<string>::const_iterator ri = result.begin(); ri != result.end();
+       ++ri) {
+    cout << *ri << endl;
+  }
+
+  return 0;
 }

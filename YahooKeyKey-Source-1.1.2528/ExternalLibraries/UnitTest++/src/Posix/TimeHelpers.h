@@ -5,24 +5,20 @@
 
 namespace UnitTest {
 
-class Timer
-{
-public:
-    Timer();
-    void Start();
-    int GetTimeInMs() const;    
+class Timer {
+ public:
+  Timer();
+  void Start();
+  int GetTimeInMs() const;
 
-private:
-    struct timeval m_startTime;    
+ private:
+  struct timeval m_startTime;
 };
 
-
-namespace TimeHelpers
-{
-void SleepMs (int ms);
+namespace TimeHelpers {
+void SleepMs(int ms);
 }
 
-
-}
+}  // namespace UnitTest
 
 #endif

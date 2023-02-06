@@ -25,80 +25,65 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#include <CoreFoundation/CoreFoundation.h>
 #include "PVBundleLoadingSystem.h"
+
+#include <CoreFoundation/CoreFoundation.h>
 
 using namespace OpenVanilla;
 
-template<class T> class LFCFAutoObject
-{
-public:
-    LFCFAutoObject(T object)
-        : m_object(object)
-    {
-    }
-    
-    ~LFCFAutoObject()
-    {
-        if (m_object)
-            CFRelease(m_object);
-    }
-    
-    operator T()
-    {
-        return m_object;
-    }
-    
-protected:
-    T m_object;
+template <class T>
+class LFCFAutoObject {
+ public:
+  LFCFAutoObject(T object) : m_object(object) {}
+
+  ~LFCFAutoObject() {
+    if (m_object) CFRelease(m_object);
+  }
+
+  operator T() { return m_object; }
+
+ protected:
+  T m_object;
 };
 
-
 PVBundleLoadingSystem::PVBundleLoadingSystem(PVLoaderPolicy* policy)
-    : PVCommonPackageLoadingSystem(policy)
-{
-}
+    : PVCommonPackageLoadingSystem(policy) {}
 
-PVBundleLoadingSystem::~PVBundleLoadingSystem()
-{
-    unloadAllUnloadables();
-}
+PVBundleLoadingSystem::~PVBundleLoadingSystem() { unloadAllUnloadables(); }
 
-void* PVBundleLoadingSystem::loadLibrary(const string& path)
-{
-    LFCFAutoObject<CFStringRef> pathString = CFStringCreateWithCString(NULL, path.c_str(), kCFStringEncodingUTF8);
-    LFCFAutoObject<CFURLRef> url = CFURLCreateWithFileSystemPath(NULL, pathString, kCFURLPOSIXPathStyle, false);
-    CFBundleRef bundle = CFBundleCreate(NULL, url);
+void* PVBundleLoadingSystem::loadLibrary(const string& path) {
+  LFCFAutoObject<CFStringRef> pathString =
+      CFStringCreateWithCString(NULL, path.c_str(), kCFStringEncodingUTF8);
+  LFCFAutoObject<CFURLRef> url = CFURLCreateWithFileSystemPath(
+      NULL, pathString, kCFURLPOSIXPathStyle, false);
+  CFBundleRef bundle = CFBundleCreate(NULL, url);
 
-    if (bundle) {
-        if (CFBundleLoadExecutable(bundle)) {
-            return (void*)bundle;
-        }
-        else {
-            CFRelease(bundle);
-            return 0;
-        }            
+  if (bundle) {
+    if (CFBundleLoadExecutable(bundle)) {
+      return (void*)bundle;
+    } else {
+      CFRelease(bundle);
+      return 0;
     }
+  }
 }
 
-bool PVBundleLoadingSystem::unloadLibrary(void* library)
-{
-    if (!library)
-        return false;
+bool PVBundleLoadingSystem::unloadLibrary(void* library) {
+  if (!library) return false;
 
-    CFBundleRef bundle = (CFBundleRef)library;
-    CFBundleUnloadExecutable(bundle);
-    CFRelease(bundle);
-    return true;
+  CFBundleRef bundle = (CFBundleRef)library;
+  CFBundleUnloadExecutable(bundle);
+  CFRelease(bundle);
+  return true;
 }
 
-void* PVBundleLoadingSystem::getFunctionNamed(void* library, const string& name)
-{
-    if (!library)
-        return 0;
+void* PVBundleLoadingSystem::getFunctionNamed(void* library,
+                                              const string& name) {
+  if (!library) return 0;
 
-    LFCFAutoObject<CFStringRef> funcString = CFStringCreateWithCString(NULL, name.c_str(), kCFStringEncodingUTF8);        
-    CFBundleRef bundle = (CFBundleRef)library;
+  LFCFAutoObject<CFStringRef> funcString =
+      CFStringCreateWithCString(NULL, name.c_str(), kCFStringEncodingUTF8);
+  CFBundleRef bundle = (CFBundleRef)library;
 
-    return CFBundleGetFunctionPointerForName(bundle, funcString);
+  return CFBundleGetFunctionPointerForName(bundle, funcString);
 }

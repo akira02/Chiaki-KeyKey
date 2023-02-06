@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -27,46 +27,46 @@
 //
 
 #include <cmath>
+
 #include "Evalgelion.h"
 
 using namespace std;
 using namespace Evalgelion;
 
-
 int main() {
-    Evaluator eval;
+  Evaluator eval;
 
-    
-    while (!cin.eof()) {
-        string line;
-        getline(cin, line);
-        
-        cout << eval(line) << endl;
-        
-        // vector<Token> tokens = Lexer::Parse(line);
-        // for (vector<Token>::const_iterator ti = tokens.begin() ; ti != tokens.end() ; ++ti)
-        //     cout << *ti << endl;
-            
-        // Parser parser(tokens);
-        // Node* e = parser.expression();
-        // if (e) {
-        //     cout << endl << "good." << endl;
-        //     cout << *e << endl;
-        //     
-        //     double result = e->evaluateWithinContext(c);
-        //     double rdresult = round(result);
-        // 
-        //     cout << "result: ";            
-        //     if (result == rdresult)
-        //         cout << (long long)result;
-        //     else
-        //         cout << fixed << result;
-        //     cout << endl;
-        //     delete e;
-        // }
-        // else
-        //     cout << endl << "bad." << endl;
-    }    
-    
-    return 0;    
+  while (!cin.eof()) {
+    string line;
+    getline(cin, line);
+
+    cout << eval(line) << endl;
+
+    // vector<Token> tokens = Lexer::Parse(line);
+    // for (vector<Token>::const_iterator ti = tokens.begin() ; ti !=
+    // tokens.end() ; ++ti)
+    //     cout << *ti << endl;
+
+    // Parser parser(tokens);
+    // Node* e = parser.expression();
+    // if (e) {
+    //     cout << endl << "good." << endl;
+    //     cout << *e << endl;
+    //
+    //     double result = e->evaluateWithinContext(c);
+    //     double rdresult = round(result);
+    //
+    //     cout << "result: ";
+    //     if (result == rdresult)
+    //         cout << (long long)result;
+    //     else
+    //         cout << fixed << result;
+    //     cout << endl;
+    //     delete e;
+    // }
+    // else
+    //     cout << endl << "bad." << endl;
+  }
+
+  return 0;
 }

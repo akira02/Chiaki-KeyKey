@@ -26,93 +26,77 @@
 //
 
 #ifndef __APPLE__
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 using namespace OpenVanilla;
 
 class TestEventHandlingContext : public OVEventHandlingContext {
-public:
-    ~TestEventHandlingContext()
-    {
-        cerr << "NOTE: event handling context destructed" << endl;
-    }
-    
-    virtual bool handleKey(OVKey* key, OVTextBuffer* readingText, OVTextBuffer* composingText, OVCandidateService* candidateService, OVLoaderService* loaderService)
-    {
-        loaderService->logger("context") << "Received key, code = " << key->keyCode() << endl;
-        return false;
-    }
+ public:
+  ~TestEventHandlingContext() {
+    cerr << "NOTE: event handling context destructed" << endl;
+  }
+
+  virtual bool handleKey(OVKey* key, OVTextBuffer* readingText,
+                         OVTextBuffer* composingText,
+                         OVCandidateService* candidateService,
+                         OVLoaderService* loaderService) {
+    loaderService->logger("context")
+        << "Received key, code = " << key->keyCode() << endl;
+    return false;
+  }
 };
 
-
 class TestModule : public OVModule {
-public:
-    ~TestModule()
-    {
-        cout << "module destruted!" << endl;
-    }
-    
-    virtual OVEventHandlingContext* createContext()
-    {
-        return new TestEventHandlingContext;
-    }
+ public:
+  ~TestModule() { cout << "module destruted!" << endl; }
 
-    virtual bool initialize(OVPathInfo* pathInfo, OVLoaderService* loaderService)
-    {
-        loaderService->logger("test module") << "module initialized! loaded path = " << pathInfo->loadedPath << endl;
-        return true;
-    }
+  virtual OVEventHandlingContext* createContext() {
+    return new TestEventHandlingContext;
+  }
 
-    virtual void finalize()
-    {
-        cout << "module finalized!" << endl;
-    }
+  virtual bool initialize(OVPathInfo* pathInfo,
+                          OVLoaderService* loaderService) {
+    loaderService->logger("test module")
+        << "module initialized! loaded path = " << pathInfo->loadedPath << endl;
+    return true;
+  }
 
-    virtual void loadConfig(OVKeyValueMap* moduleConfig, OVLoaderService* loaderService)
-    {
-        loaderService->logger("test module") << "loading module config" << endl;
-    }
-    
-    virtual void saveConfig(OVKeyValueMap* moduleConfig, OVLoaderService* loaderService)
-    {
-        loaderService->logger("test module") << "saving module config" << endl;
-    }
+  virtual void finalize() { cout << "module finalized!" << endl; }
 
-    bool isInputMethod() const
-    {
-        return true;
-    }
-    
-    const string identifier() const
-    {
-        return string("TestModule");
-    }
+  virtual void loadConfig(OVKeyValueMap* moduleConfig,
+                          OVLoaderService* loaderService) {
+    loaderService->logger("test module") << "loading module config" << endl;
+  }
+
+  virtual void saveConfig(OVKeyValueMap* moduleConfig,
+                          OVLoaderService* loaderService) {
+    loaderService->logger("test module") << "saving module config" << endl;
+  }
+
+  bool isInputMethod() const { return true; }
+
+  const string identifier() const { return string("TestModule"); }
 };
 
 class TestModulePackage : public OVModulePackage {
-public:
-    virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-    {
-        loaderService->logger("TestModulePackage") << "module package initialized!" << endl;
-        m_moduleVector.push_back(new OVModuleClassWrapper<TestModule>());
-        return true;
-    }
-    
-    virtual void finalize()
-    {
-        cerr << "module package finalized!" << endl;
-    }
+ public:
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    loaderService->logger("TestModulePackage")
+        << "module package initialized!" << endl;
+    m_moduleVector.push_back(new OVModuleClassWrapper<TestModule>());
+    return true;
+  }
 
+  virtual void finalize() { cerr << "module package finalized!" << endl; }
 };
 
-extern "C" OVModulePackage* OVModulePackageMain()
-{
-    return new TestModulePackage;
+extern "C" OVModulePackage* OVModulePackageMain() {
+  return new TestModulePackage;
 }
 
 extern "C" unsigned int OVModulePackageFrameworkVersion() {
-    return OVFrameworkInfo::Version();
+  return OVFrameworkInfo::Version();
 }

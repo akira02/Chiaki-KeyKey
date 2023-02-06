@@ -7,20 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PESettingTableView.h"
-#import "LFUtilities.h"
 
-#define HELP_URL	@"http://tw.widget.yahoo.com/keykey/help/phraseeditor.html"
+#import "LFUtilities.h"
+#import "PESettingTableView.h"
+
+#define HELP_URL @"http://tw.widget.yahoo.com/keykey/help/phraseeditor.html"
 
 #ifndef OPENVANILLA_DO_CONNECTION_NAME
-	#error Must define OPENVANILLA_DO_CONNECTION_NAME
+#error Must define OPENVANILLA_DO_CONNECTION_NAME
 #endif
 
 static NSString *addToolbarItemIdentifier = @"Add";
 static NSString *deleteToolbarItemIdentifier = @"Delete";
 static NSString *editPhraseToolbarItemIdentifier = @"Edit Phrase";
 static NSString *editReaingToolbarItemIdentifier = @"Edit Reading";
-static NSString *importAddressBookToolbarItemIdentifier = @"Import Address Book";
+static NSString *importAddressBookToolbarItemIdentifier =
+    @"Import Address Book";
 static NSString *reloadToolbarItemIdentifier = @"Reload";
 
 @protocol TakaoPhraseEditorService
@@ -41,27 +43,26 @@ static NSString *reloadToolbarItemIdentifier = @"Reload";
 
 #pragma mark -
 
-@interface PEController : NSWindowController
-{
-	id _loader;
-	IBOutlet NSTableView *_tableView;
-	IBOutlet NSTextField *_statusTextField;
-	
-	IBOutlet NSWindow *_phraseWindow;
-	IBOutlet PESettingTableView *_phraseTableView;
-	IBOutlet NSButton *_okButton;
+@interface PEController : NSWindowController {
+  id _loader;
+  IBOutlet NSTableView *_tableView;
+  IBOutlet NSTextField *_statusTextField;
 
-	IBOutlet NSWindow *_importOptionWindow;
-	IBOutlet NSButton *_continueImportButton;
-	IBOutlet NSButton *_importLastAndFirstNameCheckBox;
-	IBOutlet NSButton *_importFirstNameCheckBox;
-	IBOutlet NSButton *_importAlreadyExistCheckBox;
-	
-	IBOutlet NSWindow *_progressWindow;
-	IBOutlet NSProgressIndicator *_progressIndicator;
-	IBOutlet NSTextField *_progressTextField;
+  IBOutlet NSWindow *_phraseWindow;
+  IBOutlet PESettingTableView *_phraseTableView;
+  IBOutlet NSButton *_okButton;
 
-	int _editingRow;
+  IBOutlet NSWindow *_importOptionWindow;
+  IBOutlet NSButton *_continueImportButton;
+  IBOutlet NSButton *_importLastAndFirstNameCheckBox;
+  IBOutlet NSButton *_importFirstNameCheckBox;
+  IBOutlet NSButton *_importAlreadyExistCheckBox;
+
+  IBOutlet NSWindow *_progressWindow;
+  IBOutlet NSProgressIndicator *_progressIndicator;
+  IBOutlet NSTextField *_progressTextField;
+
+  int _editingRow;
 }
 
 - (void)updateStatus;

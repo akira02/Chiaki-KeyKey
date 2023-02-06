@@ -27,14 +27,13 @@
 
 #include "TestPlainVanillaLoader.h"
 
-int main(int argc, char* argv[])
-{
-	int ret = 1;
-    
-    if (argc > 1)
-        ret = TestPlainVanillaLoader(argv[1]);
-    else
-        fprintf(stderr, "usage: TestPlainVanillaLoader path\n");
+int main(int argc, char* argv[]) {
+  int ret = 1;
 
-    return ret;    
+  if (argc > 1)
+    ret = TestPlainVanillaLoader(argv[1]);
+  else
+    fprintf(stderr, "usage: TestPlainVanillaLoader path\n");
+
+  return ret;
 }

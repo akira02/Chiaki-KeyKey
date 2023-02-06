@@ -6,15 +6,15 @@ file for terms.
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
+
 #import "TakaoSettings.h"
 
-@interface TakaoReverseLookup : NSObject
-{
-	IBOutlet NSView *_view;
-	IBOutlet NSPopUpButton *_popUpButton;
-	
-	NSArray *_reverseLookupArray;
-	NSString *_preferenceFilePath;
+@interface TakaoReverseLookup : NSObject {
+  IBOutlet NSView *_view;
+  IBOutlet NSPopUpButton *_popUpButton;
+
+  NSArray *_reverseLookupArray;
+  NSString *_preferenceFilePath;
 }
 
 - (NSView *)view;

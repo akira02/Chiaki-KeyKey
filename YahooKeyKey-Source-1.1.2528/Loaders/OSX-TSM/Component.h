@@ -1,7 +1,7 @@
 // [AUTO_HEADER]
 
 // AppleComponent stands for "Apple component return type"
-#define AppleComponent    pascal ComponentResult      // no extern "C" here
+#define AppleComponent pascal ComponentResult  // no extern "C" here
 
 // main entry point
 AppleComponent TSMCDispatch(ComponentParameters *param, Handle hndl);
@@ -9,7 +9,8 @@ AppleComponent TSMCDispatch(ComponentParameters *param, Handle hndl);
 // we implement these in this module
 AppleComponent TSMCCanDo(SInt16 selector);
 AppleComponent TSMCGetVersion();
-AppleComponent TSMCGetScriptLangSupport(Handle hndl, ScriptLanguageSupportHandle *outhndl);
+AppleComponent TSMCGetScriptLangSupport(Handle hndl,
+                                        ScriptLanguageSupportHandle *outhndl);
 
 // component entry points
 AppleComponent TSMCOpenComponent(ComponentInstance inst);
@@ -29,4 +30,5 @@ AppleComponent TSMCHidePaletteWindows(Handle hndl);
 AppleComponent TSMCInitialize(ComponentInstance inst);
 
 // menu handler
-pascal OSStatus TSMCMenuHandler(EventHandlerCallRef callref, EventRef evnt, void *userdata);
+pascal OSStatus TSMCMenuHandler(EventHandlerCallRef callref, EventRef evnt,
+                                void *userdata);

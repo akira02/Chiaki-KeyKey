@@ -29,21 +29,18 @@
 #define OVKeyPreprocessor_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OVModule.h>
+#include <OpenVanilla/OVModule.h>
 #else
-    #include "OVModule.h"
+#include "OVModule.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
-    
-    class OVKeyPreprocessor : public OVModule {
-    public:
-        virtual bool isPreprocessor() const
-        {
-            return true;
-        }
-    };
+using namespace std;
+
+class OVKeyPreprocessor : public OVModule {
+ public:
+  virtual bool isPreprocessor() const { return true; }
 };
+};  // namespace OpenVanilla
 
 #endif

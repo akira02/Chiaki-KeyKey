@@ -1,24 +1,24 @@
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
+
+#import "CVFloatingBackground.h"
 #import "CVFloatingWindow.h"
 #import "CVNotifyWindow.h"
-#import "CVFloatingBackground.h"
 
-@interface CVNotifyController : NSWindowController
-{
-	IBOutlet NSTextField * _messageTextField;
-	
-	BOOL _shouldStay;
-	NSColor *_backgroundColor;
-	NSColor *_foregroundColor;
-	NSTimer *_waitTimer;
-	NSTimer *_fadeTimer;
+@interface CVNotifyController : NSWindowController {
+  IBOutlet NSTextField *_messageTextField;
+
+  BOOL _shouldStay;
+  NSColor *_backgroundColor;
+  NSColor *_foregroundColor;
+  NSTimer *_waitTimer;
+  NSTimer *_fadeTimer;
 }
 
 #pragma mark Class Methods
-+ (void)notify:(NSString*)message;
-+ (void)notifyAndStay:(NSString*)message;
++ (void)notify:(NSString *)message;
++ (void)notifyAndStay:(NSString *)message;
 + (void)addInstanceCount;
 + (void)removeInstanceCount;
 + (void)resetCount;

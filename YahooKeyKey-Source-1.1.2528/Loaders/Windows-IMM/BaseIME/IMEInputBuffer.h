@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,57 +30,60 @@
 #define IMEInputBuffer_h
 
 #ifndef WINVER
-    #define WINVER 0x0501
+#define WINVER 0x0501
 #endif
 
 #ifndef _WIN32_WINNT
-    #define _WIN32_WINNT 0x0501
+#define _WIN32_WINNT 0x0501
 #endif
 
 #ifndef WIN32_LEAN_AND_MEAN
-    #define WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
 #endif
 
-#include <windows.h>
 #include <immdev.h>
 #include <tchar.h>
+#include <windows.h>
+
 #include <string>
 #include <vector>
 
 #include "IMEHelper.h"
 
 namespace BaseIME {
-	using namespace std;
+using namespace std;
 
-    class IMEInputBuffer {
-    public:
-        static bool RegisterClass(HINSTANCE hInstance);
-        static bool Create(HWND parent);
-        static void Destroy();
-        static IMEInputBuffer* SharedInputBuffer();
-        
-        void show();
-        void hide();
-		void checkWindowPosition();
-        void moveTo(int x, int y);
-        void updateContent(wchar_t* combinedCompositionString, wchar_t* combinedCompositionAttributes, size_t cursorPosition);
-        
-    protected:
-        IMEInputBuffer();
-        
-        static HINSTANCE c_sharedHInstance;
-        static bool c_classRegistered;
-        static IMEInputBuffer* c_sharedInputBuffer;
-        static LRESULT WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-        
-    protected:
-        HWND m_window;
-        // vector<string> m_combinedBufferCodepoints;
-        // vector<string> m_combinedBufferAttributes;
-        size_t m_cursorIndex;
-		wstring m_combinedCompositionString;
-		wstring m_combinedCompositionAttributes;
-	};
+class IMEInputBuffer {
+ public:
+  static bool RegisterClass(HINSTANCE hInstance);
+  static bool Create(HWND parent);
+  static void Destroy();
+  static IMEInputBuffer* SharedInputBuffer();
+
+  void show();
+  void hide();
+  void checkWindowPosition();
+  void moveTo(int x, int y);
+  void updateContent(wchar_t* combinedCompositionString,
+                     wchar_t* combinedCompositionAttributes,
+                     size_t cursorPosition);
+
+ protected:
+  IMEInputBuffer();
+
+  static HINSTANCE c_sharedHInstance;
+  static bool c_classRegistered;
+  static IMEInputBuffer* c_sharedInputBuffer;
+  static LRESULT WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+ protected:
+  HWND m_window;
+  // vector<string> m_combinedBufferCodepoints;
+  // vector<string> m_combinedBufferAttributes;
+  size_t m_cursorIndex;
+  wstring m_combinedCompositionString;
+  wstring m_combinedCompositionAttributes;
 };
+};  // namespace BaseIME
 
 #endif

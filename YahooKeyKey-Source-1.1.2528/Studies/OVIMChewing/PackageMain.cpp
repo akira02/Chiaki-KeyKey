@@ -4,12 +4,10 @@
 
 using namespace OpenVanilla;
 
-extern "C" OVModulePackage* OVModulePackageMain()
-{
-    return new OVIMChewingPackage;
+extern "C" OVModulePackage* OVModulePackageMain() {
+  return new OVIMChewingPackage;
 }
 
-extern "C" unsigned int OVModulePackageFrameworkVersion()
-{
-    return OVFrameworkInfo::Version();
+extern "C" unsigned int OVModulePackageFrameworkVersion() {
+  return OVFrameworkInfo::Version();
 }

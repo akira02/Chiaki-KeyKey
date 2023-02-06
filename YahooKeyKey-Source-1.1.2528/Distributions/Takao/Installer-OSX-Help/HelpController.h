@@ -4,7 +4,7 @@
 #import <WebKit/WebKit.h>
 
 @interface HelpController : NSWindowController {
-	IBOutlet WebView *_webview;
+  IBOutlet WebView *_webview;
 }
 - (void)openInternationPref;
 - (void)logout;

@@ -2,12 +2,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CVBubbleTextWindow : NSWindow
-{
-	NSPoint _initialLocation;
-	BOOL _useWindowAnimation;
+@interface CVBubbleTextWindow : NSWindow {
+  NSPoint _initialLocation;
+  BOOL _useWindowAnimation;
 
-	IBOutlet id _textView;
+  IBOutlet id _textView;
 }
 - (void)setText:(NSString *)newText;
 - (void)setBubbleBackgroundColor:(NSColor *)color;

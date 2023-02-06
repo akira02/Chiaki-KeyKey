@@ -29,4 +29,4 @@
 /* Define to make XML Namespaces functionality available. */
 #define XML_NS
 
-#endif  /* AMIGACONFIG_H */
+#endif /* AMIGACONFIG_H */

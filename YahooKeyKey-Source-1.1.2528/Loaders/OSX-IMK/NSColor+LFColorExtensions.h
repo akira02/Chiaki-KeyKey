@@ -2,8 +2,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface NSColor(LFColorExtensions)
+@interface NSColor (LFColorExtensions)
 + (NSColor *)highlightGradientFromColor;
 + (NSColor *)highlightGradientToColor;
 - (NSColor *)gradientToColor;

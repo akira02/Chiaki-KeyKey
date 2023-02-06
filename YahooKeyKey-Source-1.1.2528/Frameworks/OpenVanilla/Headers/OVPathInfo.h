@@ -29,35 +29,36 @@
 #define OVPathInfo_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OVFileHelper.h>
+#include <OpenVanilla/OVFileHelper.h>
 #else
-    #include "OVFileHelper.h"
+#include "OVFileHelper.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    struct OVPathInfo {
-        string loadedPath;
-        string resourcePath;
-        string writablePath;
-        
-        static const OVPathInfo DefaultPathInfo() {
-            string tmpdir = OVDirectoryHelper::TempDirectory();
-            OVPathInfo pathInfo;
-            
-            pathInfo.loadedPath = tmpdir;
-            pathInfo.resourcePath = tmpdir;
-            pathInfo.writablePath = tmpdir;
-            return pathInfo;
-        }
-    };
-    
-    inline ostream& operator<<(ostream& stream, const OVPathInfo& info)
-    {
-        stream << "OVPathInfo = (loaded path = " << info.loadedPath << ", resource path = " << info.resourcePath << ", writable path = " << info.writablePath << ")";
-        return stream;
-    }
+struct OVPathInfo {
+  string loadedPath;
+  string resourcePath;
+  string writablePath;
+
+  static const OVPathInfo DefaultPathInfo() {
+    string tmpdir = OVDirectoryHelper::TempDirectory();
+    OVPathInfo pathInfo;
+
+    pathInfo.loadedPath = tmpdir;
+    pathInfo.resourcePath = tmpdir;
+    pathInfo.writablePath = tmpdir;
+    return pathInfo;
+  }
 };
+
+inline ostream& operator<<(ostream& stream, const OVPathInfo& info) {
+  stream << "OVPathInfo = (loaded path = " << info.loadedPath
+         << ", resource path = " << info.resourcePath
+         << ", writable path = " << info.writablePath << ")";
+  return stream;
+}
+};  // namespace OpenVanilla
 
 #endif

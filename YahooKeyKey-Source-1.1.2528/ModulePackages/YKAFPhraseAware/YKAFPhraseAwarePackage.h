@@ -8,29 +8,27 @@ file for terms.
 #define YKAFPhraseAwarePackage_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "YKAFPhraseAware.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class YKAFPhraseAwarePackage : public OVModulePackage {
-    public:
-        YKAFPhraseAwarePackage()
-        {
-            m_moduleVector.push_back(new OVModuleClassWrapper<YKAFPhraseAware>);
-        }
-        
-        virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-        {
-            return true;
-        }        
-    };
-    
+class YKAFPhraseAwarePackage : public OVModulePackage {
+ public:
+  YKAFPhraseAwarePackage() {
+    m_moduleVector.push_back(new OVModuleClassWrapper<YKAFPhraseAware>);
+  }
+
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    return true;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

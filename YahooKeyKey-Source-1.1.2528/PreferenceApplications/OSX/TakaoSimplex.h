@@ -6,50 +6,50 @@ file for terms.
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
+
 #import "TakaoSettings.h"
 
 /*!
-	@header TakaoSimplex
+        @header TakaoSimplex
 */
 
-/*! 
-	@class TakaoSimplex
-	@abstract The controller to interact with the user interface and the
-	 settings of The Simplex Input Method.
+/*!
+        @class TakaoSimplex
+        @abstract The controller to interact with the user interface and the
+         settings of The Simplex Input Method.
 */
 
-@interface TakaoSimplex : NSObject
-{
-    IBOutlet id _clearReadingBufferAtCompositionErrorCheckBox;
-    IBOutlet id _composeWhenTypingCheckBox;
-    IBOutlet id _useCharactersSupportedByEncodingCheckBox;
+@interface TakaoSimplex : NSObject {
+  IBOutlet id _clearReadingBufferAtCompositionErrorCheckBox;
+  IBOutlet id _composeWhenTypingCheckBox;
+  IBOutlet id _useCharactersSupportedByEncodingCheckBox;
 
-	NSMutableDictionary *_simplexDictionary;
-	NSString *_preferenceFilePath;
+  NSMutableDictionary *_simplexDictionary;
+  NSString *_preferenceFilePath;
 }
 /*!
-	@method writePreference:
-	@abstract Write the new setting into the plist file wile user 
-	click on any button or check box.
-	@param sender The sender object.
+        @method writePreference:
+        @abstract Write the new setting into the plist file wile user
+        click on any button or check box.
+        @param sender The sender object.
 */
 - (IBAction)writePreference:(id)sender;
 /*!
-	@method setClearOnError:
-	@abstract Responding on checking the "SetClearOnError" option.
-	@discussion ClearOnError and AutoCompose should not be set in 
-	the same time, so, if one option is checked, another one must 
-	be unchecked. 
-	@param sender The sender object.
+        @method setClearOnError:
+        @abstract Responding on checking the "SetClearOnError" option.
+        @discussion ClearOnError and AutoCompose should not be set in
+        the same time, so, if one option is checked, another one must
+        be unchecked.
+        @param sender The sender object.
 */
 - (IBAction)setClearOnError:(id)sender;
 /*!
-	@method setAutoCompose:
-	@abstract Responding on checking the "setAutoCompose" option.
-	@discussion ClearOnError and AutoCompose should not be set in
-	the same time, so, if one option is checked, another one must 
-	be unchecked. 
-	@param sender The sender object.
+        @method setAutoCompose:
+        @abstract Responding on checking the "setAutoCompose" option.
+        @discussion ClearOnError and AutoCompose should not be set in
+        the same time, so, if one option is checked, another one must
+        be unchecked.
+        @param sender The sender object.
 */
 - (IBAction)setAutoCompose:(id)sender;
 @end

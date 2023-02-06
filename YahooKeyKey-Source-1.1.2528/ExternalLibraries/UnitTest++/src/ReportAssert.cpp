@@ -2,9 +2,9 @@
 
 namespace UnitTest {
 
-void ReportAssert(char const* description, char const* filename, int const lineNumber)
-{
-    throw AssertException(description, filename, lineNumber);
+void ReportAssert(char const* description, char const* filename,
+                  int const lineNumber) {
+  throw AssertException(description, filename, lineNumber);
 }
 
-}
+}  // namespace UnitTest

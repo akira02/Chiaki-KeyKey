@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,30 +30,28 @@
 #define OVIMUnicodeHEXPackage_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "OVIMUnicodeHEX.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVIMUnicodeHEXPackage : public OVModulePackage {
-    public:
-        OVIMUnicodeHEXPackage()
-        {
-            m_moduleVector.push_back(new OVModuleClassWrapper<OVIMUnicodeHEX>);
-        }
-        
-        virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-        {
-            loaderService->logger("OVIMUnicodeHEXPacakge") << "Initialized" << endl;
-            return true;
-        }        
-    };
-    
+class OVIMUnicodeHEXPackage : public OVModulePackage {
+ public:
+  OVIMUnicodeHEXPackage() {
+    m_moduleVector.push_back(new OVModuleClassWrapper<OVIMUnicodeHEX>);
+  }
+
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    loaderService->logger("OVIMUnicodeHEXPacakge") << "Initialized" << endl;
+    return true;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

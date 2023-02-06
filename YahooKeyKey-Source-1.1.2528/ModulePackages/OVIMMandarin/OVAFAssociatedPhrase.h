@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -30,61 +30,64 @@
 #define OVAFAssociatedPhrase_h
 
 #ifndef OV_USE_SQLITE
-	#define OV_USE_SQLITE
+#define OV_USE_SQLITE
 #endif
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #ifndef OVAFASSOCIATEDPHRASE_IDENTIFIER
-    #define OVAFASSOCIATEDPHRASE_IDENTIFIER "OVAFAssociatedPhrase"
+#define OVAFASSOCIATEDPHRASE_IDENTIFIER "OVAFAssociatedPhrase"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class OVAFAssociatedPhrase;
-    
-    class OVAFAssociatedPhraseContext : public OVEventHandlingContext {
-    public:
-        OVAFAssociatedPhraseContext(OVAFAssociatedPhrase* module);
-        ~OVAFAssociatedPhraseContext();
-        
-        virtual void startSession(OVLoaderService* loaderService);
-        virtual bool handleKey(OVKey* key, OVTextBuffer* readingText, OVTextBuffer* composingText, OVCandidateService* candidateService, OVLoaderService* loaderService);
-        virtual bool handleDirectText(const string&, OVTextBuffer* readingText, OVTextBuffer* composingText, OVCandidateService* candidateService, OVLoaderService* loaderService);
-        
-    protected:
-        OVAFAssociatedPhrase* m_module;
-        OVSQLiteStatement* m_selectStatement;
-        vector<string> m_candidates;
-        bool m_keyHandled;
-    };
-    
-    class OVAFAssociatedPhrase : public OVAroundFilter {
-    public:
-        OVAFAssociatedPhrase();
-        ~OVAFAssociatedPhrase();
-        
-        virtual OVEventHandlingContext* createContext();
-        virtual const string identifier() const;
-        virtual const string localizedName(const string& locale);
-        virtual bool initialize(OVPathInfo* pathInfo, OVLoaderService* loaderService);
-        virtual void finalize();
-        friend class OVAFAssociatedPhraseContext;
+class OVAFAssociatedPhrase;
 
-        virtual int suggestedOrder() const
-        {
-            return -1;
-        }
-        
-    protected:
-        OVSQLiteConnection* m_phraseDB;    
-    };
-    
+class OVAFAssociatedPhraseContext : public OVEventHandlingContext {
+ public:
+  OVAFAssociatedPhraseContext(OVAFAssociatedPhrase* module);
+  ~OVAFAssociatedPhraseContext();
+
+  virtual void startSession(OVLoaderService* loaderService);
+  virtual bool handleKey(OVKey* key, OVTextBuffer* readingText,
+                         OVTextBuffer* composingText,
+                         OVCandidateService* candidateService,
+                         OVLoaderService* loaderService);
+  virtual bool handleDirectText(const string&, OVTextBuffer* readingText,
+                                OVTextBuffer* composingText,
+                                OVCandidateService* candidateService,
+                                OVLoaderService* loaderService);
+
+ protected:
+  OVAFAssociatedPhrase* m_module;
+  OVSQLiteStatement* m_selectStatement;
+  vector<string> m_candidates;
+  bool m_keyHandled;
 };
+
+class OVAFAssociatedPhrase : public OVAroundFilter {
+ public:
+  OVAFAssociatedPhrase();
+  ~OVAFAssociatedPhrase();
+
+  virtual OVEventHandlingContext* createContext();
+  virtual const string identifier() const;
+  virtual const string localizedName(const string& locale);
+  virtual bool initialize(OVPathInfo* pathInfo, OVLoaderService* loaderService);
+  virtual void finalize();
+  friend class OVAFAssociatedPhraseContext;
+
+  virtual int suggestedOrder() const { return -1; }
+
+ protected:
+  OVSQLiteConnection* m_phraseDB;
+};
+
+};  // namespace OpenVanilla
 
 #endif

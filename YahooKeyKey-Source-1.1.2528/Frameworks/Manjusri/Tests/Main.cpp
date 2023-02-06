@@ -6,7 +6,4 @@ file for terms.
 
 #include <UnitTest++.h>
 
-int main()
-{
-    return UnitTest::RunAllTests();
-}
+int main() { return UnitTest::RunAllTests(); }

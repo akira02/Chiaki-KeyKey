@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+
 #include "expat.h"
 
 #if defined(__amigaos__) && defined(__USE_INLINE__)
@@ -22,27 +23,21 @@
 #define XML_FMT_INT_MOD "l"
 #endif
 
-static void XMLCALL
-startElement(void *userData, const char *name, const char **atts)
-{
+static void XMLCALL startElement(void *userData, const char *name,
+                                 const char **atts) {
   int i;
   int *depthPtr = (int *)userData;
-  for (i = 0; i < *depthPtr; i++)
-    putchar('\t');
+  for (i = 0; i < *depthPtr; i++) putchar('\t');
   puts(name);
   *depthPtr += 1;
 }
 
-static void XMLCALL
-endElement(void *userData, const char *name)
-{
+static void XMLCALL endElement(void *userData, const char *name) {
   int *depthPtr = (int *)userData;
   *depthPtr -= 1;
 }
 
-int
-main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   char buf[BUFSIZ];
   XML_Parser parser = XML_ParserCreate(NULL);
   int done;
@@ -53,8 +48,7 @@ main(int argc, char *argv[])
     int len = (int)fread(buf, 1, sizeof(buf), stdin);
     done = len < sizeof(buf);
     if (XML_Parse(parser, buf, len, done) == XML_STATUS_ERROR) {
-      fprintf(stderr,
-              "%s at line %" XML_FMT_INT_MOD "u\n",
+      fprintf(stderr, "%s at line %" XML_FMT_INT_MOD "u\n",
               XML_ErrorString(XML_GetErrorCode(parser)),
               XML_GetCurrentLineNumber(parser));
       return 1;

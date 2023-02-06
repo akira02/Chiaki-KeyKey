@@ -8,29 +8,27 @@ file for terms.
 #define YKAFWordCountPackage_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 #include "YKAFWordCount.h"
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class YKAFWordCountPackage : public OVModulePackage {
-    public:
-        YKAFWordCountPackage()
-        {
-            m_moduleVector.push_back(new OVModuleClassWrapper<YKAFWordCount>);
-        }
-        
-        virtual bool initialize(OVPathInfo* , OVLoaderService* loaderService)
-        {
-            return true;
-        }        
-    };
-    
+class YKAFWordCountPackage : public OVModulePackage {
+ public:
+  YKAFWordCountPackage() {
+    m_moduleVector.push_back(new OVModuleClassWrapper<YKAFWordCount>);
+  }
+
+  virtual bool initialize(OVPathInfo*, OVLoaderService* loaderService) {
+    return true;
+  }
 };
+
+};  // namespace OpenVanilla
 
 #endif

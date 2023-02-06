@@ -15,18 +15,17 @@
 #define UNICODE
 #define _UNICODE
 #endif /* XML_UNICODE */
-#include <windows.h>
 #include <stdio.h>
 #include <tchar.h>
+#include <windows.h>
+
 #include "filemap.h"
 
 static void win32perror(const TCHAR *);
 
-int
-filemap(const TCHAR *name,
-        void (*processor)(const void *, size_t, const TCHAR *, void *arg),
-        void *arg)
-{
+int filemap(const TCHAR *name,
+            void (*processor)(const void *, size_t, const TCHAR *, void *arg),
+            void *arg) {
   HANDLE f;
   HANDLE m;
   DWORD size;
@@ -34,7 +33,7 @@ filemap(const TCHAR *name,
   void *p;
 
   f = CreateFile(name, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING,
-                          FILE_FLAG_SEQUENTIAL_SCAN, NULL);
+                 FILE_FLAG_SEQUENTIAL_SCAN, NULL);
   if (f == INVALID_HANDLE_VALUE) {
     win32perror(name);
     return 0;
@@ -68,29 +67,22 @@ filemap(const TCHAR *name,
     CloseHandle(f);
     return 0;
   }
-  processor(p, size, name, arg); 
+  processor(p, size, name, arg);
   UnmapViewOfFile(p);
   CloseHandle(m);
   CloseHandle(f);
   return 1;
 }
 
-static void
-win32perror(const TCHAR *s)
-{
+static void win32perror(const TCHAR *s) {
   LPVOID buf;
-  if (FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER
-                    | FORMAT_MESSAGE_FROM_SYSTEM,
-                    NULL,
-                    GetLastError(),
-                    MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                    (LPTSTR) &buf,
-                    0,
+  if (FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM,
+                    NULL, GetLastError(),
+                    MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPTSTR)&buf, 0,
                     NULL)) {
     _ftprintf(stderr, _T("%s: %s"), s, buf);
     fflush(stderr);
     LocalFree(buf);
-  }
-  else
+  } else
     _ftprintf(stderr, _T("%s: unknown Windows error\n"), s);
 }

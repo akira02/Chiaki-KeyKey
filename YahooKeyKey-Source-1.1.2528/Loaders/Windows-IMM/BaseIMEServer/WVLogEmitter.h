@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -29,25 +29,23 @@
 #ifndef WVLogEmitter_h
 #define WVLogEmitter_h
 
-#include <PlainVanilla.h>
 #include <LFPlatform.h>
+#include <PlainVanilla.h>
 
 namespace OpenVanilla {
-    using namespace std;
-    using namespace LFPlatform;
+using namespace std;
+using namespace LFPlatform;
 
-
-    class WVLogEmitter : public PVLogEmitter {
-    public:
-        virtual void emitLog(const string& logEntry)
-        {
-    		if (logEntry.length() > 0) {
-    		    // strip the ending \n
-                Logger logger(m_sectionName);
-                logger.debug("%s", logEntry.substr(0, logEntry.length() - 1).c_str());
-    		}
-        }
-    };    
+class WVLogEmitter : public PVLogEmitter {
+ public:
+  virtual void emitLog(const string& logEntry) {
+    if (logEntry.length() > 0) {
+      // strip the ending \n
+      Logger logger(m_sectionName);
+      logger.debug("%s", logEntry.substr(0, logEntry.length() - 1).c_str());
+    }
+  }
 };
+};  // namespace OpenVanilla
 
 #endif

@@ -7,11 +7,9 @@ file for terms.
 
 #import <Cocoa/Cocoa.h>
 
-
-@interface TakaoKeyboardLayoutPopUpButton : NSPopUpButton
-{
-	NSMenu *_standardMenu;
-	NSMenu *_realMenu;
+@interface TakaoKeyboardLayoutPopUpButton : NSPopUpButton {
+  NSMenu *_standardMenu;
+  NSMenu *_realMenu;
 }
 
 - (void)changeMenu:(NSNotification *)notification;

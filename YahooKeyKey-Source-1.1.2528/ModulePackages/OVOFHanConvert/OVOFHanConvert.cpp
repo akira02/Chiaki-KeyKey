@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2004-2010 The OpenVanilla Project (http://openvanilla.org)
 // All rights reserved.
-// 
+//
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without
@@ -28,10 +28,10 @@
 
 #include "OVOFHanConvert.h"
 
+#include <cctype>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cstdio>
-#include <cctype>
 
 using namespace OpenVanilla;
 
@@ -41,64 +41,62 @@ extern "C" unsigned short vxSC2TCTable[];
 const size_t vxTC2SCTableSize = 3059;
 extern "C" unsigned short vxTC2SCTable[];
 
-struct VXHCData
-{
-	unsigned short key, value;
+struct VXHCData {
+  unsigned short key, value;
 };
 
-int VXHCCompare(const void *a, const void *b)
-{
-	unsigned short x=((const struct VXHCData*)a)->key, y=((const struct VXHCData*)b)->key;
-	if (x==y) return 0;
-	if (x<y) return -1;
-	return 1;
+int VXHCCompare(const void* a, const void* b) {
+  unsigned short x = ((const struct VXHCData*)a)->key,
+                 y = ((const struct VXHCData*)b)->key;
+  if (x == y) return 0;
+  if (x < y) return -1;
+  return 1;
 }
 
-unsigned short VXHCFind(unsigned key, unsigned short *table, size_t size)
-{
-	struct VXHCData k;
-	k.key=key;
-	struct VXHCData *d=(struct VXHCData*)bsearch(&k, table, size, sizeof(struct VXHCData), VXHCCompare);
-	if (!d) return 0;
-	return d->value;
+unsigned short VXHCFind(unsigned key, unsigned short* table, size_t size) {
+  struct VXHCData k;
+  k.key = key;
+  struct VXHCData* d = (struct VXHCData*)bsearch(
+      &k, table, size, sizeof(struct VXHCData), VXHCCompare);
+  if (!d) return 0;
+  return d->value;
 }
 
-unsigned short VXUCS2TradToSimpChinese(unsigned short c)
-{
-	return VXHCFind(c, vxTC2SCTable, vxTC2SCTableSize);
+unsigned short VXUCS2TradToSimpChinese(unsigned short c) {
+  return VXHCFind(c, vxTC2SCTable, vxTC2SCTableSize);
 }
 
-unsigned short VXUCS2SimpToTradChinese(unsigned short c)
-{
-	return VXHCFind(c, vxSC2TCTable, vxSC2TCTableSize);
+unsigned short VXUCS2SimpToTradChinese(unsigned short c) {
+  return VXHCFind(c, vxSC2TCTable, vxSC2TCTableSize);
 }
 
-const string OVOFTC2SCContext::filterText(const string& inputText, OVLoaderService* loaderService)
-{
-    wstring wideText = OVUTF16::FromUTF8(inputText);
-    
-    for (wstring::iterator iter = wideText.begin() ; iter != wideText.end() ; ++iter) {
-        unsigned short value = VXUCS2TradToSimpChinese((unsigned short)*iter);
-        *iter = value ? value : *iter;
-    }
-    
-    return OVUTF8::FromUTF16(wideText);
+const string OVOFTC2SCContext::filterText(const string& inputText,
+                                          OVLoaderService* loaderService) {
+  wstring wideText = OVUTF16::FromUTF8(inputText);
+
+  for (wstring::iterator iter = wideText.begin(); iter != wideText.end();
+       ++iter) {
+    unsigned short value = VXUCS2TradToSimpChinese((unsigned short)*iter);
+    *iter = value ? value : *iter;
+  }
+
+  return OVUTF8::FromUTF16(wideText);
 }
 
-const string OVOFSC2TCContext::filterText(const string& inputText, OVLoaderService* loaderService)
-{
-    wstring wideText = OVUTF16::FromUTF8(inputText);
+const string OVOFSC2TCContext::filterText(const string& inputText,
+                                          OVLoaderService* loaderService) {
+  wstring wideText = OVUTF16::FromUTF8(inputText);
 
-    for (wstring::iterator iter = wideText.begin() ; iter != wideText.end() ; ++iter) {
-        unsigned short value = VXUCS2SimpToTradChinese((unsigned short)*iter);
-        *iter = value ? value : *iter;
-    }
-    
-    return OVUTF8::FromUTF16(wideText);
+  for (wstring::iterator iter = wideText.begin(); iter != wideText.end();
+       ++iter) {
+    unsigned short value = VXUCS2SimpToTradChinese((unsigned short)*iter);
+    *iter = value ? value : *iter;
+  }
+
+  return OVUTF8::FromUTF16(wideText);
 }
 
-const string OVOFHanConvert::identifier() const
-{
-    return m_tc2sc ? OVOFHANCONVERT_IDENTIFIER_PREFIX "-TC2SC" : OVOFHANCONVERT_IDENTIFIER_PREFIX "-SC2TC";
+const string OVOFHanConvert::identifier() const {
+  return m_tc2sc ? OVOFHANCONVERT_IDENTIFIER_PREFIX "-TC2SC"
+                 : OVOFHANCONVERT_IDENTIFIER_PREFIX "-SC2TC";
 }
-

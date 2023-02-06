@@ -6,14 +6,14 @@ file for terms.
 // [AUTO_HEADER]
 
 #import <Cocoa/Cocoa.h>
+
 #import "TakaoSettings.h"
 
-@interface TakaoSearch : NSObject
-{
-	IBOutlet id u_shortcutKey;
-	
-	NSMutableDictionary *_searchDictionary;
-	NSString *_preferenceFilePath;	
+@interface TakaoSearch : NSObject {
+  IBOutlet id u_shortcutKey;
+
+  NSMutableDictionary *_searchDictionary;
+  NSString *_preferenceFilePath;
 }
 
 /*!

@@ -21,9 +21,8 @@
  * Must be used with Expat compiled for UTF-8 output.
  */
 
-
-#include <stdio.h>
 #include <expat.h>
+#include <stdio.h>
 
 #if defined(__amigaos__) && defined(__USE_INLINE__)
 #include <proto/expat.h>
@@ -39,19 +38,16 @@
 #define XML_FMT_INT_MOD "l"
 #endif
 
-#define BUFFSIZE        8192
+#define BUFFSIZE 8192
 
 char Buff[BUFFSIZE];
 
 int Depth;
 
-static void XMLCALL
-start(void *data, const char *el, const char **attr)
-{
+static void XMLCALL start(void *data, const char *el, const char **attr) {
   int i;
 
-  for (i = 0; i < Depth; i++)
-    printf("  ");
+  for (i = 0; i < Depth; i++) printf("  ");
 
   printf("%s", el);
 
@@ -63,17 +59,11 @@ start(void *data, const char *el, const char **attr)
   Depth++;
 }
 
-static void XMLCALL
-end(void *data, const char *el)
-{
-  Depth--;
-}
+static void XMLCALL end(void *data, const char *el) { Depth--; }
 
-int
-main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   XML_Parser p = XML_ParserCreate(NULL);
-  if (! p) {
+  if (!p) {
     fprintf(stderr, "Couldn't allocate memory for parser\n");
     exit(-1);
   }
@@ -98,8 +88,7 @@ main(int argc, char *argv[])
       exit(-1);
     }
 
-    if (done)
-      break;
+    if (done) break;
   }
   XML_ParserFree(p);
   return 0;

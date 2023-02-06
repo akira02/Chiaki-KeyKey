@@ -29,133 +29,128 @@
 #define PVLoaderPolicy_h
 
 #if defined(__APPLE__)
-    #include <OpenVanilla/OpenVanilla.h>
+#include <OpenVanilla/OpenVanilla.h>
 #else
-    #include "OpenVanilla.h"
+#include "OpenVanilla.h"
 #endif
 
 namespace OpenVanilla {
-    using namespace std;
+using namespace std;
 
-    class PVLoaderPolicy : public OVBase {
-    public:
-        // these derive information from system default and given path or identifier, but you can override these, too
-        PVLoaderPolicy(const vector<string> loadPaths);
-        virtual bool addModulePackageLoadPath(const string& path);
-        virtual const vector<string> modulePackageLoadPaths() const;
-        virtual const string modulePackageIdentifierFromPath(const string& path);
-        virtual const OVPathInfo modulePackagePathInfoFromPath(const string& path);
-        virtual const string propertyListPathFromIdentifier(const string& identifier);
-        virtual const string propertyListPathForLoader();
-        virtual const string moduleIdentifierPrefix(const string& identifier);
-        
-    public:
-        // customizable (overridable) mehtods
-        virtual const string defaultDatabaseFileName();
-        virtual const string loaderIdentifier();
-        virtual const string loaderName();
-        virtual const vector<string> modulePackageFilePatterns();
-        
-    protected:
-        vector<string> m_modulePackageLoadPaths;        
-    };    
-    
-    inline bool PVLoaderPolicy::addModulePackageLoadPath(const string& path)
-    {
-        m_modulePackageLoadPaths.push_back(path);
-        return true;
-    }
+class PVLoaderPolicy : public OVBase {
+ public:
+  // these derive information from system default and given path or identifier,
+  // but you can override these, too
+  PVLoaderPolicy(const vector<string> loadPaths);
+  virtual bool addModulePackageLoadPath(const string& path);
+  virtual const vector<string> modulePackageLoadPaths() const;
+  virtual const string modulePackageIdentifierFromPath(const string& path);
+  virtual const OVPathInfo modulePackagePathInfoFromPath(const string& path);
+  virtual const string propertyListPathFromIdentifier(const string& identifier);
+  virtual const string propertyListPathForLoader();
+  virtual const string moduleIdentifierPrefix(const string& identifier);
 
-    inline const string PVLoaderPolicy::loaderIdentifier()
-    {
-		#ifndef PVLOADERPOLICY_LOADER_IDENTIFIER
-        return string("org.openvanilla");
-		#else
-		return string(PVLOADERPOLICY_LOADER_IDENTIFIER);
-		#endif
-    }
+ public:
+  // customizable (overridable) mehtods
+  virtual const string defaultDatabaseFileName();
+  virtual const string loaderIdentifier();
+  virtual const string loaderName();
+  virtual const vector<string> modulePackageFilePatterns();
 
-    inline const string PVLoaderPolicy::loaderName()
-    {
-		#ifndef PVLOADERPOLICY_LOADER_NAME
-        return string("OpenVanilla");
-		#else
-		return string(PVLOADERPOLICY_LOADER_NAME);
-		#endif
-    }
+ protected:
+  vector<string> m_modulePackageLoadPaths;
+};
 
-    inline const string PVLoaderPolicy::defaultDatabaseFileName()
-    {
-        return loaderName() + ".db";
-    }
+inline bool PVLoaderPolicy::addModulePackageLoadPath(const string& path) {
+  m_modulePackageLoadPaths.push_back(path);
+  return true;
+}
 
-    inline const vector<string> PVLoaderPolicy::modulePackageFilePatterns()
-    {
-        vector<string> result;
-        #if defined(__APPLE__)
-            result.push_back("*.bundle");
-        #elif defined(WIN32)
-            result.push_back("*.dll");
-        #else
-            #error Should be so on Linux and FreeBSD--check it out.
-            result.push_back("*.so");
-        #endif
+inline const string PVLoaderPolicy::loaderIdentifier() {
+#ifndef PVLOADERPOLICY_LOADER_IDENTIFIER
+  return string("org.openvanilla");
+#else
+  return string(PVLOADERPOLICY_LOADER_IDENTIFIER);
+#endif
+}
 
-        return result;
-    }
+inline const string PVLoaderPolicy::loaderName() {
+#ifndef PVLOADERPOLICY_LOADER_NAME
+  return string("OpenVanilla");
+#else
+  return string(PVLOADERPOLICY_LOADER_NAME);
+#endif
+}
 
-    inline PVLoaderPolicy::PVLoaderPolicy(const vector<string> loadPaths)
-        : m_modulePackageLoadPaths(loadPaths)
-    {
-    }
+inline const string PVLoaderPolicy::defaultDatabaseFileName() {
+  return loaderName() + ".db";
+}
 
-    inline const vector<string> PVLoaderPolicy::modulePackageLoadPaths() const
-    {
-        return m_modulePackageLoadPaths;
-    }
+inline const vector<string> PVLoaderPolicy::modulePackageFilePatterns() {
+  vector<string> result;
+#if defined(__APPLE__)
+  result.push_back("*.bundle");
+#elif defined(WIN32)
+  result.push_back("*.dll");
+#else
+#error Should be so on Linux and FreeBSD--check it out.
+  result.push_back("*.so");
+#endif
 
+  return result;
+}
 
-    inline const string PVLoaderPolicy::modulePackageIdentifierFromPath(const string& path)
-    {
-        return OVPathHelper::FilenameWithoutExtension(OVPathHelper::FilenameWithoutPath(path));
-    }
+inline PVLoaderPolicy::PVLoaderPolicy(const vector<string> loadPaths)
+    : m_modulePackageLoadPaths(loadPaths) {}
 
-    inline const OVPathInfo PVLoaderPolicy::modulePackagePathInfoFromPath(const string& path)
-    {
-        OVPathInfo info;
-        string identifier = modulePackageIdentifierFromPath(path);            
-        info.loadedPath = OVPathHelper::DirectoryFromPath(path);
+inline const vector<string> PVLoaderPolicy::modulePackageLoadPaths() const {
+  return m_modulePackageLoadPaths;
+}
 
-        if (OVWildcard::Match(path, "*.bundle"))
-            info.resourcePath = OVPathHelper::PathCat(OVPathHelper::PathCat(path, "/Contents"), "/Resources");
-        else
-            info.resourcePath = info.loadedPath;
+inline const string PVLoaderPolicy::modulePackageIdentifierFromPath(
+    const string& path) {
+  return OVPathHelper::FilenameWithoutExtension(
+      OVPathHelper::FilenameWithoutPath(path));
+}
 
-        info.writablePath = OVPathHelper::PathCat(OVDirectoryHelper::UserApplicationSupportDataDirectory(loaderName()), identifier);
+inline const OVPathInfo PVLoaderPolicy::modulePackagePathInfoFromPath(
+    const string& path) {
+  OVPathInfo info;
+  string identifier = modulePackageIdentifierFromPath(path);
+  info.loadedPath = OVPathHelper::DirectoryFromPath(path);
 
-        return info;
-    }
+  if (OVWildcard::Match(path, "*.bundle"))
+    info.resourcePath = OVPathHelper::PathCat(
+        OVPathHelper::PathCat(path, "/Contents"), "/Resources");
+  else
+    info.resourcePath = info.loadedPath;
 
-    inline const string PVLoaderPolicy::propertyListPathFromIdentifier(const string& identifier)
-    {
-        string plist = moduleIdentifierPrefix(identifier) + string(".plist");
-        string dir = OVDirectoryHelper::UserPreferencesDirectory(loaderName());
+  info.writablePath = OVPathHelper::PathCat(
+      OVDirectoryHelper::UserApplicationSupportDataDirectory(loaderName()),
+      identifier);
 
-        return OVPathHelper::PathCat(dir, plist);
-    }
+  return info;
+}
 
-    inline const string PVLoaderPolicy::propertyListPathForLoader()
-    {
-        string plist = loaderIdentifier() + string(".plist");
-        string dir = OVDirectoryHelper::UserPreferencesDirectory(loaderName());
+inline const string PVLoaderPolicy::propertyListPathFromIdentifier(
+    const string& identifier) {
+  string plist = moduleIdentifierPrefix(identifier) + string(".plist");
+  string dir = OVDirectoryHelper::UserPreferencesDirectory(loaderName());
 
-        return OVPathHelper::PathCat(dir, plist);            
-    }
+  return OVPathHelper::PathCat(dir, plist);
+}
 
-    inline const string PVLoaderPolicy::moduleIdentifierPrefix(const string& identifier)
-    {
-        return loaderIdentifier() + string(".") + identifier;
-    }
-};    
+inline const string PVLoaderPolicy::propertyListPathForLoader() {
+  string plist = loaderIdentifier() + string(".plist");
+  string dir = OVDirectoryHelper::UserPreferencesDirectory(loaderName());
+
+  return OVPathHelper::PathCat(dir, plist);
+}
+
+inline const string PVLoaderPolicy::moduleIdentifierPrefix(
+    const string& identifier) {
+  return loaderIdentifier() + string(".") + identifier;
+}
+};  // namespace OpenVanilla
 
 #endif
