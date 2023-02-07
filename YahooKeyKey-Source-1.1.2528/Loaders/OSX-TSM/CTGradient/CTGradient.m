@@ -496,7 +496,7 @@ static void resolveHSV(float *color1, float *color2);
 
 // Adds a color stop with <color> at <position> in elementList
 //(if two elements are at the same position then added imediatly after the one
-//that was there already)
+// that was there already)
 - (CTGradient *)addColorStop:(NSColor *)color atPosition:(float)position {
   CTGradient *newGradient = [self copy];
   CTGradientElement newGradientElement;
@@ -930,7 +930,7 @@ static void resolveHSV(float *color1, float *color2);
 
 #pragma mark Core Graphics
 //////////////////////////////////////Blending
-///Functions/////////////////////////////////////
+/// Functions/////////////////////////////////////
 void linearEvaluation(void *info, const float *in, float *out) {
   float position = *in;
 
@@ -995,14 +995,15 @@ void linearEvaluation(void *info, const float *in, float *out) {
 
 // Chromatic Evaluation -
 //	This blends colors by their Hue, Saturation, and Value(Brightness) right
-//now I just 	transform the RGB values stored in the CTGradientElements to HSB,
-//in the future I may 	streamline it to avoid transforming in and out of HSB
-//colorspace *for later*
+// now I just 	transform the RGB values stored in the CTGradientElements to
+// HSB, in the future I may 	streamline it to avoid transforming in and out
+// of HSB colorspace *for later*
 //
 //	For the chromatic blend we shift the hue of color1 to meet the hue of
-//color2. To do 	this we will add to the hue's angle (if we subtract we'll be
-//doing the inverse 	chromatic...scroll down more for that). All we need to do is
-//keep adding to the hue
+// color2. To do 	this we will add to the hue's angle (if we subtract we'll
+// be
+// doing the inverse 	chromatic...scroll down more for that). All we need to
+// do is keep adding to the hue
 //   until we wrap around the colorwheel and get to color2.
 void chromaticEvaluation(void *info, const float *in, float *out) {
   float position = *in;
@@ -1081,9 +1082,10 @@ void chromaticEvaluation(void *info, const float *in, float *out) {
 
 // Inverse Chromatic Evaluation -
 //	Inverse Chromatic is about the same story as Chromatic Blend, but here
-//the Hue 	is strictly decreasing, that is we need to get from color1 to color2
-//by decreasing 	the 'angle' (i.e. 90º -> 180º would be done by subtracting 270º
-//and getting -180º... 	which is equivalent to 180º mod 360º
+// the Hue 	is strictly decreasing, that is we need to get from color1 to
+// color2 by decreasing 	the 'angle' (i.e. 90º -> 180º would be done by
+// subtracting 270º and getting -180º... 	which is equivalent to 180º mod
+// 360º
 void inverseChromaticEvaluation(void *info, const float *in, float *out) {
   float position = *in;
 

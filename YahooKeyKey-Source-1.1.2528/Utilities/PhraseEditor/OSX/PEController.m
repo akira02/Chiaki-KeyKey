@@ -22,7 +22,7 @@ typedef unsigned int NSUInteger;
   [super dealloc];
 }
 - (void)awakeFromNib {
-  [NSApp setDelegate:self];
+  [NSApp setDelegate:(id)self];
   _loader = [[NSConnection
       rootProxyForConnectionWithRegisteredName:OPENVANILLA_DO_CONNECTION_NAME
                                           host:nil] retain];
@@ -43,12 +43,12 @@ typedef unsigned int NSUInteger;
 
   NSToolbar *toolbar =
       [[[NSToolbar alloc] initWithIdentifier:@"toolbar"] autorelease];
-  [toolbar setDelegate:self];
+  [toolbar setDelegate:(id)self];
   [[self window] setToolbar:toolbar];
-  [[self window] setDelegate:self];
+  [[self window] setDelegate:(id)self];
   [[self window] center];
 
-  [NSApp setDelegate:self];
+  [NSApp setDelegate:(id)self];
 
 #if (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
   NSTokenFieldCell *cell = [[[NSTokenFieldCell alloc] init] autorelease];
@@ -59,7 +59,7 @@ typedef unsigned int NSUInteger;
   [_tableView setDraggingSourceOperationMask:NSDragOperationEvery forLocal:NO];
   [_tableView setAllowsMultipleSelection:YES];
   [_tableView setDataSource:self];
-  [_tableView setDelegate:self];
+  [_tableView setDelegate:(id)self];
   [_tableView setRowHeight:20.0];
 
   [_phraseWindow setDefaultButtonCell:[_okButton cell]];

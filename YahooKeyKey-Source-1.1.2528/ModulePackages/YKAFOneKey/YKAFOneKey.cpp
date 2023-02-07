@@ -143,8 +143,8 @@ bool YKAFOneKeyContext::handleKey(OVKey* key, OVTextBuffer* readingText,
                                   OVCandidateService* candidateService,
                                   OVLoaderService* loaderService) {
   //	cerr << "handleKey " << key->keyCode() << ", logging? " <<
-  //m_loggingUserInput << ", invoking feature? " << hex << (unsigned
-  //int)m_invokingFeature  << dec << endl;
+  // m_loggingUserInput << ", invoking feature? " << hex << (unsigned
+  // int)m_invokingFeature  << dec << endl;
 
   if (!m_oneKeyData) {
     return false;
@@ -249,7 +249,8 @@ bool YKAFOneKeyContext::handleKey(OVKey* key, OVTextBuffer* readingText,
     for (vector<pair<char, size_t> >::iterator cfi = collectedFeatures.begin();
          cfi != collectedFeatures.end(); ++cfi) {
       if ((*cfi).first) {
-        //				loaderService->logger("OneKey") << "key " <<
+        //				loaderService->logger("OneKey") << "key "
+        //<<
         //(*cfi).first << ", feature: " << (*cfi).second << endl;
         shortcutKey += string(1, (*cfi).first);
         list->addCandidate(localizedFeatureTitleAtIndex((*cfi).second));
@@ -326,7 +327,7 @@ bool YKAFOneKeyContext::handleKey(OVKey* key, OVTextBuffer* readingText,
       if (trackerString.size()) {
         loaderService->callLoaderFeature("SendTrackerRequest", trackerString);
         //				loaderService->logger("OneKey") <<
-        //trackerString << endl;
+        // trackerString << endl;
       }
 
       if (actionString == "OpenDictionary") {

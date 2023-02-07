@@ -80,7 +80,7 @@ static MenuRef TSCSharedMenu = NULL;
                                                  inRange:maxRange];
 
       //			NSLog(@"section range: %@, attr: %@",
-      //NSStringFromRange(currentRange), attributes);
+      // NSStringFromRange(currentRange), attributes);
       id usa = [attributes objectForKey:@"UnderlineStyleAttribute"];
       if (!usa) {
         usa = [NSNumber numberWithInt:NSUnderlineStyleSingle];
@@ -99,8 +99,8 @@ static MenuRef TSCSharedMenu = NULL;
   //	if (![highlightSegments count]) {
   //		NSLog(@"using no segments");
   //		[highlightSegments addObject:[NSArray arrayWithObjects:[NSValue
-  //valueWithRange:maxRange], [NSNumber numberWithInt:NSUnderlineStyleSingle],
-  //nil]];
+  // valueWithRange:maxRange], [NSNumber numberWithInt:NSUnderlineStyleSingle],
+  // nil]];
   //	}
 
   OSStatus status;

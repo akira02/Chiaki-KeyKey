@@ -203,7 +203,7 @@ file for terms.
 //	[_useCtrlBackSlashToggleInputMethod setEnabled:NO];
 //	NSString *title = [_useCtrlBackSlashToggleInputMethod title];
 //	[_useCtrlBackSlashToggleInputMethod setTitle:[NSString
-//stringWithFormat:@"%@ (10.5 only)", title]];
+// stringWithFormat:@"%@ (10.5 only)", title]];
 #endif
 
   if ([[_takaoDictionary valueForKey:@"OneDimensionalCandidatePanelStyle"]
@@ -266,7 +266,7 @@ file for terms.
   }
 
   [_moduleListTableView setDataSource:self];
-  [_moduleListTableView setDelegate:self];
+  [_moduleListTableView setDelegate:(id)self];
   [_moduleListTableView reloadData];
 }
 - (void)awakeFromNib {
@@ -413,7 +413,7 @@ file for terms.
   }
 
   if (_sound) {
-    [_sound setDelegate:self];
+    [_sound setDelegate:(id)self];
     [_sound play];
     [_stopPlayiongButton setEnabled:YES];
   }
@@ -479,7 +479,7 @@ file for terms.
   [self doWrite];
 
   if (_sound) {
-    [_sound setDelegate:self];
+    [_sound setDelegate:(id)self];
     [_sound play];
     [_stopPlayiongButton setEnabled:YES];
   }
@@ -615,14 +615,14 @@ file for terms.
 
   //#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_4
   //	if ([aColor colorSpaceName] == NSDeviceWhiteColorSpace || [aColor
-  //colorSpaceName] ==NSCalibratedWhiteColorSpace) { 		fromColor = [NSColor
-  //colorWithCalibratedRed:1.0 green:1.0 blue:1.0 alpha:[aColor
-  //alphaComponent]];
+  // colorSpaceName] ==NSCalibratedWhiteColorSpace) { 		fromColor =
+  // [NSColor colorWithCalibratedRed:1.0 green:1.0 blue:1.0 alpha:[aColor
+  // alphaComponent]];
   //	}
   //	else if ([aColor colorSpaceName] == NSDeviceBlackColorSpace || [aColor
-  //colorSpaceName] ==NSCalibratedBlackColorSpace) { 		fromColor = [NSColor
-  //colorWithCalibratedRed:0.0 green:0.0 blue:0.0 alpha:[aColor
-  //alphaComponent]];
+  // colorSpaceName] ==NSCalibratedBlackColorSpace) { 		fromColor =
+  // [NSColor colorWithCalibratedRed:0.0 green:0.0 blue:0.0 alpha:[aColor
+  // alphaComponent]];
   //	}
   //	else {
   //		fromColor = aColor;
@@ -632,13 +632,13 @@ file for terms.
   //	float saturation = [fromColor saturationComponent];
   //	float brightness = [fromColor brightnessComponent] / 3.0;
   //	toColor = [NSColor colorWithCalibratedHue:hue saturation:saturation
-  //brightness:brightness alpha:1.0]; #endif
+  // brightness:brightness alpha:1.0]; #endif
 
   [image lockFocus];
   //#if MAC_OS_X_VERSION_MAX_ALLOWED > MAC_OS_X_VERSION_10_4
   //	NSGradient *g = [[[NSGradient alloc] initWithStartingColor:fromColor
-  //endingColor:toColor] autorelease]; 	[g drawInRect:NSMakeRect(0, 0, [image
-  //size].width, [image size].height) angle:270.0]; #else
+  // endingColor:toColor] autorelease]; 	[g drawInRect:NSMakeRect(0, 0,
+  // [image size].width, [image size].height) angle:270.0]; #else
   [aColor setFill];
   [NSBezierPath
       fillRect:NSMakeRect(0, 0, [image size].width, [image size].height)];

@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
   _array = [NSMutableArray new];
   [self setDataSource:self];
-  [self setDelegate:self];
+  [self setDelegate:(id)self];
 }
 - (void)dealloc {
   [_array release];

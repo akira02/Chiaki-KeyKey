@@ -337,7 +337,8 @@ static int PTRCALL PREFIX(cdataSectionTok)(const ENCODING *enc, const char *ptr,
     ptr += n;                                            \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_NONXML : case BT_MALFORM : case BT_TRAIL : case BT_CR
           : case BT_LF : case BT_RSQB : *nextTokPtr = ptr;
@@ -792,7 +793,8 @@ static int PTRCALL PREFIX(contentTok)(const ENCODING *enc, const char *ptr,
     ptr += n;                                            \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_RSQB : if (ptr + MINBPC(enc) != end) {
         if (!CHAR_MATCHES(enc, ptr + MINBPC(enc), ASCII_RSQB)) {
@@ -1057,7 +1059,8 @@ static int PTRCALL PREFIX(prologTok)(const ENCODING *enc, const char *ptr,
     *nextTokPtr = ptr;                              \
     return XML_TOK_INVALID;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_NMSTRT : case BT_HEX : tok = XML_TOK_NAME;
       ptr += MINBPC(enc);
@@ -1163,7 +1166,8 @@ static int PTRCALL PREFIX(attributeValueTok)(const ENCODING *enc,
     ptr += n;        \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_AMP : if (ptr == start) return PREFIX(scanRef)(
                             enc, ptr + MINBPC(enc), end, nextTokPtr);
@@ -1219,7 +1223,8 @@ static int PTRCALL PREFIX(entityValueTok)(const ENCODING *enc, const char *ptr,
     ptr += n;        \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_AMP : if (ptr == start) return PREFIX(scanRef)(
                             enc, ptr + MINBPC(enc), end, nextTokPtr);
@@ -1388,7 +1393,8 @@ static int PTRCALL PREFIX(getAtts)(const ENCODING *enc, const char *ptr,
     START_NAME ptr += (n - MINBPC(enc)); \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_NONASCII : case BT_NMSTRT : case BT_HEX : START_NAME break;
 #undef START_NAME
@@ -1561,7 +1567,8 @@ static int PTRCALL PREFIX(sameName)(const ENCODING *enc, const char *ptr1,
   case BT_LEAD##n:   \
     if (*ptr1++ != *ptr2++) return 0;
       LEAD_CASE(4)
-      LEAD_CASE(3) LEAD_CASE(2)
+      LEAD_CASE(3)
+      LEAD_CASE(2)
 #undef LEAD_CASE
           /* fall through */
           if (*ptr1++ != *ptr2++) return 0;
@@ -1630,7 +1637,8 @@ static int PTRFASTCALL PREFIX(nameLength)(const ENCODING *enc,
     ptr += n;        \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_NONASCII : case BT_NMSTRT :
 #ifdef XML_NS
@@ -1669,7 +1677,8 @@ static void PTRCALL PREFIX(updatePosition)(const ENCODING *enc, const char *ptr,
     ptr += n;        \
     break;
       LEAD_CASE(2)
-      LEAD_CASE(3) LEAD_CASE(4)
+      LEAD_CASE(3)
+      LEAD_CASE(4)
 #undef LEAD_CASE
           case BT_LF : pos->columnNumber = (XML_Size)-1;
       pos->lineNumber++;

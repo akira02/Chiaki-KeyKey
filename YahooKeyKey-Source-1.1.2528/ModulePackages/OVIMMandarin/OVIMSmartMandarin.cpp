@@ -603,8 +603,8 @@ bool OVIMSmartMandarinContext::handleKey(OVKey* key, OVTextBuffer* readingText,
           if (ctrlOptX || ctrl0or1 || ctrlX) {
             // handles ctrl-opt-[x] or ctrl-alt-[x]
             string queryString;
-            //					loaderService->logger("debug") << "blah" <<
-            //endl;
+            //					loaderService->logger("debug") << "blah"
+            //<< endl;
 
             string keyString = key->receivedString();
             if (keyString.length() > 1) {

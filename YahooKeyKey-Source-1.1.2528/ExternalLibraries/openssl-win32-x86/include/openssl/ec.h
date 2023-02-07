@@ -115,7 +115,7 @@ typedef struct ec_group_st
      of generator)
      -- ASN1 stuff
     */
-        EC_GROUP;
+    EC_GROUP;
 
 typedef struct ec_point_st EC_POINT;
 

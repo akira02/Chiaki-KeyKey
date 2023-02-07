@@ -254,7 +254,7 @@ class BaseIMEService {
       // primaryInputMethod)
       //{
       //	FormCustomerCare^ form = gcnew
-      //FormCustomerCare(userInfoFilePath, primaryInputMethod);
+      // FormCustomerCare(userInfoFilePath, primaryInputMethod);
       //	Application::Run(form);
       // }
 

@@ -43,7 +43,7 @@ file for terms.
   }
 
   [_genericModuleListTableView setDataSource:self];
-  [_genericModuleListTableView setDelegate:self];
+  [_genericModuleListTableView setDelegate:(id)self];
   [_genericModuleListTableView reloadData];
 
   id controller = [[_modules objectAtIndex:0] valueForKey:@"controller"];

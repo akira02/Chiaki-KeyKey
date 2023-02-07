@@ -622,7 +622,7 @@ static const struct normal_encoding little2_encoding_ns = {
 #if BYTEORDER == 1234
      1
 #else
-      0
+     0
 #endif
     },
     {
@@ -638,7 +638,7 @@ static const struct normal_encoding little2_encoding = {
 #if BYTEORDER == 1234
      1
 #else
-      0
+     0
 #endif
     },
     {
@@ -747,7 +747,7 @@ static const struct normal_encoding big2_encoding_ns = {{VTABLE, 2, 0,
 #if BYTEORDER == 4321
                                                          1
 #else
-                                                           0
+                                                         0
 #endif
                                                         },
                                                         {
@@ -762,7 +762,7 @@ static const struct normal_encoding big2_encoding = {{VTABLE, 2, 0,
 #if BYTEORDER == 4321
                                                       1
 #else
-                                                        0
+                                                      0
 #endif
                                                      },
                                                      {

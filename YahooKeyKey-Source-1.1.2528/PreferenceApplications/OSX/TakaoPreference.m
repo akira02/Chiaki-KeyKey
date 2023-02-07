@@ -14,7 +14,7 @@ file for terms.
 @implementation TakaoPreference
 
 - (void)awakeFromNib {
-  [NSApp setDelegate:self];
+  [NSApp setDelegate:(id)self];
 
   _defaultApplicationImage = [[NSApp applicationIconImage] copy];
 
@@ -68,7 +68,7 @@ file for terms.
   [toolbar setAutosavesConfiguration:NO];
   [toolbar setSizeMode:NSToolbarSizeModeDefault];
   [toolbar setDisplayMode:NSToolbarDisplayModeIconAndLabel];
-  [toolbar setDelegate:self];
+  [toolbar setDelegate:(id)self];
   [toolbar setSelectedItemIdentifier:GeneralToolbarItemIdentifier];
 #if (MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_5)
   // cancel unified look and feel?
@@ -83,7 +83,7 @@ file for terms.
   [window setLevel:NSFloatingWindowLevel];
   [window setToolbar:toolbar];
   [window center];
-  [window setDelegate:self];
+  [window setDelegate:(id)self];
 
   [self setActiveView:_generalView animate:NO];
   [self setAppIcon:[NSImage imageNamed:@"general"]];

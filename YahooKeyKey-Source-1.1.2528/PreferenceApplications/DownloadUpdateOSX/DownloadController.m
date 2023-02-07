@@ -75,11 +75,11 @@ static DownloadManager *_manager;
   m_changelogURLString =
       [[[DownloadManager sharedManager] changelogURLString] retain];
 
-  [u_web setFrameLoadDelegate:self];
-  [u_web setResourceLoadDelegate:self];
-  [u_web setUIDelegate:self];
-  [u_web setPolicyDelegate:self];
-  [u_web setDownloadDelegate:self];
+  [u_web setFrameLoadDelegate:(id)self];
+  [u_web setResourceLoadDelegate:(id)self];
+  [u_web setUIDelegate:(id)self];
+  [u_web setPolicyDelegate:(id)self];
+  [u_web setDownloadDelegate:(id)self];
 
   [u_retry setHidden:YES];
   [u_install setHidden:YES];
@@ -87,7 +87,7 @@ static DownloadManager *_manager;
   [[self window] orderOut:self];
   [[self window] center];
   [[self window] setLevel:NSFloatingWindowLevel];
-  [[self window] setDelegate:self];
+  [[self window] setDelegate:(id)self];
   [[self window] setDefaultButtonCell:[u_cancel cell]];
 
   [u_askWindow setDefaultButtonCell:[u_askYes cell]];
@@ -168,7 +168,7 @@ static DownloadManager *_manager;
                        cachePolicy:NSURLRequestUseProtocolCachePolicy
                    timeoutInterval:60.0];
   NSURLDownload *theDownload = [[NSURLDownload alloc] initWithRequest:theRequest
-                                                             delegate:self];
+                                                             Delegate:(id)self];
   if (theDownload) {
     [theDownload setDestination:m_actionFilePath allowOverwrite:YES];
   } else {

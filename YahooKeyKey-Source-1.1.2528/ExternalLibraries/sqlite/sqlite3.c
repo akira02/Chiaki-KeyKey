@@ -9601,12 +9601,13 @@ struct FuncDef {
 /*
 ** Possible values for FuncDef.flags
 */
-#define SQLITE_FUNC_LIKE 0x01     /* Candidate for the LIKE optimization */
-#define SQLITE_FUNC_CASE 0x02     /* Case-sensitive LIKE-type function */
-#define SQLITE_FUNC_EPHEM 0x04    /* Ephemeral.  Delete with VDBE */
-#define SQLITE_FUNC_NEEDCOLL 0x08 /* sqlite3GetFuncCollSeq() might be called \
-                                   */
-#define SQLITE_FUNC_PRIVATE 0x10  /* Allowed for internal use only */
+#define SQLITE_FUNC_LIKE 0x01  /* Candidate for the LIKE optimization */
+#define SQLITE_FUNC_CASE 0x02  /* Case-sensitive LIKE-type function */
+#define SQLITE_FUNC_EPHEM 0x04 /* Ephemeral.  Delete with VDBE */
+#define SQLITE_FUNC_NEEDCOLL                                                \
+  0x08                           /* sqlite3GetFuncCollSeq() might be called \
+                                  */
+#define SQLITE_FUNC_PRIVATE 0x10 /* Allowed for internal use only */
 
 /*
 ** The following three macros, FUNCTION(), LIKEFUNC() and AGGREGATE() are
@@ -25859,7 +25860,7 @@ static const sqlite3_io_methods *autolockIoFinderImpl(
 #ifdef SQLITE_ENABLE_AFP_LOCKING_SMB
               {"smbfs", &afpIoMethods},
 #else
-               {"smbfs", &flockIoMethods},
+              {"smbfs", &flockIoMethods},
 #endif
               {"webdav", &nolockIoMethods}, {0, 0}};
   int i;
@@ -51841,14 +51842,14 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
             case OP_Divide: {
               if (a == 0) goto arithmetic_result_is_null;
               /* Dividing the largest possible negative 64-bit integer (1<<63)
-              *by
-              ** -1 returns an integer too large to store in a 64-bit data-type.
-              *On
-              ** some architectures, the value overflows to (1<<63). On others,
-              ** a SIGFPE is issued. The following statement normalizes this
-              ** behavior so that all architectures behave as if integer
-              ** overflow occurred.
-              */
+               *by
+               ** -1 returns an integer too large to store in a 64-bit
+               *data-type. On
+               ** some architectures, the value overflows to (1<<63). On others,
+               ** a SIGFPE is issued. The following statement normalizes this
+               ** behavior so that all architectures behave as if integer
+               ** overflow occurred.
+               */
               if (a == -1 && b == SMALLEST_INT64) a = 1;
               b /= a;
               break;
@@ -52013,9 +52014,9 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
         }
 
         /* If any auxiliary data functions have been called by this user
-        *function,
-        ** immediately call the destructor for any non-static values.
-        */
+         *function,
+         ** immediately call the destructor for any non-static values.
+         */
         if (ctx.pVdbeFunc) {
           sqlite3VdbeDeleteAuxData(ctx.pVdbeFunc, pOp->p1);
           pOp->p4.pVdbeFunc = ctx.pVdbeFunc;
@@ -52753,13 +52754,14 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
           szHdrSz = getVarint32((u8 *)zData, offset);
 
           /* The KeyFetch() or DataFetch() above are fast and will get the
-          *entire
-          ** record header in most cases.  But they will fail to get the
-          *complete
-          ** record header if the record header does not fit on a single page
-          ** in the B-Tree.  When that happens, use sqlite3VdbeMemFromBtree() to
-          ** acquire the complete header text.
-          */
+           *entire
+           ** record header in most cases.  But they will fail to get the
+           *complete
+           ** record header if the record header does not fit on a single page
+           ** in the B-Tree.  When that happens, use sqlite3VdbeMemFromBtree()
+           *to
+           ** acquire the complete header text.
+           */
           if (!zRec && avail < offset) {
             sMem.flags = 0;
             sMem.db = 0;
@@ -53548,12 +53550,13 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
           case SQLITE_OK: {
             int flags = sqlite3BtreeFlags(pCur->pCursor);
             /* Sanity checking.  Only the lower four bits of the flags byte
-            *should
-            ** be used.  Bit 3 (mask 0x08) is unpredictable.  The lower 3 bits
-            ** (mask 0x07) should be either 5 (intkey+leafdata for tables) or
-            ** 2 (zerodata for indices).  If these conditions are not met it can
-            ** only mean that we are dealing with a corrupt database file
-            */
+             *should
+             ** be used.  Bit 3 (mask 0x08) is unpredictable.  The lower 3 bits
+             ** (mask 0x07) should be either 5 (intkey+leafdata for tables) or
+             ** 2 (zerodata for indices).  If these conditions are not met it
+             *can
+             ** only mean that we are dealing with a corrupt database file
+             */
             if ((flags & 0xf0) != 0 ||
                 ((flags & 0x07) != 5 && (flags & 0x07) != 2)) {
               rc = SQLITE_CORRUPT_BKPT;
@@ -53765,9 +53768,9 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
             i64 iKey; /* The rowid we are to seek to */
 
             /* The input value in P3 might be of any type: integer, real,
-            *string,
-            ** blob, or NULL.  But it needs to be an integer before we can do
-            ** the seek, so covert it. */
+             *string,
+             ** blob, or NULL.  But it needs to be an integer before we can do
+             ** the seek, so covert it. */
             applyNumericAffinity(pIn3);
             iKey = sqlite3VdbeIntValue(pIn3);
             pC->rowidIsValid = 0;
@@ -53777,8 +53780,8 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
             if ((pIn3->flags & MEM_Int) == 0) {
               if ((pIn3->flags & MEM_Real) == 0) {
                 /* If the P3 value cannot be converted into any kind of a
-                *number,
-                ** then the seek is not possible, so jump to P2 */
+                 *number,
+                 ** then the seek is not possible, so jump to P2 */
                 pc = pOp->p2 - 1;
                 break;
               }
@@ -54212,11 +54215,11 @@ SQLITE_PRIVATE int sqlite3VdbeExec(Vdbe *p /* The VDBE */
 #define MAX_ROWID 0x7fffffff
 #else
           /* Some compilers complain about constants of the form
-          *0x7fffffffffffffff.
-          ** Others complain about 0x7ffffffffffffffffLL.  The following macro
-          *seems
-          ** to provide the constant while making all compilers happy.
-          */
+           *0x7fffffffffffffff.
+           ** Others complain about 0x7ffffffffffffffffLL.  The following macro
+           *seems
+           ** to provide the constant while making all compilers happy.
+           */
 #define MAX_ROWID (i64)((((u64)0x7fffffff) << 32) | (u64)0xffffffff)
 #endif
 
@@ -72630,13 +72633,13 @@ SQLITE_PRIVATE void sqlite3Pragma(
                   db->nextAutovac = (u8)eAuto;
                   if (ALWAYS(eAuto >= 0)) {
                     /* Call SetAutoVacuum() to set initialize the internal auto
-                    *and
-                    ** incr-vacuum flags. This is required in case this
-                    *connection
-                    ** creates the database file. It is important that it is
-                    *created
-                    ** as an auto-vacuum capable db.
-                    */
+                     *and
+                     ** incr-vacuum flags. This is required in case this
+                     *connection
+                     ** creates the database file. It is important that it is
+                     *created
+                     ** as an auto-vacuum capable db.
+                     */
                     int rc = sqlite3BtreeSetAutoVacuum(pBt, eAuto);
                     if (rc == SQLITE_OK && (eAuto == 1 || eAuto == 2)) {
                       /* When setting the auto_vacuum mode to either "full" or
@@ -72888,8 +72891,8 @@ SQLITE_PRIVATE void sqlite3Pragma(
 #ifndef SQLITE_OMIT_FLAG_PRAGMAS
                             if (flagPragma(pParse, zLeft, zRight)) {
                           /* The flagPragma() subroutine also generates any
-                          *necessary code
-                          ** there is nothing more to do here */
+                           *necessary code
+                           ** there is nothing more to do here */
                         } else
 #endif /* SQLITE_OMIT_FLAG_PRAGMAS */
 
@@ -73155,10 +73158,10 @@ SQLITE_PRIVATE void sqlite3Pragma(
 #endif
 
                             /* Reinstall the LIKE and GLOB functions.  The
-                            *variant of LIKE
-                            ** used will be case sensitive or not depending on
-                            *the RHS.
-                            */
+                             *variant of LIKE
+                             ** used will be case sensitive or not depending on
+                             *the RHS.
+                             */
                             if (sqlite3StrICmp(zLeft, "case_sensitive_like") ==
                                 0) {
                               if (zRight) {
@@ -73173,23 +73176,23 @@ SQLITE_PRIVATE void sqlite3Pragma(
 
 #ifndef SQLITE_OMIT_INTEGRITY_CHECK
                               /* Pragma "quick_check" is an experimental reduced
-                              *version of
-                              ** integrity_check designed to detect most
-                              *database corruption
-                              ** without most of the overhead of a full
-                              *integrity-check.
-                              */
+                               *version of
+                               ** integrity_check designed to detect most
+                               *database corruption
+                               ** without most of the overhead of a full
+                               *integrity-check.
+                               */
                               if (sqlite3StrICmp(zLeft, "integrity_check") ==
                                       0 ||
                                   sqlite3StrICmp(zLeft, "quick_check") == 0) {
                                 int i, j, addr, mxErr;
 
                                 /* Code that appears at the end of the integrity
-                                *check.  If no error
-                                ** messages have been generated, output OK.
-                                *Otherwise output the
-                                ** error message
-                                */
+                                 *check.  If no error
+                                 ** messages have been generated, output OK.
+                                 *Otherwise output the
+                                 ** error message
+                                 */
                                 static const VdbeOpList endCode[] = {
                                     {OP_AddImm, 1, 0, 0},  /* 0 */
                                     {OP_IfNeg, 1, 0, 0},   /* 1 */
@@ -73463,14 +73466,14 @@ SQLITE_PRIVATE void sqlite3Pragma(
                                     sqlite3VdbeAddOp2(v, OP_ResultRow, 1, 1);
                                   } else { /* "PRAGMA encoding = XXX" */
                                     /* Only change the value of sqlite.enc if
-                                    *the database handle is not
-                                    ** initialized. If the main database exists,
-                                    *the new sqlite.enc value
-                                    ** will be overwritten when the schema is
-                                    *next loaded. If it does not
-                                    ** already exists, it will be created to use
-                                    *the new encoding value.
-                                    */
+                                     *the database handle is not
+                                     ** initialized. If the main database
+                                     *exists, the new sqlite.enc value
+                                     ** will be overwritten when the schema is
+                                     *next loaded. If it does not
+                                     ** already exists, it will be created to
+                                     *use the new encoding value.
+                                     */
                                     if (!(DbHasProperty(db, 0,
                                                         DB_SchemaLoaded)) ||
                                         DbHasProperty(db, 0, DB_Empty)) {

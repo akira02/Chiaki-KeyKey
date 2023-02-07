@@ -579,9 +579,9 @@
   [_beaconHTML retain];
 
   [self _cleanCache];
-  [_webview setUIDelegate:self];
-  [_webview setFrameLoadDelegate:self];
-  [_webview setPolicyDelegate:self];
+  [_webview setUIDelegate:(id)self];
+  [_webview setFrameLoadDelegate:(id)self];
+  [_webview setPolicyDelegate:(id)self];
   [_webview setApplicationNameForUserAgent:@"Yahoo! KeyKey"];
 
   // must be IE6...
@@ -595,7 +595,7 @@
   [toolbar setAutosavesConfiguration:NO];
   [toolbar setSizeMode:NSToolbarSizeModeDefault];
   [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
-  [toolbar setDelegate:self];
+  [toolbar setDelegate:(id)self];
   [[self window] setToolbar:toolbar];
 
   NSRect screenRect = [[NSScreen mainScreen] visibleFrame];
@@ -604,7 +604,7 @@
       screenRect.origin.x + screenRect.size.width - windowRect.size.width - 10;
   int y = screenRect.origin.y + screenRect.size.height -
           windowRect.size.height - 10;
-  [[self window] setDelegate:self];
+  [[self window] setDelegate:(id)self];
   [[self window] setTitle:LFLSTR(@"Dictionary")];
   [[self window]
       setFrame:NSMakeRect(x, y, windowRect.size.width, windowRect.size.height)

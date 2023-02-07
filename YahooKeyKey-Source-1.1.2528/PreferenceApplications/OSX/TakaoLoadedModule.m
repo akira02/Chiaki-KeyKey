@@ -25,7 +25,7 @@ static AuthorizationRef authorizationRef = NULL;
 
 - (void)awakeFromNib {
   [_pluginView setFrame:NSMakeRect(0, 0, 480, 230)];
-  [_tableView setDelegate:self];
+  [_tableView setDelegate:(id)self];
   [_tableView setDataSource:self];
   [self hideProgressIndicator];
 }

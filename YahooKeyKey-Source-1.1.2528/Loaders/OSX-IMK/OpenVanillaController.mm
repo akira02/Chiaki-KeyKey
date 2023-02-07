@@ -512,7 +512,7 @@ static id OVCActiveContextSender = nil;
       }
     } else {
       //		    if (cocoaModifiers & NSShiftKeyMask)
-      //vanillaModifiers |= OVKeyMask::Shift;
+      // vanillaModifiers |= OVKeyMask::Shift;
       keyImpl = new PVKeyImpl(0, vanillaModifiers);
     }
 

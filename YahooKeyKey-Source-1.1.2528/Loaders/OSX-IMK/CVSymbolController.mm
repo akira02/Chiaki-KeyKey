@@ -65,7 +65,7 @@
 
 - (void)awakeFromNib {
   [[self window] setTitle:LFLSTR(@"Symbols")];
-  [[self window] setDelegate:self];
+  [[self window] setDelegate:(id)self];
 
   [_popUpButton removeAllItems];
   [self toggleActiveView:nil];
@@ -118,7 +118,8 @@
 #pragma mark Interface Builder actions
 
 - (IBAction)toggleSymbol:(id)sender {
-  NSInteger selectedIndex = [_popUpButton indexOfItem:[_popUpButton selectedItem]];
+  NSInteger selectedIndex =
+      [_popUpButton indexOfItem:[_popUpButton selectedItem]];
   id item = [_viewArray objectAtIndex:selectedIndex];
   NSView *view = [item view];
   [self toggleActiveView:view];

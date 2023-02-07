@@ -179,20 +179,20 @@ using namespace OpenVanilla;
     _versionChecker = 0;
 
     _autoUpdateHTTPRequest = [LFHTTPRequest new];
-    [_autoUpdateHTTPRequest setDelegate:self];
+    [_autoUpdateHTTPRequest setDelegate:(id)self];
     [_autoUpdateHTTPRequest
         setContentType:LFHTTPRequestWWWFormURLEncodedContentType];
 
     _autoUpdateSignatureHTTPRequest = [LFHTTPRequest new];
-    [_autoUpdateSignatureHTTPRequest setDelegate:self];
+    [_autoUpdateSignatureHTTPRequest setDelegate:(id)self];
     [_autoUpdateSignatureHTTPRequest
         setContentType:LFHTTPRequestWWWFormURLEncodedContentType];
 
     _oneKeyDataHTTPRequest = [LFHTTPRequest new];
-    [_oneKeyDataHTTPRequest setDelegate:self];
+    [_oneKeyDataHTTPRequest setDelegate:(id)self];
 
     _cannedMessagesDataHTTPRequest = [LFHTTPRequest new];
-    [_cannedMessagesDataHTTPRequest setDelegate:self];
+    [_cannedMessagesDataHTTPRequest setDelegate:(id)self];
 
     _mergedCannedMessagesArray = [NSMutableArray new];
     _mergedOneKeyData = new PVPlistValue(PVPlistValue::Dictionary);
@@ -505,8 +505,8 @@ using namespace OpenVanilla;
         OVPathHelper::PathCat(libAppSupportLoaderPath, "SignedModules");
 
     //		if (OVPathHelper::PathExists(modulePath) &&
-    //OVPathHelper::IsDirectory(modulePath)) { 			NSLog(@"has signed module path:
-    //%s", modulePath.c_str());
+    // OVPathHelper::IsDirectory(modulePath)) { 			NSLog(@"has signed module
+    // path: %s", modulePath.c_str());
     signedModuleLoadPaths.push_back(modulePath);
     //		}
   } while (0);
@@ -677,7 +677,8 @@ using namespace OpenVanilla;
 - (NSArray *)identifiersAndLocalizedNamesWithPattern:(NSString *)pattern {
   NSMutableArray *result = [NSMutableArray array];
   vector<pair<string, string> > rsp = _loader->allModuleIdentifiersAndNames();
-  OVWildcard exp(string([pattern UTF8String]));
+  auto x = [pattern UTF8String];
+  OVWildcard exp((OpenVanilla::string(x)));
 
   for (vector<pair<string, string> >::iterator ri = rsp.begin();
        ri != rsp.end(); ++ri) {

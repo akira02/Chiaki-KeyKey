@@ -10,7 +10,7 @@ file for terms.
 */
 
 //#define LFLSTR(x)      [[NSBundle mainBundle] localizedStringForKey:x
-//value:nil table:nil]
+// value:nil table:nil]
 
 /*!
         @define PLIST_GLOBAL_FILENAME

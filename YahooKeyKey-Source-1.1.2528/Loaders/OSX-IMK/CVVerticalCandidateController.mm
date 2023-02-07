@@ -91,8 +91,8 @@
 
   _candidateArray = [[NSMutableArray alloc] init];
   [_scrollView setBorderType:NSNoBorder];
-  [_tableView setDelegate:self];
-  [_tableView setDataSource:self];
+  [_tableView setDelegate:(id)self];
+  [_tableView setDataSource:(id)self];
 
   [_pageIndicatorTextField setStringValue:@""];
   [_pageIndicatorTextField setTextColor:_foregroundColor];

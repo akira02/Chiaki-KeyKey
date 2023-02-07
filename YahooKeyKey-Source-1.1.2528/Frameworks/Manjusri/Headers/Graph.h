@@ -752,10 +752,10 @@ inline pair<bool, string> Graph::shiftNodeAndMaintainPathWalk(
       // overriding using the next node information
 
       //				cerr << "filling following node at (" <<
-      //node.location().first << ", " << node.location().second<< ") with
-      //override text" << endl; 				cerr << "overriding the following node with
-      //previous text: " << otext << ", so current is now: " <<
-      //node.findHighestScorePair(otext).first << endl;
+      // node.location().first << ", " << node.location().second<< ") with
+      // override text" << endl; 				cerr << "overriding
+      // the following node with previous text: " << otext << ", so current is
+      // now: " << node.findHighestScorePair(otext).first << endl;
 
       // node.adjustScoreWithSelection(node.findHighestScorePair(otext).first);
 

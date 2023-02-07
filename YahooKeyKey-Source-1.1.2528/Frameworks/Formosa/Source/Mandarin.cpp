@@ -679,9 +679,11 @@ const BopomofoKeyboardLayout* BopomofoKeyboardLayout::LayoutForName(
       OpenVanilla::OVWildcard::Match(name, "pinyin"))
     return HanyuPinyinLayout();
   // <lithoglyph>
-  if (OpenVanilla::OVWildcard::Match(name, "bpmfdtnlgkhjvcjvcrzasexuyhgeiawomnklldfjs"))
+  if (OpenVanilla::OVWildcard::Match(
+          name, "bpmfdtnlgkhjvcjvcrzasexuyhgeiawomnklldfjs"))
     return HsuLayout();
-  if (OpenVanilla::OVWildcard::Match(name, "bpmfdtnlvkhgvcgycjqwsexuaorwiqzpmntlhfjkd"))
+  if (OpenVanilla::OVWildcard::Match(
+          name, "bpmfdtnlvkhgvcgycjqwsexuaorwiqzpmntlhfjkd"))
     return ETen26Layout();
   // </lithoglyph>
   return 0;

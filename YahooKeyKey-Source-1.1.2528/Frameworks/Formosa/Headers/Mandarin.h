@@ -24,9 +24,10 @@
 #ifndef MANDARIN_H_
 #define MANDARIN_H_
 
+#include <OpenVanilla/OVWildcard.h>
+
 #include <iostream>
 #include <map>
-#include <OpenVanilla/OVWildcard.h>
 #include <string>
 #include <vector>
 
@@ -213,7 +214,8 @@ class BopomofoKeyboardLayout {
   static const BopomofoKeyboardLayout* HanyuPinyinLayout();
 
   // recognizes (case-insensitive): standard, eten, hsu, eten26
-  static const BopomofoKeyboardLayout* LayoutForName(const OpenVanilla::string& name);
+  static const BopomofoKeyboardLayout* LayoutForName(
+      const OpenVanilla::string& name);
 
   BopomofoKeyboardLayout(const BopomofoKeyToComponentMap& ktcm,
                          const std::string& name)

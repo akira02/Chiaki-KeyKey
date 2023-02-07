@@ -5,12 +5,12 @@
 @implementation HelpController
 
 - (void)awakeFromNib {
-  [[self window] setDelegate:self];
+  [[self window] setDelegate:(id)self];
   [[self window] setLevel:NSFloatingWindowLevel];
   [[self window] center];
 
-  [_webview setUIDelegate:self];
-  [_webview setFrameLoadDelegate:self];
+  [_webview setUIDelegate:(id)self];
+  [_webview setFrameLoadDelegate:(id)self];
 
   NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"install"
                                                        ofType:@"html"];

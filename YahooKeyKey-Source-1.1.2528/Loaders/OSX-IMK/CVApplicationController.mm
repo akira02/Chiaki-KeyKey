@@ -112,7 +112,7 @@ extern size_t VendorMotcleSize;
 
   if ([_serverConnection registerName:OPENVANILLA_DO_CONNECTION_NAME]) {
     //	    NSLog(@"OpenVanilla DO service registered: %@",
-    //OPENVANILLA_DO_CONNECTION_NAME);
+    // OPENVANILLA_DO_CONNECTION_NAME);
   } else {
     NSLog(@"Failed to register DO service");
   }

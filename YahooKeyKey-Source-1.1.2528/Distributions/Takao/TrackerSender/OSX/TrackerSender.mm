@@ -19,7 +19,7 @@ TrackerSender *SharedTrackerSender = nil;
 }
 - (void)sendTrackerWithURLString:(NSString *)urlString {
   LFHTTPRequest *request = [[LFHTTPRequest alloc] init];
-  [request setDelegate:self];
+  [request setDelegate:(id)self];
 
   // Must use IE6
   [request setUserAgent:

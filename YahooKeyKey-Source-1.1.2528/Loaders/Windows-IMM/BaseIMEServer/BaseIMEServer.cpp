@@ -1084,7 +1084,7 @@ const string IMEServer::serverURLWithDefaultValueAndConfigurableKey(
 
 const string IMEServer::versionInfoURL() {
   //	return
-  //serverURLWithDefaultValueAndConfigurableKey("http://w1.keykey.vip.tpc.yahoo.com/ykk/VersionInfo.php",
+  // serverURLWithDefaultValueAndConfigurableKey("http://w1.keykey.vip.tpc.yahoo.com/ykk/VersionInfo.php",
   //"VersionInfoURL");
   return serverURLWithDefaultValueAndConfigurableKey(
       "http://tw.media.yahoo.com/ykk/VersionInfo.php", "VersionInfoURL");
