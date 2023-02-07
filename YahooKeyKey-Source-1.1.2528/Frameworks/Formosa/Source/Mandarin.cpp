@@ -667,6 +667,26 @@ BopomofoCharacterMap::BopomofoCharacterMap() {
     componentToCharacter[(*iter).second] = (*iter).first;
 }
 
+const BopomofoKeyboardLayout* BopomofoKeyboardLayout::LayoutForName(
+    const OpenVanilla::string& name) {
+  if (OpenVanilla::OVWildcard::Match(name, "standard")) return StandardLayout();
+  if (OpenVanilla::OVWildcard::Match(name, "eten")) return ETenLayout();
+  if (OpenVanilla::OVWildcard::Match(name, "hsu")) return HsuLayout();
+  if (OpenVanilla::OVWildcard::Match(name, "eten26")) return ETen26Layout();
+  if (OpenVanilla::OVWildcard::Match(name, "hanyupinyin") ||
+      OpenVanilla::OVWildcard::Match(name, "hanyu pinyin") ||
+      OpenVanilla::OVWildcard::Match(name, "hanyu-pinyin") ||
+      OpenVanilla::OVWildcard::Match(name, "pinyin"))
+    return HanyuPinyinLayout();
+  // <lithoglyph>
+  if (OpenVanilla::OVWildcard::Match(name, "bpmfdtnlgkhjvcjvcrzasexuyhgeiawomnklldfjs"))
+    return HsuLayout();
+  if (OpenVanilla::OVWildcard::Match(name, "bpmfdtnlvkhgvcgycjqwsexuaorwiqzpmntlhfjkd"))
+    return ETen26Layout();
+  // </lithoglyph>
+  return 0;
+}
+
 #define ASSIGNKEY1(m, vec, k, val) \
   m[k] = (vec.clear(), vec.push_back((BPMF::Component)val), vec)
 #define ASSIGNKEY2(m, vec, k, val1, val2)                    \
