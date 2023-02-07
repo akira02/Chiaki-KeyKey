@@ -514,7 +514,7 @@ class Parser {
         return ne;
     }
 
-    return false;
+    return nullptr;
   }
 
   Node* expression() {
