@@ -41,19 +41,16 @@
 namespace CareService {
 
 const string SystemInfo::PlatformSummary() {
-  SInt32 OSXVersionMajor;
-  SInt32 OSXVersionMinor;
-  SInt32 OSXVersionTiny;
+  @autoreleasepool {
+    auto x = [NSProcessInfo alloc];
+    auto v = x.operatingSystemVersion;
 
-  assert(noErr == Gestalt(gestaltSystemVersionMajor, &OSXVersionMajor));
-  assert(noErr == Gestalt(gestaltSystemVersionMinor, &OSXVersionMinor));
-  assert(noErr == Gestalt(gestaltSystemVersionBugFix, &OSXVersionTiny));
+    stringstream s;
+    s << "Mac OS X " << v.majorVersion << "." << v.minorVersion << "."
+      << v.patchVersion;
 
-  stringstream s;
-  s << "Mac OS X " << OSXVersionMajor << "." << OSXVersionMinor << "."
-    << OSXVersionTiny;
-
-  return s.str();
+    return s.str();
+  }
 }
 
 };
