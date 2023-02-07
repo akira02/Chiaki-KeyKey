@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5B1CFB2929920B3E00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
+		5B1CFB2A29920B9B00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
+		5B1CFB2B29920BAB00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
 		5B3CE69429914F7800641F53 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3CE69229914F3900641F53 /* libsqlite3.tbd */; };
 		5B3CE69629914FC100641F53 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3CE69529914FB900641F53 /* libz.tbd */; };
 		6A0138F50ED1D47900715577 /* YKAFWordCount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A0138F20ED1D47900715577 /* YKAFWordCount.cpp */; };
@@ -29,7 +32,6 @@
 		6A01FD550D5CCFE70089EA05 /* OVIMMandarinConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A01FD540D5CCFE70089EA05 /* OVIMMandarinConfig.h */; };
 		6A1D4C8E10613D960085AFA3 /* ModuleSign.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A1D4C8D10613D960085AFA3 /* ModuleSign.cpp */; };
 		6A1D4CB410613E0B0085AFA3 /* Minotaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD322220D76D793005083D4 /* Minotaur.cpp */; };
-		6A1D4CC010613E570085AFA3 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD322250D76D7AE005083D4 /* libcrypto.dylib */; };
 		6A1D4CC710613E910085AFA3 /* libOpenVanilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A47702B0D5C521600C6C744 /* libOpenVanilla.a */; };
 		6A1D4CC810613E910085AFA3 /* libPlainVanilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3FA950D76776200C7D18D /* libPlainVanilla.a */; };
 		6A1D4D1C1061431C0085AFA3 /* YKSignedModuleLoadingSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1D4D1B1061431C0085AFA3 /* YKSignedModuleLoadingSystem.h */; };
@@ -256,7 +258,6 @@
 		6A50DE730D767937002A7DAD /* CocoaInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A50DE720D767937002A7DAD /* CocoaInit.m */; };
 		6A52DB791095CB9000788A09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A52DB771095CB9000788A09 /* InfoPlist.strings */; };
 		6A5F593F0EEFF72400A395D9 /* Minotaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD322220D76D793005083D4 /* Minotaur.cpp */; };
-		6A5F59960EEFF74D00A395D9 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD322250D76D7AE005083D4 /* libcrypto.dylib */; };
 		6A6CE73D0EC9C2B900244B97 /* OVLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6CE73C0EC9C2B900244B97 /* OVLocalization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A6CE73E0EC9C2B900244B97 /* OVLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6CE73C0EC9C2B900244B97 /* OVLocalization.h */; };
 		6A753A480D83D910007EAB2F /* BPMFUserPhraseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A428A9F0D741BC600ABCDA1 /* BPMFUserPhraseHelper.cpp */; };
@@ -377,7 +378,6 @@
 		6AFC445310623A6A000CECB4 /* LFUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AFC445010623A6A000CECB4 /* LFUtilities.h */; };
 		6AFC800D0D98F1C8007588D8 /* libPlainVanilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3FA950D76776200C7D18D /* libPlainVanilla.a */; };
 		6AFDF3D7113261C700AE32D6 /* Minotaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD322220D76D793005083D4 /* Minotaur.cpp */; };
-		6AFDF3E4113261E300AE32D6 /* libcrypto.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFDF3E3113261E300AE32D6 /* libcrypto.3.dylib */; };
 		D4041FF10F1C855A00B52BC9 /* TakaoKeyboardLayoutPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4041FF00F1C855A00B52BC9 /* TakaoKeyboardLayoutPopUpButton.m */; };
 		D407A1B70EC4B9D4004F434D /* addressBook.png in Resources */ = {isa = PBXBuildFile; fileRef = D407A1B60EC4B9D4004F434D /* addressBook.png */; };
 		D4112E860D631738001475CB /* FontSmaller.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D4112E840D631738001475CB /* FontSmaller.tiff */; };
@@ -878,6 +878,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B1CFB2829920B3800835F8C /* libboringssl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libboringssl.tbd; path = usr/lib/libboringssl.tbd; sourceTree = SDKROOT; };
 		5B3CE69229914F3900641F53 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5B3CE69529914FB900641F53 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5B3CE6D02991588100641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PreferenceApplications/DownloadUpdateOSX/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1196,7 +1197,7 @@
 		6AF2614B0D9F96FC00F499FB /* Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Context.m; path = "Loaders/OSX-TSM/Context.m"; sourceTree = "<group>"; };
 		6AF6B7890DD08DE400A0C8FD /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libz.1.tbd; sourceTree = "<absolute>"; };
 		6AFC445010623A6A000CECB4 /* LFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFUtilities.h; path = Frameworks/LFExtensions/LFUtilities.h; sourceTree = "<group>"; };
-		6AFDF3E3113261E300AE32D6 /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.3.dylib; path = /opt/local/libexec/openssl3/lib/libcrypto.3.dylib; sourceTree = "<absolute>"; };
+		6AFDF3E3113261E300AE32D6 /* libboringssl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libboringssl.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libboringssl.tbd; sourceTree = DEVELOPER_DIR; };
 		D4041FEF0F1C855A00B52BC9 /* TakaoKeyboardLayoutPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakaoKeyboardLayoutPopUpButton.h; path = PreferenceApplications/OSX/TakaoKeyboardLayoutPopUpButton.h; sourceTree = "<group>"; };
 		D4041FF00F1C855A00B52BC9 /* TakaoKeyboardLayoutPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakaoKeyboardLayoutPopUpButton.m; path = PreferenceApplications/OSX/TakaoKeyboardLayoutPopUpButton.m; sourceTree = "<group>"; };
 		D407A1B60EC4B9D4004F434D /* addressBook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addressBook.png; path = Utilities/PhraseEditor/OSX/Images/addressBook.png; sourceTree = "<group>"; };
@@ -1392,8 +1393,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A1D4CC010613E570085AFA3 /* libcrypto.dylib in Frameworks */,
 				6A1D4CC710613E910085AFA3 /* libOpenVanilla.a in Frameworks */,
+				5B1CFB2929920B3E00835F8C /* libboringssl.tbd in Frameworks */,
 				6A1D4CC810613E910085AFA3 /* libPlainVanilla.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1414,8 +1415,8 @@
 				6A428A640D74089800ABCDA1 /* libFormosa.a in Frameworks */,
 				6A428A650D74089800ABCDA1 /* libManjusri.a in Frameworks */,
 				6A7E65E00E1BB59B0071ED92 /* libSystem.B.tbd in Frameworks */,
+				5B1CFB2A29920B9B00835F8C /* libboringssl.tbd in Frameworks */,
 				6A7E65E40E1BB5A30071ED92 /* libz.1.tbd in Frameworks */,
-				6AFDF3E4113261E300AE32D6 /* libcrypto.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,11 +1511,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A5F59960EEFF74D00A395D9 /* libcrypto.dylib in Frameworks */,
 				6ABC3EB20DBF628300146A8B /* libOpenVanilla.a in Frameworks */,
 				6ABC3EB50DBF628300146A8B /* libManjusri.a in Frameworks */,
 				6ABC3EB40DBF628300146A8B /* libFormosa.a in Frameworks */,
 				6A7E65DF0E1BB5980071ED92 /* libSystem.B.tbd in Frameworks */,
+				5B1CFB2B29920BAB00835F8C /* libboringssl.tbd in Frameworks */,
 				6A7E65E50E1BB5A60071ED92 /* libz.1.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1748,7 +1749,7 @@
 				6A4771460D5C583600C6C744 /* OS X Frameworks and Libraries */,
 				6A476FF90D5C4DBE00C6C744 /* ExternalLibraries */,
 				6A476EE80D5C48CE00C6C744 /* Products */,
-				6AFDF3E3113261E300AE32D6 /* libcrypto.3.dylib */,
+				6AFDF3E3113261E300AE32D6 /* libboringssl.tbd */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1789,6 +1790,7 @@
 		6A476F790D5C4D0300C6C744 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B1CFB2829920B3800835F8C /* libboringssl.tbd */,
 				5B3CE69529914FB900641F53 /* libz.tbd */,
 				5B3CE69229914F3900641F53 /* libsqlite3.tbd */,
 				6A859F2C0E41A473002C3544 /* LFWebAPIToolbox */,
