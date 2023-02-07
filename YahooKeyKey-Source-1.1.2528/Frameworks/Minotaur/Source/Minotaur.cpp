@@ -6,57 +6,19 @@ file for terms.
 
 #include "Minotaur.h"
 
-#include <openssl/engine.h>
-#include <openssl/pem.h>
-#include <openssl/rsa.h>
-#include <openssl/sha.h>
-
 namespace Minotaur {
 
 // 160 bits
 size_t Minos::DigestSize() { return 20; }
 
 char* Minos::Digest(const char* block, size_t blockSize) {
-  char* digest = (char*)calloc(1, DigestSize());
-  if (digest)
-    SHA1((unsigned char*)block, (unsigned long)blockSize,
-         (unsigned char*)digest);
-
-  return digest;
+  return (char*)block;
 }
 
 pair<char*, size_t> Minos::Encrypt(const char* dataBlock, size_t blockSize,
                                    const char* RSAKey, size_t keySize,
                                    bool encryptWithPrivateKey) {
-  RSA* rsa = 0;
-  BIO* bio = 0;
-  char* result = 0;
-  size_t encryptedSize = 0;
-
-  if (bio = BIO_new_mem_buf((void*)RSAKey, (int)keySize)) {
-    RSA* bioResult = encryptWithPrivateKey
-                         ? PEM_read_bio_RSAPrivateKey(bio, &rsa, NULL, NULL)
-                         : PEM_read_bio_RSA_PUBKEY(bio, &rsa, NULL, NULL);
-    if (bioResult) {
-      result = (char*)calloc(1, RSA_size(rsa));
-      if (result) {
-        if (encryptWithPrivateKey)
-          encryptedSize = RSA_private_encrypt(
-              (int)blockSize, (unsigned char*)dataBlock, (unsigned char*)result,
-              rsa, RSA_PKCS1_PADDING);
-        else
-          encryptedSize = RSA_public_encrypt(
-              (int)blockSize, (unsigned char*)dataBlock, (unsigned char*)result,
-              rsa, RSA_PKCS1_PADDING);
-      }
-
-      RSA_free(rsa);
-    }
-
-    BIO_free(bio);
-  }
-
-  return pair<char*, size_t>(result, encryptedSize);
+  return pair<char*, size_t>((char*)dataBlock, blockSize);
 }
 
 pair<char*, size_t> Minos::Encrypt(const pair<char*, size_t>& block,
@@ -76,35 +38,7 @@ pair<char*, size_t> Minos::GetBack(const pair<char*, size_t>& block,
 pair<char*, size_t> Minos::GetBack(const char* encodedBlock, size_t blockSize,
                                    const char* RSAKey, size_t keySize,
                                    bool decryptWithPublicKey) {
-  RSA* rsa = 0;
-  BIO* bio = 0;
-  char* result = 0;
-  size_t decryptedSize = 0;
-
-  if (bio = BIO_new_mem_buf((void*)RSAKey, (int)keySize)) {
-    RSA* bioResult = decryptWithPublicKey
-                         ? PEM_read_bio_RSA_PUBKEY(bio, &rsa, NULL, NULL)
-                         : PEM_read_bio_RSAPrivateKey(bio, &rsa, NULL, NULL);
-    if (bioResult) {
-      result = (char*)calloc(1, RSA_size(rsa) - 11);
-      if (result) {
-        if (decryptWithPublicKey)
-          decryptedSize = RSA_public_decrypt(
-              (int)blockSize, (unsigned char*)encodedBlock,
-              (unsigned char*)result, rsa, RSA_PKCS1_PADDING);
-        else
-          decryptedSize = RSA_private_decrypt(
-              (int)blockSize, (unsigned char*)encodedBlock,
-              (unsigned char*)result, rsa, RSA_PKCS1_PADDING);
-      }
-
-      RSA_free(rsa);
-    }
-
-    BIO_free(bio);
-  }
-
-  return pair<char*, size_t>(result, decryptedSize);
+  return pair<char*, size_t>((char*)encodedBlock, blockSize);
 }
 
 bool Minos::LazyMatch(const char* b1, const char* b2, size_t size) {

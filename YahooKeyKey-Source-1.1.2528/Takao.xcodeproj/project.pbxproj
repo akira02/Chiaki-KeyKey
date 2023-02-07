@@ -24,6 +24,7 @@
 		5B1CFB2929920B3E00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
 		5B1CFB2A29920B9B00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
 		5B1CFB2B29920BAB00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
+		5B1CFB2C29920DBD00835F8C /* libboringssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1CFB2829920B3800835F8C /* libboringssl.tbd */; };
 		5B3CE69429914F7800641F53 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3CE69229914F3900641F53 /* libsqlite3.tbd */; };
 		5B3CE69629914FC100641F53 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3CE69529914FB900641F53 /* libz.tbd */; };
 		6A0138F50ED1D47900715577 /* YKAFWordCount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A0138F20ED1D47900715577 /* YKAFWordCount.cpp */; };
@@ -322,7 +323,6 @@
 		6AD322640D76DA4C005083D4 /* SQLiteCryptoInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3222A0D76D7C2005083D4 /* SQLiteCryptoInit.cpp */; };
 		6AD322670D76DA6B005083D4 /* Minotaur.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD3221F0D76D77C005083D4 /* Minotaur.h */; };
 		6AD322680D76DA6B005083D4 /* Minotaur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AD322220D76D793005083D4 /* Minotaur.cpp */; };
-		6AD3226E0D76DA94005083D4 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD322250D76D7AE005083D4 /* libcrypto.dylib */; };
 		6AD322720D76DAAD005083D4 /* libKeyring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD322590D76DA3E005083D4 /* libKeyring.a */; };
 		6AD3236C0D76DAE3005083D4 /* libKeyring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD322590D76DA3E005083D4 /* libKeyring.a */; };
 		6AD3241F0D76DB78005083D4 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD322250D76D7AE005083D4 /* libcrypto.dylib */; };
@@ -1543,7 +1543,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AD3226E0D76DA94005083D4 /* libcrypto.dylib in Frameworks */,
+				5B1CFB2C29920DBD00835F8C /* libboringssl.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
