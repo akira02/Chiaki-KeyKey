@@ -48,7 +48,7 @@
 
   if (i == -1) return @"";
 
-  NSRange r = (NSRange){0, i + 1};
+  NSRange r = (NSRange){0, static_cast<NSUInteger>(i + 1)};
   return [self substringWithRange:r];
 }
 - (NSArray *)splitBySpaceWithQuote {
