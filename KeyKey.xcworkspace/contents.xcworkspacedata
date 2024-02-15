@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:YahooKeyKey-Source-1.1.2528/LithoglyphModules.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YahooKeyKey-Source-1.1.2528/Takao.xcodeproj">
+   </FileRef>
+</Workspace>
