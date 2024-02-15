@@ -890,6 +890,7 @@
 		5B3CE6DF2991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = PreferenceApplications/OSX/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B3CE6E42991588400641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Utilities/PhraseEditor/OSX/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B3CE6E52991588500641F53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Utilities/PhraseEditor/OSX/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5BAD29D02B7E14410013D695 /* PhraseEditorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhraseEditorRelease.entitlements; sourceTree = "<group>"; };
 		5BE8931729915D2600A3F6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Loaders/OSX-IMK/Base.lproj/AboutWindow.xib"; sourceTree = "<group>"; };
 		5BE8931829915D2600A3F6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = PreferenceApplications/OSX/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5BE8931929915D2600A3F6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = PreferenceApplications/OSX/Base.lproj/TakaoReverseLookup.xib; sourceTree = "<group>"; };
@@ -1718,6 +1719,7 @@
 		6A476ED70D5C48AB00C6C744 = {
 			isa = PBXGroup;
 			children = (
+				5BAD29D02B7E14410013D695 /* PhraseEditorRelease.entitlements */,
 				6AE561A40EF3CD5E002460F0 /* Cross-Platform Loader Components */,
 				6AB9315C0EA42CA6005CD336 /* Dynamic Module Packages */,
 				6A859F5D0E41A673002C3544 /* Takao-Specific */,
@@ -5940,11 +5942,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PhraseEditorRelease.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
