@@ -1,3 +1,4 @@
+
 !**/[Pp]ackages/build/
 !*.[Cc]ache/
 !.axoCover/settings.json
@@ -158,6 +159,7 @@ config.make
 config.status
 Credits.rtf
 csx/
+DataCompiler/dataCompiler.exe
 dlldata.c
 DocProject/buildhelp/
 DocProject/Help/*.hhc
@@ -174,15 +176,18 @@ FakesAssemblies/
 Generated\ Files/
 Generated_Code/
 Icon
-Installer/PKGRoot/
 install-sh
+Installer/PKGRoot/
 ipch/
+KeyKeyUserDBKit-Swift/.build
+KeyKeyUserDBKit-Swift/.swiftpm
 Makefile.in
 nCrunchTemp_*
 Network Trash Folder
 node_modules/
 OpenCover/
 orleans.codegen.cs
+Package.resolved
 Package.StoreAssociation.xml
 paket-files/
 project.fragment.lock.json
@@ -227,4 +232,3 @@ _TeamCity*
 _UpgradeReport_Files/
 __pycache__/
 ~$*
-DataCompiler/dataCompiler.exe
