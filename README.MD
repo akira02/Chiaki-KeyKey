@@ -1,27 +1,98 @@
-本倉庫乃奇摩輸入法廢件處理廠，目前維護下述 macOS 專用的奇摩輸入法元件：
+# Chiaki KeyKey
 
-- 奇摩輸入法偏好設定（ARM64 & AMD64），對應 target 名稱「Takao->Preferences」。
-- 奇摩輸入法辭典編輯程式（ARM64 & AMD64），對應 target 名稱「Takao->PhraseEditor」。
+Chiaki KeyKey is a modern macOS revival experiment based on the open-sourced Yahoo! KeyKey / OpenVanilla codebase.
 
-如欲自行建置的話，請開啟「./YahooKeyKey-Source-1.1.2528/LithoglyphModules.xcodeproj」然後選擇上文提到的 TARGET 建置即可。
-Xcode 可能會給出大量的 deprecation 警告，但有些是原理上很難無損修換成新版 API 的，請量力而行。
+The goal is to preserve the excellent Traditional Chinese input experience of KeyKey while making the project buildable, auditable, and maintainable on current Apple Silicon Macs.
 
-切記：這個倉庫是**廢件處理廠**、不是產品保固中心。**不會有誰活該對這些廢件的可用性負責**。
+This is not an official Yahoo product. The upstream source was released under a BSD-style license; see [LICENSE.txt](LICENSE.txt). The Yahoo! name and contributor names may not be used to endorse derived products without written permission.
 
-原始 README 資料：
-```
-Yahoo! KeyKey[1] is a customized Chinese input methods tool based on an open source project Openvanilla[2].
+## Current Status
 
-Yahoo! had decided to make Yahoo! Keykey as a open source projecet and under new BSD licene.
+This fork starts from `vChewing/KeyKey-Boneyard` and is now hosted as:
 
-Some external dependency information are list here:
-1.SinicaCorpus: You could reach http://www.sinica.edu.tw/ for the license.
-2.BPMFMappings was created based on SinicaCorpus.
-3.YahooSearchTerms: You could grabe hot keyword from http://tw.yahoo.com.
-4.sqlite-cerod-see: Commerical SQLite Compressed and Encrypted Read-Only Database (CEROD) Extension, please check http://www.hwaci.com/sw/sqlite/cerod.html
-5.DotMacKit.framework and PackageMaker.app: You can get it from Apple development kit.
-6.CTGradient is licensed under http://creativecommons.org/licenses/by/2.5/ .
+- GitHub: <https://github.com/akira02/Chiaki-KeyKey>
+- Upstream archive: <https://github.com/vChewing/KeyKey-Boneyard>
 
-[1]. http://tw.media.yahoo.com/keykey/
-[2]. http://openvanilla.org/
-```
+The repository currently contains the original Yahoo! KeyKey source tree plus previously repaired macOS utility targets:
+
+- Preferences app target: `Takao -> Preferences`
+- Phrase editor target: `Takao -> PhraseEditor`
+
+The full input method target still needs modernization before it can be treated as a current macOS product. The important work is expected to be:
+
+- Replace legacy build and packaging assumptions with an Xcode 26+ friendly project.
+- Make the InputMethodKit host build cleanly for Apple Silicon.
+- Remove old x86 / PPC / 10.5-era assumptions from `Info.plist`, event handling, helper code, and packaging.
+- Rebuild the dictionary pipeline without Yahoo search-term data, private Sinica Corpus inputs, or the commercial CEROD SQLite extension.
+- Add a reproducible data pipeline so generated dictionaries can be rebuilt from documented sources.
+
+Local environment note: Xcode 26.5 is available on the current development machine.
+
+## Source Layout
+
+- `YahooKeyKey-Source-1.1.2528/` - original Yahoo! KeyKey source package.
+- `YahooKeyKey-Source-1.1.2528/Loaders/OSX-IMK/` - legacy macOS InputMethodKit loader.
+- `YahooKeyKey-Source-1.1.2528/Frameworks/OpenVanilla/` - OpenVanilla framework sources.
+- `YahooKeyKey-Source-1.1.2528/Distributions/Takao/DatabaseCooker/` - original dictionary cooking scripts.
+
+## Dictionary Replacement Survey
+
+Last reviewed: 2026-06-22.
+
+The original dictionary build expected data that is no longer a good fit for a redistributable modern fork:
+
+- Sinica Corpus files require a separate license.
+- Yahoo search terms are not a stable or redistributable open data source.
+- `sqlite-cerod-see` / CEROD was a commercial SQLite read-only compression extension.
+
+For Chiaki KeyKey, dictionary data should be split into four layers: pronunciation mappings, phrase vocabulary, frequency / language model data, and Traditional / Simplified / regional conversion data.
+
+| Source | Useful For | License / Access Notes | Fit |
+| --- | --- | --- | --- |
+| [libchewing](https://github.com/chewing/libchewing) | Bopomofo behavior, keyboard layouts, engine comparison, possible data reference | GitHub mirror lists LGPL-2.1; the project has moved to Codeberg. Audit before vendoring data or code. | Strong reference implementation for Traditional Chinese phonetic input. Best used first as a behavior benchmark. |
+| [Rime bopomofo](https://github.com/rime/rime-bopomofo), [terra-pinyin](https://github.com/rime/rime-terra-pinyin), [essay](https://github.com/rime/rime-essay) | Bopomofo schemas, pinyin mappings, shared vocabulary / language model | Repositories list LGPL-3.0. Bundling converted data may impose license obligations. | Very useful seed material, but should be kept behind a license audit before shipping. |
+| [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict) | Traditional / Simplified word entries and pinyin | CC BY-SA 4.0. MDBG listed 125,045 entries in the 2026-06-21 release. | Good base word dictionary. It has readings, not usage frequency. |
+| [moedict-data](https://github.com/g0v/moedict-data) | Taiwan Ministry of Education dictionary data, readings, definitions | README says original text remains MOE copyright under CC BY-ND 3.0 Taiwan, while the JSON conversion work is CC0. | Useful as a reference source. Be cautious about distributing modified derived dictionary text. |
+| [Wikimedia dumps](https://dumps.wikimedia.org/zhwiki/latest/) and [Chinese Wiktionary dumps](https://dumps.wikimedia.org/zhwiktionary/latest/) | Corpus text, article titles, term frequency, Wiktionary lexical hints | Wikimedia text is generally CC BY-SA 4.0 / GFDL under the Terms of Use. Dumps are updated regularly. | Good for frequency and phrase mining after cleanup. Attribution/share-alike implications must be documented. |
+| [Tatoeba downloads](https://tatoeba.org/en/downloads) | Mandarin sentences, sentence-level examples, small corpus supplement | Downloads page says files are CC BY 2.0 FR, with some sentences also available as CC0. | Useful supplemental corpus, not enough as the primary language model. |
+| [Unicode Unihan](https://www.unicode.org/reports/tr38/) | Per-character readings, variants, radical/stroke metadata | Unicode License v3 permits use, copy, modification, publication, distribution, and sale with notice. | Excellent low-level character metadata; not a phrase dictionary. |
+| [CNS11643 全字庫](https://data.gov.tw/dataset/5961) | Taiwan character metadata: Zhuyin, Cangjie, strokes, radicals, pinyin, components, stroke order | Government Open Data License v1 and OFL-1.1 for font assets. Dataset updated 2026-05-05. | Strong Taiwan-specific character metadata source. |
+| [OpenCC](https://github.com/BYVoid/OpenCC) | Traditional / Simplified conversion, Taiwan / Hong Kong regional variants | Apache-2.0. | Useful conversion layer; not a ranking dictionary. |
+
+### Recommended Data Direction
+
+The safest first build should avoid private or hard-to-redistribute data. A practical starting combination is:
+
+1. Use CC-CEDICT for base words and pinyin readings.
+2. Use Unicode Unihan and CNS11643 for character-level readings and metadata.
+3. Use Wikimedia and Tatoeba as opt-in corpus inputs for phrase frequency and language model training.
+4. Use OpenCC for conversion and regional variant normalization.
+5. Compare behavior against libchewing and Rime before deciding whether to reuse any LGPL-covered data directly.
+
+This gives us a reproducible, public-data path without depending on the original Yahoo search terms, Sinica Corpus files, or CEROD.
+
+## Modernization Roadmap
+
+The likely path is not a full rewrite of the Chinese input algorithm on day one. A more realistic sequence is:
+
+1. Keep the OpenVanilla / KeyKey core readable and buildable.
+2. Modernize the macOS InputMethodKit shell for Apple Silicon.
+3. Replace deprecated or removed macOS APIs only where they block building, signing, packaging, or runtime behavior.
+4. Build a new dictionary cooker with explicit source licenses and deterministic outputs.
+5. Add smoke tests for composition, candidate selection, punctuation, preference loading, and user phrase editing.
+6. Package as a signed modern `.app` / input method bundle once the loader is stable.
+
+## Original Upstream Notes
+
+The original README described Yahoo! KeyKey as a customized Chinese input method based on OpenVanilla, released as open source under a New BSD license.
+
+It also listed the historical external dependencies:
+
+1. Sinica Corpus - separate license from Academia Sinica.
+2. BPMF mappings created from Sinica Corpus.
+3. Yahoo search terms from `tw.yahoo.com`.
+4. Commercial SQLite CEROD extension.
+5. Apple development kit tools such as DotMacKit.framework and PackageMaker.app.
+6. CTGradient under Creative Commons BY 2.5.
+
+Those notes are preserved here for provenance, but they should not be treated as the data plan for Chiaki KeyKey.
